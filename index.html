@@ -3,858 +3,1295 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kerala Classical & Traditional Performing Arts Directory — Enroll</title>
+<title>Kerala Classical &amp; Traditional Performing Arts Directory — Enroll</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Hind:wght@400;500;600;700&family=Noto+Sans+Malayalam:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg: #F7F0E1;
-    --card: #FFFDF7;
-    --ink: #2A2320;
-    --maroon: #7A1F2B;
-    --maroon-dark: #591420;
-    --gold: #B8862E;
-    --gold-light: #E8D2A0;
-    --green: #2F4A3C;
-    --line: #E3D6BC;
-    --danger: #7A1F2B;
+    --bg:#0B0A09; --card:#17140F; --card-2:#211C15;
+    --ink:#F5EFE3; --muted:#B0A392;
+    --maroon:#D4566B; --maroon-deep:#8C2436;
+    --gold:#E5BB63; --green:#5CB08A;
+    --line:#3A322A; --danger:#F0798D;
   }
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;}
   body{
-    background:var(--bg);
-    background-image:
-      radial-gradient(circle at 0% 0%, rgba(122,31,43,0.05), transparent 40%),
-      radial-gradient(circle at 100% 100%, rgba(47,74,60,0.06), transparent 40%);
-    color:var(--ink);
-    font-family:'Hind', sans-serif;
-    font-size:18px;
-    line-height:1.5;
-    min-height:100vh;
-    padding:0 0 60px 0;
+    background:var(--bg); color:var(--ink);
+    font-family:'Hind','Noto Sans Malayalam',sans-serif;
+    font-size:19px; line-height:1.55; min-height:100vh; padding:0 0 60px 0;
+    -webkit-text-size-adjust:100%;
   }
   .topbar{
-    background:linear-gradient(180deg, var(--maroon) 0%, var(--maroon-dark) 100%);
-    color:#F7F0E1;
-    padding:22px 20px 26px;
-    text-align:center;
-    position:relative;
+    background:linear-gradient(180deg,#2A0E15 0%,#140708 100%);
+    border-bottom:1px solid var(--line);
+    color:var(--ink); padding:22px 20px 24px; text-align:center;
   }
-  .topbar h1{
-    font-family:'Rozha One', serif;
-    font-size:26px;
-    margin:0 0 4px;
-    letter-spacing:0.3px;
-    font-weight:400;
-  }
-  .topbar p{
-    margin:0;
-    font-size:14px;
-    color:var(--gold-light);
-    letter-spacing:0.5px;
-  }
-  .motif{
-    display:flex;
-    justify-content:center;
-    gap:8px;
-    margin-top:12px;
-  }
-  .motif span{
-    width:7px;height:7px;border-radius:50%;
-    background:var(--gold);
-    opacity:0.85;
-  }
-  .motif span:nth-child(3n){ background:#F7F0E1; opacity:0.5; }
+  .topbar h1{font-family:'Rozha One',serif;font-size:25px;margin:0 0 5px;font-weight:400;
+    line-height:1.25;color:#FBF4E6;}
+  .topbar p{margin:0;font-size:14px;color:var(--gold);letter-spacing:0.5px;}
+  .motif{display:flex;justify-content:center;gap:8px;margin-top:12px;}
+  .motif span{width:7px;height:7px;border-radius:50%;background:var(--gold);opacity:0.9;}
+  .motif span:nth-child(3n){background:var(--maroon);opacity:0.7;}
 
-  .wrap{ max-width:560px; margin:0 auto; padding:20px 16px 0; }
+  .wrap{max-width:580px;margin:0 auto;padding:20px 16px 0;}
+  .progress{display:flex;gap:4px;margin:16px 0 20px;}
+  .progress .seg{flex:1;height:6px;border-radius:4px;background:#2E2820;}
+  .progress .seg.done{background:var(--gold);}
+  .progress .seg.active{background:var(--maroon);}
+  .step-label{text-align:center;font-size:13px;color:var(--gold);text-transform:uppercase;
+    letter-spacing:1.6px;font-weight:600;margin-bottom:4px;}
 
-  .progress{
-    display:flex; align-items:center; gap:4px;
-    margin:18px 0 22px;
-  }
-  .progress .seg{
-    flex:1; height:6px; border-radius:4px;
-    background:var(--line);
-    overflow:hidden;
-  }
-  .progress .seg.done{ background:var(--gold); }
-  .progress .seg.active{ background:var(--maroon); }
-  .step-label{
-    text-align:center; font-size:13px; color:var(--green);
-    text-transform:uppercase; letter-spacing:1.5px; font-weight:600;
-    margin-bottom:6px;
-  }
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:24px 20px;box-shadow:0 4px 20px rgba(0,0,0,0.4);}
+  .card h2{font-family:'Rozha One',serif;font-weight:400;font-size:24px;color:var(--gold);margin:0 0 6px;}
+  .card .sub{font-size:16px;color:var(--muted);margin:0 0 20px;}
 
-  .card{
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:14px;
-    padding:22px 20px;
-    box-shadow:0 2px 10px rgba(90,60,20,0.06);
-  }
-  .card h2{
-    font-family:'Rozha One', serif;
-    font-weight:400;
-    font-size:22px;
-    color:var(--maroon);
-    margin:0 0 4px;
-  }
-  .card .sub{
-    font-size:15px; color:#6b5d4f; margin:0 0 18px;
-  }
+  label.field-label{display:block;font-weight:600;font-size:17px;margin:20px 0 7px;color:var(--ink);}
+  label.field-label .req{color:var(--maroon);}
+  label.field-label .opt{color:var(--muted);font-weight:500;font-size:14px;}
 
-  label.field-label{
-    display:block; font-weight:600; font-size:16px; margin:16px 0 6px;
-    color:var(--ink);
-  }
-  label.field-label .req{ color:var(--maroon); }
-  label.field-label .opt{ color:#9a8c7a; font-weight:500; font-size:13px; }
+  input[type=text],input[type=tel],input[type=email],input[type=password],textarea,select{
+    width:100%;font-family:'Hind','Noto Sans Malayalam',sans-serif;font-size:19px;padding:14px 15px;
+    border:2px solid var(--line);border-radius:10px;background:#0E0C0A;color:var(--ink);outline:none;}
+  input::placeholder,textarea::placeholder{color:#6E6355;}
+  input:focus,textarea:focus,select:focus{border-color:var(--gold);}
+  textarea{min-height:84px;resize:vertical;}
+  select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--gold) 50%),
+    linear-gradient(135deg,var(--gold) 50%,transparent 50%);
+    background-position:calc(100% - 20px) calc(1.2em),calc(100% - 15px) calc(1.2em);
+    background-size:5px 5px,5px 5px;background-repeat:no-repeat;}
 
-  input[type=text], input[type=tel], input[type=email], textarea{
-    width:100%;
-    font-family:'Hind', sans-serif;
-    font-size:18px;
-    padding:13px 14px;
-    border:2px solid var(--line);
-    border-radius:10px;
-    background:#fff;
-    color:var(--ink);
-    outline:none;
-    transition:border-color .15s;
-  }
-  input:focus, textarea:focus{ border-color:var(--maroon); }
-  textarea{ min-height:80px; resize:vertical; }
+  .check-row{display:flex;align-items:flex-start;gap:12px;margin:16px 0;}
+  .check-row input[type=checkbox]{width:24px;height:24px;accent-color:var(--maroon);
+    flex-shrink:0;margin-top:2px;}
+  .check-row label{font-size:17px;font-weight:500;}
 
-  .check-row{ display:flex; align-items:center; gap:10px; margin:14px 0; }
-  .check-row input[type=checkbox]{ width:22px; height:22px; accent-color:var(--maroon); }
-  .check-row label{ font-size:16px; font-weight:500; }
+  .conditional{margin-top:12px;padding:14px;background:var(--card-2);
+    border-left:3px solid var(--gold);border-radius:8px;display:none;}
+  .conditional.show{display:block;}
 
-  .conditional{
-    margin-top:10px; padding:12px 14px;
-    background:#FBF3E4; border-left:3px solid var(--gold);
-    border-radius:8px;
-    display:none;
-  }
-  .conditional.show{ display:block; }
+  .option-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:8px;}
+  .option-card{border:2px solid var(--line);background:var(--card-2);border-radius:12px;
+    padding:17px 11px;text-align:center;cursor:pointer;font-weight:600;font-size:17px;
+    color:var(--ink);user-select:none;}
+  .option-card:active{transform:scale(0.98);}
+  .option-card.selected{border-color:var(--gold);background:#33261A;color:var(--gold);
+    box-shadow:0 0 0 1px var(--gold) inset;}
+  .option-card .tag{display:block;font-size:13px;color:var(--muted);font-weight:500;margin-top:4px;}
+  .option-card.selected .tag{color:#D8B478;}
 
-  .option-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:6px; }
-  .option-card{
-    border:2px solid var(--line);
-    background:#fff;
-    border-radius:12px;
-    padding:16px 10px;
-    text-align:center;
-    cursor:pointer;
-    font-weight:600;
-    font-size:16px;
-    color:var(--ink);
-    transition:all .12s;
-    user-select:none;
-  }
-  .option-card:active{ transform:scale(0.98); }
-  .option-card.selected{
-    border-color:var(--maroon);
-    background:linear-gradient(180deg,#fff, #FBF0EC);
-    color:var(--maroon);
-    box-shadow:0 2px 8px rgba(122,31,43,0.15);
-  }
-  .option-card .tag{ display:block; font-size:12px; color:#9a8c7a; font-weight:500; margin-top:3px; }
-  .option-card.selected .tag{ color:var(--gold); }
+  .chip-wrap{display:flex;flex-wrap:wrap;gap:9px;margin-top:8px;}
+  .chip{border:2px solid var(--line);background:var(--card-2);border-radius:999px;
+    padding:10px 17px;font-size:16px;font-weight:500;cursor:pointer;user-select:none;color:var(--ink);}
+  .chip.selected{border-color:var(--green);background:var(--green);color:#0B0A09;font-weight:600;}
 
-  .chip-wrap{ display:flex; flex-wrap:wrap; gap:8px; margin-top:6px; }
-  .chip{
-    border:2px solid var(--line);
-    background:#fff;
-    border-radius:999px;
-    padding:9px 16px;
-    font-size:15px;
-    font-weight:500;
-    cursor:pointer;
-    user-select:none;
-  }
-  .chip.selected{
-    border-color:var(--green);
-    background:var(--green);
-    color:#fff;
-  }
+  .nav-buttons{display:flex;gap:11px;margin-top:28px;}
+  button{font-family:'Hind','Noto Sans Malayalam',sans-serif;font-size:18px;font-weight:600;
+    border-radius:10px;padding:15px 18px;border:none;cursor:pointer;}
+  .btn-primary{flex:1;background:var(--maroon);color:#12100E;}
+  .btn-primary:active{background:#B8455A;}
+  .btn-secondary{background:transparent;color:var(--gold);border:2px solid var(--line);}
+  .btn-primary:disabled{background:#4A403A;color:#8A8078;cursor:not-allowed;}
 
-  .nav-buttons{
-    display:flex; gap:10px; margin-top:26px;
-  }
-  button{
-    font-family:'Hind', sans-serif;
-    font-size:17px;
-    font-weight:600;
-    border-radius:10px;
-    padding:14px 18px;
-    border:none;
-    cursor:pointer;
-  }
-  .btn-primary{
-    flex:1;
-    background:var(--maroon);
-    color:#fff;
-  }
-  .btn-primary:active{ background:var(--maroon-dark); }
-  .btn-secondary{
-    background:transparent;
-    color:var(--green);
-    border:2px solid var(--line);
-  }
-  .btn-primary:disabled{ background:#c9b7a8; cursor:not-allowed; }
+  .error-text{color:var(--danger);font-size:15px;margin-top:8px;display:none;}
+  .error-text.show{display:block;}
 
-  .error-text{ color:var(--danger); font-size:14px; margin-top:6px; display:none; }
-  .error-text.show{ display:block; }
+  .summary-row{display:flex;justify-content:space-between;gap:12px;padding:11px 0;
+    border-bottom:1px solid var(--line);font-size:16px;}
+  .summary-row .k{color:var(--muted);flex:0 0 42%;}
+  .summary-row .v{font-weight:600;text-align:right;flex:1;}
 
-  .summary-row{
-    display:flex; justify-content:space-between; gap:12px;
-    padding:10px 0; border-bottom:1px solid var(--line);
-    font-size:15px;
-  }
-  .summary-row .k{ color:#6b5d4f; flex:0 0 42%; }
-  .summary-row .v{ font-weight:600; text-align:right; flex:1; }
+  .success-icon{width:68px;height:68px;border-radius:50%;background:var(--green);color:#0B0A09;
+    display:flex;align-items:center;justify-content:center;font-size:34px;margin:0 auto 18px;font-weight:700;}
+  .ref-box{background:var(--card-2);border:1px dashed var(--gold);border-radius:10px;
+    padding:16px;text-align:center;margin:18px 0;}
+  .ref-box .refid{font-family:'Rozha One',serif;font-size:22px;color:var(--gold);letter-spacing:1px;}
 
-  .success-icon{
-    width:64px;height:64px;border-radius:50%;
-    background:var(--green); color:#fff;
-    display:flex;align-items:center;justify-content:center;
-    font-size:32px; margin:0 auto 16px;
-  }
-  .ref-box{
-    background:#FBF3E4; border:1px dashed var(--gold);
-    border-radius:10px; padding:14px; text-align:center; margin:16px 0;
-  }
-  .ref-box .refid{ font-family:'Rozha One', serif; font-size:20px; color:var(--maroon); letter-spacing:1px; }
+  .hidden{display:none !important;}
+  .mal{display:block;font-family:'Noto Sans Malayalam',sans-serif;font-size:14px;
+    color:var(--muted);margin-top:3px;font-weight:400;line-height:1.45;}
+  h2 .mal{font-size:15px;}
+  .option-card .mal{font-size:13px;}
 
-  .helper-text{ font-size:13px; color:#9a8c7a; margin-top:4px; }
-  .hidden{ display:none !important; }
-  .mal{ display:block; font-size:14px; color:#8a7256; margin-top:2px; font-weight:500; }
-  h2 .mal{ font-size:15px; margin-top:1px; }
-  .option-card .mal{ font-size:12.5px; margin-top:2px; }
-  .chip .mal{ font-size:12px; margin-top:1px; opacity:0.85; }
+  .lang-switch{display:flex;justify-content:center;gap:8px;margin-top:14px;}
+  .lang-switch button{padding:7px 16px;font-size:14px;background:transparent;
+    border:1px solid var(--line);color:var(--muted);border-radius:999px;}
+  .lang-switch button.active{border-color:var(--gold);color:var(--gold);}
 
-  .admin-link{
-    display:block; text-align:center; margin:34px 0 0;
-    font-size:13px; color:#9a8c7a; text-decoration:underline;
-    cursor:pointer; background:none; border:none; font-family:'Hind',sans-serif;
-    width:100%;
-  }
+  .admin-link{display:block;text-align:center;margin:34px 0 0;font-size:13px;color:#6E6355;
+    text-decoration:underline;cursor:pointer;background:none;border:none;width:100%;}
+  .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.8);display:flex;
+    align-items:center;justify-content:center;padding:20px;z-index:50;}
+  .modal-box{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:24px 20px;max-width:380px;width:100%;}
+  .modal-box h3{font-family:'Rozha One',serif;font-weight:400;color:var(--gold);margin:0 0 12px;font-size:21px;}
 
-  .modal-overlay{
-    position:fixed; inset:0; background:rgba(42,35,32,0.55);
-    display:flex; align-items:center; justify-content:center;
-    padding:20px; z-index:50;
-  }
-  .modal-box{
-    background:var(--card); border-radius:14px; padding:24px 20px;
-    max-width:380px; width:100%; box-shadow:0 8px 30px rgba(0,0,0,0.25);
-  }
-  .modal-box h3{ font-family:'Rozha One',serif; font-weight:400; color:var(--maroon); margin:0 0 12px; font-size:20px; }
-
-  .admin-wrap{ max-width:760px; margin:0 auto; padding:20px 16px 60px; }
-  .admin-header{ display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:16px; }
-  .admin-header h2{ font-family:'Rozha One',serif; font-weight:400; color:var(--maroon); margin:0; font-size:22px; }
-  .admin-stats{ font-size:14px; color:#6b5d4f; }
-  .admin-toolbar{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:16px; }
-  .admin-toolbar input[type=text]{ flex:1; min-width:160px; }
-  .btn-gold{ background:var(--gold); color:#fff; white-space:nowrap; }
-  .btn-outline{ background:transparent; border:2px solid var(--line); color:var(--ink); white-space:nowrap; }
-
-  .entry-card{
-    background:var(--card); border:1px solid var(--line); border-radius:12px;
-    padding:14px 16px; margin-bottom:10px;
-  }
-  .entry-card .entry-top{ display:flex; justify-content:space-between; align-items:baseline; gap:10px; }
-  .entry-card .entry-name{ font-weight:700; font-size:17px; color:var(--ink); }
-  .entry-card .entry-ref{ font-size:12px; color:var(--gold); font-family:'Rozha One',serif; }
-  .entry-card .entry-meta{ font-size:14px; color:#6b5d4f; margin-top:4px; }
-  .entry-card .entry-meta b{ color:var(--green); }
-  .empty-state{ text-align:center; color:#9a8c7a; padding:40px 10px; }
+  .admin-wrap{max-width:780px;margin:0 auto;padding:20px 16px 60px;}
+  .admin-header{display:flex;justify-content:space-between;align-items:center;gap:10px;
+    flex-wrap:wrap;margin-bottom:16px;}
+  .admin-header h2{font-family:'Rozha One',serif;font-weight:400;color:var(--gold);margin:0;font-size:23px;}
+  .admin-stats{font-size:15px;color:var(--muted);}
+  .admin-toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;}
+  .admin-toolbar input[type=text]{flex:1;min-width:160px;}
+  .btn-gold{background:var(--gold);color:#12100E;white-space:nowrap;}
+  .btn-outline{background:transparent;border:2px solid var(--line);color:var(--ink);white-space:nowrap;}
+  .entry-card{background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:15px 17px;margin-bottom:11px;}
+  .entry-card .entry-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;}
+  .entry-card .entry-name{font-weight:700;font-size:18px;}
+  .entry-card .entry-ref{font-size:13px;color:var(--gold);font-family:'Rozha One',serif;}
+  .entry-card .entry-meta{font-size:15px;color:var(--muted);margin-top:5px;}
+  .entry-card .entry-meta b{color:var(--green);}
+  .empty-state{text-align:center;color:var(--muted);padding:44px 10px;}
 </style>
 </head>
 <body>
 
 <div class="topbar">
-  <h1>Kerala Classical &amp; Traditional Performing Arts Directory</h1>
-  <p>Stakeholder Enrollment · Agni Cultural Academy</p>
-  <p style="font-size:13px;color:#F7F0E1;opacity:0.85;margin-top:2px;">കേരള ക്ലാസിക്കൽ & പരമ്പരാഗത കലാരൂപ ഡയറക്ടറി</p>
-  <div class="motif">
-    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-  </div>
+  <h1 id="appTitle">Kerala Classical &amp; Traditional Performing Arts Directory</h1>
+  <p id="appSub">Stakeholder Enrollment · Agni Cultural Academy</p>
+  <div class="motif"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="lang-switch" id="langSwitch"></div>
 </div>
 
 <div class="wrap">
-  <div id="stepLabel" class="step-label">Step 1 of 7</div>
+  <div id="stepLabel" class="step-label"></div>
   <div class="progress" id="progressBar"></div>
-
   <div class="card" id="cardArea"></div>
-
   <button class="admin-link" id="adminLinkBtn">Admin</button>
 </div>
 
 <div id="adminRoot"></div>
 
 <script>
-// ---------- Data ----------
+// ============ CONFIG ============
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzoZM5vTsHZrRqsPxJikl8WBHp18ed8I9rFFGEco-RM_XJ8oV55wi7NUwPq7G4iFkiBHQ/exec";
+const ADMIN_TOKEN = "agni2026";
+const ENROLLMENT_LINK = "https://keralaartsdirectory.github.io/Kerala-Performing-Arts-Directory/";
+
+// ============ LANGUAGE ============
+let lang = null; // 'en' | 'ml' — null until chosen
+
+const STR = {
+  appTitle:{en:"Kerala Classical & Traditional Performing Arts Directory",
+            ml:"കേരള ക്ലാസിക്കൽ & പരമ്പരാഗത കലാരൂപ ഡയറക്ടറി"},
+  appSub:{en:"Stakeholder Enrollment · Agni Cultural Academy",
+          ml:"രജിസ്ട്രേഷൻ · അഗ്നി കൾച്ചറൽ അക്കാദമി"},
+  stepOf:{en:(a,b)=>`Step ${a} of ${b}`, ml:(a,b)=>`ഘട്ടം ${a} / ${b}`},
+
+  langTitle:{en:"Choose your language", ml:"ഭാഷ തിരഞ്ഞെടുക്കുക"},
+  langSub:{en:"Select the language you would like to use for this form.",
+           ml:"ഈ ഫോം പൂരിപ്പിക്കാൻ ആഗ്രഹിക്കുന്ന ഭാഷ തിരഞ്ഞെടുക്കുക."},
+
+  btnContinue:{en:"Continue", ml:"തുടരുക"},
+  btnBack:{en:"Back", ml:"പിന്നോട്ട്"},
+  btnReview:{en:"Review & Submit", ml:"പരിശോധിച്ച് സമർപ്പിക്കുക"},
+  btnSubmit:{en:"Submit Enrollment", ml:"രജിസ്ട്രേഷൻ സമർപ്പിക്കുക"},
+  btnSubmitting:{en:"Submitting...", ml:"സമർപ്പിക്കുന്നു..."},
+  btnRetry:{en:(n)=>`Retrying (${n}/3)...`, ml:(n)=>`വീണ്ടും ശ്രമിക്കുന്നു (${n}/3)...`},
+  btnAnother:{en:"Enroll Another Person", ml:"മറ്റൊരാളെ രജിസ്റ്റർ ചെയ്യുക"},
+  btnShare:{en:"Share with Fellow Artists on WhatsApp",
+            ml:"സഹകലാകാരന്മാരുമായി വാട്സാപ്പിൽ പങ്കുവയ്ക്കുക"},
+  optional:{en:"(optional)", ml:"(ഐച്ഛികം)"},
+  selectPrompt:{en:"-- Select --", ml:"-- തിരഞ്ഞെടുക്കുക --"},
+  chooseAll:{en:"Choose all that apply.", ml:"ബാധകമായവയെല്ലാം തിരഞ്ഞെടുക്കുക."},
+
+  whoTitle:{en:"Who is enrolling?", ml:"ആരാണ് രജിസ്റ്റർ ചെയ്യുന്നത്?"},
+  whoSub:{en:"Choose the option that best describes you.",
+          ml:"താങ്കൾക്ക് ഏറ്റവും യോജിച്ച ഓപ്ഷൻ തിരഞ്ഞെടുക്കുക."},
+  whoErr:{en:"Please choose one option.", ml:"ഒരു ഓപ്ഷൻ തിരഞ്ഞെടുക്കുക."},
+
+  contactTitle:{en:"Your details", ml:"താങ്കളുടെ വിവരങ്ങൾ"},
+  contactTitleBody:{en:"Contact person details", ml:"ബന്ധപ്പെടേണ്ട വ്യക്തിയുടെ വിവരങ്ങൾ"},
+  contactSub:{en:"This helps us keep the directory accurate and lets others reach you.",
+              ml:"ഡയറക്ടറി കൃത്യമായി സൂക്ഷിക്കാനും മറ്റുള്ളവർക്ക് താങ്കളെ ബന്ധപ്പെടാനും ഇത് സഹായിക്കും."},
+  contactSubBody:{en:"Details of the person we should contact about this listing.",
+                  ml:"ഈ രജിസ്ട്രേഷനെക്കുറിച്ച് ഞങ്ങൾ ബന്ധപ്പെടേണ്ട വ്യക്തിയുടെ വിവരങ്ങൾ."},
+  fName:{en:"Full Name", ml:"പൂർണ്ണ നാമം"},
+  fMobile:{en:"Mobile Number", ml:"മൊബൈൽ നമ്പർ"},
+  fMobilePh:{en:"10-digit mobile number", ml:"10 അക്ക മൊബൈൽ നമ്പർ"},
+  fSameWa:{en:"WhatsApp number is same as mobile", ml:"വാട്സാപ്പ് നമ്പർ മൊബൈൽ നമ്പർ തന്നെയാണ്"},
+  fWhatsapp:{en:"WhatsApp Number", ml:"വാട്സാപ്പ് നമ്പർ"},
+  fAddress:{en:"Postal Address", ml:"തപാൽ വിലാസം"},
+  fAddressPh:{en:"House name, Place, Post, District", ml:"വീട്ടുപേര്, സ്ഥലം, പോസ്റ്റ്, ജില്ല"},
+  fPincode:{en:"Pincode", ml:"പിൻകോഡ്"},
+  fPincodePh:{en:"6-digit pincode", ml:"6 അക്ക പിൻകോഡ്"},
+  fEmail:{en:"Email", ml:"ഇമെയിൽ"},
+  fSocial:{en:"Social Media Handles", ml:"സാമൂഹ്യമാധ്യമ വിലാസങ്ങൾ"},
+  fSocialPh:{en:"Instagram / Facebook / YouTube", ml:"ഇൻസ്റ്റഗ്രാം / ഫേസ്ബുക്ക് / യൂട്യൂബ്"},
+  contactErr:{en:"Please fill all mandatory fields correctly (pincode must be 6 digits).",
+              ml:"നിർബന്ധിത വിവരങ്ങളെല്ലാം കൃത്യമായി പൂരിപ്പിക്കുക (പിൻകോഡ് 6 അക്കമായിരിക്കണം)."},
+
+  artformTitle:{en:"Your art form", ml:"താങ്കളുടെ കലാരൂപം"},
+  artformTitleT:{en:"Art form you teach", ml:"താങ്കൾ പഠിപ്പിക്കുന്ന കലാരൂപം"},
+  artformSub:{en:"Choose the area you are primarily associated with.",
+              ml:"താങ്കൾ പ്രധാനമായും ബന്ധപ്പെട്ടിരിക്കുന്ന മേഖല തിരഞ്ഞെടുക്കുക."},
+  artformErr:{en:"Please choose one area.", ml:"ഒരു മേഖല തിരഞ്ഞെടുക്കുക."},
+
+  catTitle:{en:"Category", ml:"വിഭാഗം"},
+  catErr:{en:"Please choose at least one category.", ml:"കുറഞ്ഞത് ഒരു വിഭാഗമെങ്കിലും തിരഞ്ഞെടുക്കുക."},
+  specTitle:{en:"Specialization", ml:"വൈദഗ്ധ്യം"},
+  specSub:{en:"Choose your instrument(s) or specialization — select all that apply.",
+           ml:"താങ്കളുടെ വാദ്യോപകരണം അല്ലെങ്കിൽ വൈദഗ്ധ്യം തിരഞ്ഞെടുക്കുക — ബാധകമായവയെല്ലാം."},
+  specErr:{en:"Please choose at least one specialization.", ml:"കുറഞ്ഞത് ഒരു വൈദഗ്ധ്യമെങ്കിലും തിരഞ്ഞെടുക്കുക."},
+
+  extrasTitle:{en:"A little more about you", ml:"താങ്കളെക്കുറിച്ച് കുറച്ചുകൂടി"},
+  extrasSub:{en:"All fields on this page are optional.", ml:"ഈ പേജിലെ എല്ലാ വിവരങ്ങളും ഐച്ഛികമാണ്."},
+  fAir:{en:"AIR / Doordarshan Grade", ml:"ആകാശവാണി / ദൂരദർശൻ ഗ്രേഡ്"},
+  fAirPh:{en:"e.g. B High, Top Grade", ml:"ഉദാ: B High, Top Grade"},
+  fAwards:{en:"Awards / Citations", ml:"പുരസ്കാരങ്ങൾ / അംഗീകാരങ്ങൾ"},
+  fBooks:{en:"Books Published", ml:"പ്രസിദ്ധീകരിച്ച പുസ്തകങ്ങൾ"},
+  fTeachPriv:{en:"I teach privately", ml:"ഞാൻ സ്വകാര്യമായി ക്ലാസ്സുകൾ എടുക്കുന്നു"},
+  fTeachPrivPh:{en:"Subject taught, online / offline / both",
+                ml:"പഠിപ്പിക്കുന്ന വിഷയം, ഓൺലൈൻ / ഓഫ്‌ലൈൻ / രണ്ടും"},
+  fRunsPriv:{en:"I run a private institution", ml:"ഞാൻ ഒരു സ്വകാര്യ സ്ഥാപനം നടത്തുന്നു"},
+  fRunsPrivPh:{en:"Institution name & address", ml:"സ്ഥാപനത്തിന്റെ പേരും വിലാസവും"},
+  fWorksAt:{en:"I work at a Govt./Private institution",
+            ml:"ഞാൻ ഒരു സർക്കാർ / സ്വകാര്യ സ്ഥാപനത്തിൽ ജോലി ചെയ്യുന്നു"},
+  fWorksAtPh:{en:"Institution name, address, designation", ml:"സ്ഥാപനത്തിന്റെ പേര്, വിലാസം, പദവി"},
+  fOrgMember:{en:"I am a member / office bearer of an organization",
+              ml:"ഞാൻ ഒരു സംഘടനയിലെ അംഗം / ഭാരവാഹിയാണ്"},
+  fOrgMemberPh:{en:"Organization name & designation", ml:"സംഘടനയുടെ പേരും പദവിയും"},
+
+  teacherTitle:{en:"Teaching details", ml:"അധ്യാപന വിവരങ്ങൾ"},
+  teacherSub:{en:"About where you teach.", ml:"താങ്കൾ പഠിപ്പിക്കുന്ന സ്ഥലത്തെക്കുറിച്ച്."},
+  fDesignation:{en:"Your Designation", ml:"താങ്കളുടെ പദവി"},
+  fDesignationPh:{en:"Please specify your designation", ml:"താങ്കളുടെ പദവി എഴുതുക"},
+  fInstName:{en:"Name of the Institution", ml:"സ്ഥാപനത്തിന്റെ പേര്"},
+  fOrgName:{en:"Name of the Organization", ml:"സംഘടനയുടെ പേര്"},
+  fInstAddress:{en:"Address of the Institution", ml:"സ്ഥാപനത്തിന്റെ വിലാസം"},
+  fOrgAddress:{en:"Address of the Organization", ml:"സംഘടനയുടെ വിലാസം"},
+  fInstEmail:{en:"Institution Email", ml:"സ്ഥാപനത്തിന്റെ ഇമെയിൽ"},
+  fOrgEmail:{en:"Organization Email", ml:"സംഘടനയുടെ ഇമെയിൽ"},
+  fInstPhone:{en:"Institution Phone", ml:"സ്ഥാപനത്തിന്റെ ഫോൺ"},
+  fOrgMobile:{en:"Organization Mobile", ml:"സംഘടനയുടെ മൊബൈൽ"},
+  fWebsite:{en:"Website", ml:"വെബ്സൈറ്റ്"},
+  fEduPrograms:{en:"Do you organize any education programs?",
+                ml:"താങ്കൾ വിദ്യാഭ്യാസ പരിപാടികൾ സംഘടിപ്പിക്കാറുണ്ടോ?"},
+  teacherErr:{en:"Please fill your designation and the institution name.",
+              ml:"താങ്കളുടെ പദവിയും സ്ഥാപനത്തിന്റെ പേരും പൂരിപ്പിക്കുക."},
+
+  instTitle:{en:"Institution details", ml:"സ്ഥാപന വിവരങ്ങൾ"},
+  instSub:{en:"About your training institute.", ml:"താങ്കളുടെ പരിശീലന സ്ഥാപനത്തെക്കുറിച്ച്."},
+  fYear:{en:"Year of Establishment", ml:"സ്ഥാപിതമായ വർഷം"},
+  fYearPh:{en:"e.g. 1985", ml:"ഉദാ: 1985"},
+  fSubjects:{en:"What subjects are taught in your institution?",
+             ml:"താങ്കളുടെ സ്ഥാപനത്തിൽ പഠിപ്പിക്കുന്ന വിഷയങ്ങൾ ഏതെല്ലാം?"},
+  fOtherPh:{en:"Others (please specify)", ml:"മറ്റുള്ളവ (എഴുതുക)"},
+  fHasBranches:{en:"Our institution has branches", ml:"ഞങ്ങളുടെ സ്ഥാപനത്തിന് ശാഖകളുണ്ട്"},
+  fBranchCount:{en:"Number of branches", ml:"ശാഖകളുടെ എണ്ണം"},
+  fBranchAddr:{en:"Address of each branch", ml:"ഓരോ ശാഖയുടെയും വിലാസം"},
+  fProgTypes:{en:"Type of programs organized", ml:"സംഘടിപ്പിക്കുന്ന പരിപാടികളുടെ തരം"},
+  instErr:{en:"Please fill designation, institution name, address, a valid email, a 4-digit year, and at least one subject taught.",
+           ml:"പദവി, സ്ഥാപനത്തിന്റെ പേര്, വിലാസം, ശരിയായ ഇമെയിൽ, 4 അക്ക വർഷം, കുറഞ്ഞത് ഒരു വിഷയം എന്നിവ പൂരിപ്പിക്കുക."},
+
+  orgTitle:{en:"Organization details", ml:"സംഘടനാ വിവരങ്ങൾ"},
+  orgSub:{en:"About your sabha, society, trust or club.",
+          ml:"താങ്കളുടെ സഭ, സൊസൈറ്റി, ട്രസ്റ്റ് അല്ലെങ്കിൽ ക്ലബ്ബിനെക്കുറിച്ച്."},
+  fFrequency:{en:"How often do you hold programs?",
+              ml:"എത്ര ഇടവേളയിൽ പരിപാടികൾ നടത്താറുണ്ട്?"},
+  fFestivals:{en:"Special festivals organized", ml:"സംഘടിപ്പിക്കുന്ന പ്രത്യേക ഉത്സവങ്ങൾ"},
+  fFestOtherPh:{en:"Other festivals (please specify)", ml:"മറ്റ് ഉത്സവങ്ങൾ (എഴുതുക)"},
+  fEduOrg:{en:"Education programs organized", ml:"സംഘടിപ്പിക്കുന്ന വിദ്യാഭ്യാസ പരിപാടികൾ"},
+  orgErr:{en:"Please fill designation, name, address, a valid email, a 4-digit year, and at least one program type.",
+          ml:"പദവി, പേര്, വിലാസം, ശരിയായ ഇമെയിൽ, 4 അക്ക വർഷം, കുറഞ്ഞത് ഒരു പരിപാടി തരം എന്നിവ പൂരിപ്പിക്കുക."},
+
+  makerTitle:{en:"Instruments you make or repair", ml:"താങ്കൾ നിർമ്മിക്കുന്ന / നന്നാക്കുന്ന ഉപകരണങ്ങൾ"},
+  makerSub:{en:"Choose the types you work with, then the specific instruments.",
+            ml:"താങ്കൾ പ്രവർത്തിക്കുന്ന തരങ്ങൾ, തുടർന്ന് നിർദ്ദിഷ്ട ഉപകരണങ്ങൾ തിരഞ്ഞെടുക്കുക."},
+  fInstrTypes:{en:"Type of Instruments", ml:"ഉപകരണങ്ങളുടെ തരം"},
+  qLeather:{en:"Which Leather instruments?", ml:"ഏതെല്ലാം തുകൽ വാദ്യങ്ങൾ?"},
+  qString:{en:"Which String instruments?", ml:"ഏതെല്ലാം തന്ത്രി വാദ്യങ്ങൾ?"},
+  qWind:{en:"Which Wind instruments?", ml:"ഏതെല്ലാം സുഷിര വാദ്യങ്ങൾ?"},
+  makerErr:{en:"Please choose at least one instrument type.",
+            ml:"കുറഞ്ഞത് ഒരു ഉപകരണ തരമെങ്കിലും തിരഞ്ഞെടുക്കുക."},
+
+  reviewTitle:{en:"Review your details", ml:"വിവരങ്ങൾ പരിശോധിക്കുക"},
+  reviewSub:{en:"Please check everything before submitting.",
+             ml:"സമർപ്പിക്കുന്നതിന് മുമ്പ് എല്ലാം പരിശോധിക്കുക."},
+  consent:{en:"I agree to publish these details in this directory",
+           ml:"ഈ വിവരങ്ങൾ ഡയറക്ടറിയിൽ പ്രസിദ്ധീകരിക്കാൻ ഞാൻ സമ്മതിക്കുന്നു"},
+  consentNote:{en:"All submissions go through a verification step before inclusion in the published directory.",
+               ml:"പ്രസിദ്ധീകരിക്കുന്ന ഡയറക്ടറിയിൽ ഉൾപ്പെടുത്തുന്നതിന് മുമ്പ് എല്ലാ രജിസ്ട്രേഷനുകളും പരിശോധിക്കപ്പെടും."},
+  consentErr:{en:"Please agree to the publishing consent above before submitting.",
+              ml:"സമർപ്പിക്കുന്നതിന് മുമ്പ് മുകളിലുള്ള സമ്മതം നൽകുക."},
+  submitErr:{en:(e)=>`Could not save after 3 tries (${e}). Please check your connection and tap Submit again.`,
+             ml:(e)=>`3 തവണ ശ്രമിച്ചിട്ടും സേവ് ചെയ്യാനായില്ല (${e}). ഇന്റർനെറ്റ് ബന്ധം പരിശോധിച്ച് വീണ്ടും സമർപ്പിക്കുക.`},
+
+  thankYou:{en:(n)=>`Thank you, ${n}!`, ml:(n)=>`നന്ദി, ${n}!`},
+  successMsg:{en:"You have been enrolled in the Kerala Classical & Traditional Performing Arts Directory.",
+              ml:"താങ്കൾ കേരള ക്ലാസിക്കൽ & പരമ്പരാഗത കലാരൂപ ഡയറക്ടറിയിൽ രജിസ്റ്റർ ചെയ്യപ്പെട്ടിരിക്കുന്നു."},
+  refLabel:{en:"Your Reference ID", ml:"താങ്കളുടെ റഫറൻസ് ഐഡി"},
+  refNote:{en:"Please save this reference number. Our team may contact you to verify details.",
+           ml:"ഈ റഫറൻസ് നമ്പർ സൂക്ഷിക്കുക. വിവരങ്ങൾ ഉറപ്പുവരുത്താൻ ഞങ്ങളുടെ ടീം താങ്കളെ ബന്ധപ്പെട്ടേക്കാം."},
+
+  // Review row labels
+  rWho:{en:"Enrolling as", ml:"രജിസ്റ്റർ ചെയ്യുന്നത്"},
+  rName:{en:"Name", ml:"പേര്"},
+  rMobile:{en:"Mobile", ml:"മൊബൈൽ"},
+  rWhatsapp:{en:"WhatsApp", ml:"വാട്സാപ്പ്"},
+  rAddress:{en:"Address", ml:"വിലാസം"},
+  rPincode:{en:"Pincode", ml:"പിൻകോഡ്"},
+  rEmail:{en:"Email", ml:"ഇമെയിൽ"},
+  rSocial:{en:"Social Media", ml:"സാമൂഹ്യമാധ്യമം"},
+  rArtForm:{en:"Art Form", ml:"കലാരൂപം"},
+  rCategory:{en:"Category", ml:"വിഭാഗം"},
+  rSpecialization:{en:"Specialization", ml:"വൈദഗ്ധ്യം"},
+  rDesignation:{en:"Designation", ml:"പദവി"},
+  rInstitution:{en:"Institution", ml:"സ്ഥാപനം"},
+  rOrganization:{en:"Organization", ml:"സംഘടന"},
+  rTheirAddress:{en:"Their Address", ml:"അവരുടെ വിലാസം"},
+  rTheirEmail:{en:"Their Email", ml:"അവരുടെ ഇമെയിൽ"},
+  rTheirPhone:{en:"Their Phone", ml:"അവരുടെ ഫോൺ"},
+  rTheirMobile:{en:"Their Mobile", ml:"അവരുടെ മൊബൈൽ"},
+  rWebsite:{en:"Website", ml:"വെബ്സൈറ്റ്"},
+  rEstablished:{en:"Established", ml:"സ്ഥാപിതം"},
+  rSubjects:{en:"Subjects taught", ml:"പഠിപ്പിക്കുന്ന വിഷയങ്ങൾ"},
+  rBranches:{en:"Branches", ml:"ശാഖകൾ"},
+  rPrograms:{en:"Programs", ml:"പരിപാടികൾ"},
+  rFrequency:{en:"Frequency", ml:"ഇടവേള"},
+  rFestivals:{en:"Festivals", ml:"ഉത്സവങ്ങൾ"},
+  rEduPrograms:{en:"Education programs", ml:"വിദ്യാഭ്യാസ പരിപാടികൾ"},
+  rInstrTypes:{en:"Instrument types", ml:"ഉപകരണ തരങ്ങൾ"},
+  rLeather:{en:"Leather instruments", ml:"തുകൽ വാദ്യങ്ങൾ"},
+  rString:{en:"String instruments", ml:"തന്ത്രി വാദ്യങ്ങൾ"},
+  rWind:{en:"Wind instruments", ml:"സുഷിര വാദ്യങ്ങൾ"},
+  rAir:{en:"AIR/DD Grade", ml:"ആകാശവാണി/ദൂരദർശൻ ഗ്രേഡ്"},
+  rAwards:{en:"Awards", ml:"പുരസ്കാരങ്ങൾ"},
+  rBooks:{en:"Books", ml:"പുസ്തകങ്ങൾ"},
+  rTeachPriv:{en:"Teaches privately", ml:"സ്വകാര്യ ക്ലാസ്സുകൾ"},
+  rRunsPriv:{en:"Runs private institution", ml:"സ്വകാര്യ സ്ഥാപനം നടത്തുന്നു"},
+  rWorksAt:{en:"Works at institution", ml:"ജോലി ചെയ്യുന്ന സ്ഥാപനം"},
+  rOrgMember:{en:"Org. member/office bearer", ml:"സംഘടനാ അംഗം/ഭാരവാഹി"},
+  yes:{en:"Yes", ml:"ഉണ്ട്"}
+};
+
+// English option value -> Malayalam label
+const OPT_ML = {
+  // who
+  "Artist":"കലാകാരൻ / കലാകാരി","Teacher":"അധ്യാപകൻ / അധ്യാപിക",
+  "Institution":"സ്ഥാപനം","Organization":"സംഘടന",
+  "Instrument Maker/Repairer":"ഉപകരണ നിർമ്മാതാവ് / അറ്റകുറ്റപ്പണിക്കാരൻ",
+  // tags
+  "Performer":"അവതാരകൻ","Trainer / Guru":"പരിശീലകൻ / ഗുരു",
+  "Training institute":"പരിശീലന സ്ഥാപനം",
+  "Sabha / Society / Trust / Club":"സഭ / സൊസൈറ്റി / ട്രസ്റ്റ് / ക്ലബ്",
+  "Maker / Repairer":"നിർമ്മാണം / അറ്റകുറ്റപ്പണി",
+  // buckets
+  "Classical & Devotional Music":"ശാസ്ത്രീയ & ഭക്തിസംഗീതം",
+  "Classical Dance":"ശാസ്ത്രീയ നൃത്തം",
+  "Kerala Traditional Classical Art Forms":"കേരളത്തിന്റെ പരമ്പരാഗത കലാരൂപങ്ങൾ",
+  "Kerala Percussion Arts":"കേരളത്തിന്റെ താളവാദ്യകലകൾ",
+  // music categories
+  "Carnatic Music":"കർണാടക സംഗീതം","Hindustani Music":"ഹിന്ദുസ്ഥാനി സംഗീതം",
+  "Sopana Sangeetham":"സോപാന സംഗീതം","Devotional":"ഭക്തിഗാനം","Bhajans":"ഭജൻ",
+  // specializations
+  "Vocal":"ആലാപനം","Violin":"വയലിൻ","Veena":"വീണ","Mrudangam":"മൃദംഗം",
+  "Ghatam":"ഘടം","Ganjira":"ഗഞ്ചിറ","Morsing":"മോർസിംഗ്","Tabla":"തബല",
+  "Sitar":"സിതാർ","Harmonium":"ഹാർമോണിയം","Flute":"ഓടക്കുഴൽ",
+  "Nadaswaram":"നാദസ്വരം","Thavil":"തവിൽ","Dolak":"ദോലക്ക്","Pakhwaj":"പഖവാജ്",
+  "Tamburu":"തംബുരു",
+  // dance
+  "Mohiniyattam":"മോഹിനിയാട്ടം","Bharatanatyam":"ഭരതനാട്യം","Kuchipudi":"കുച്ചിപ്പുടി",
+  "Kathak":"കഥക്","Odissi":"ഒഡീസി",
+  // traditional
+  "Kathakali":"കഥകളി","Kathakali Music":"കഥകളി സംഗീതം","Koodiyattam":"കൂടിയാട്ടം",
+  "Chakiar Koothu":"ചാക്യാർ കൂത്ത്","Nangiar Koothu":"നങ്ങ്യാർ കൂത്ത്",
+  "Ottamthullal":"ഓട്ടൻതുള്ളൽ","Krishnanattam":"കൃഷ്ണനാട്ടം","Tholppavakoothu":"തോൽപ്പാവക്കൂത്ത്",
+  // percussion
+  "Thayambaka":"തായമ്പക","Melam":"മേളം","Panchavadyam":"പഞ്ചവാദ്യം",
+  "Chenda":"ചെണ്ട","Thimila":"തിമില","Maddalam":"മദ്ദളം","Kombu":"കൊമ്പ്",
+  "Kuzhal":"കുഴൽ","Edakka":"ഇടയ്ക്ക","Ilathalam":"ഇലത്താളം","Mizhavu":"മിഴാവ്",
+  // edu programs
+  "Workshops":"ശിൽപശാലകൾ","Seminars":"സെമിനാറുകൾ",
+  "Chamber music-dance concerts":"ചേംബർ സംഗീത-നൃത്ത കച്ചേരികൾ",
+  // subjects
+  "Carnatic Vocal":"കർണാടക സംഗീതം (ആലാപനം)","Hindustani Vocal":"ഹിന്ദുസ്ഥാനി (ആലാപനം)",
+  "Devotional & Bhajan":"ഭക്തിഗാനം & ഭജൻ",
+  "North Indian Classical Dances":"ഉത്തരേന്ത്യൻ ശാസ്ത്രീയ നൃത്തങ്ങൾ",
+  // org programs
+  "Classical Music":"ശാസ്ത്രീയ സംഗീതം",
+  // frequency
+  "Monthly":"പ്രതിമാസം","Bi-monthly":"രണ്ടു മാസത്തിലൊരിക്കൽ",
+  "Quarterly":"മൂന്നു മാസത്തിലൊരിക്കൽ","Annual festival":"വാർഷിക ഉത്സവം",
+  // festivals
+  "Navarathri Music-Dance festival":"നവരാത്രി സംഗീത-നൃത്ത ഉത്സവം",
+  "Thyagaraja Aradhana":"ത്യാഗരാജ ആരാധന","Swati Tirunal Festival":"സ്വാതി തിരുനാൾ ഉത്സവം",
+  // instrument types
+  "Leather":"തുകൽ വാദ്യങ്ങൾ","String":"തന്ത്രി വാദ്യങ്ങൾ","Wind":"സുഷിര വാദ്യങ്ങൾ",
+  // designations
+  "Head of the Department":"വകുപ്പ് മേധാവി","Principal":"പ്രിൻസിപ്പൽ",
+  "Founder":"സ്ഥാപകൻ","Office Bearer":"ഭാരവാഹി","Member":"അംഗം","Other":"മറ്റുള്ളവ"
+};
+
+function t(key, ...args){
+  const entry = STR[key];
+  if(!entry) return key;
+  const v = entry[lang || 'en'];
+  return typeof v === 'function' ? v(...args) : v;
+}
+// Malayalam sub-label, shown under English when lang === 'ml'
+function ml(key, ...args){
+  if(lang !== 'ml') return '';
+  const entry = STR[key];
+  if(!entry) return '';
+  const v = entry.en;
+  const eng = typeof v === 'function' ? v(...args) : v;
+  return `<span class="mal">${esc(eng)}</span>`;
+}
+function opt(v){
+  if(lang !== 'ml') return v;
+  return OPT_ML[v] ? `${OPT_ML[v]}` : v;
+}
+function optSub(v){
+  if(lang !== 'ml' || !OPT_ML[v]) return '';
+  return `<span class="mal">${esc(v)}</span>`;
+}
+
+// ============ DATA ============
 const WHO_OPTIONS = [
-  {v:"Artist", tag:"Performer", mal:"കലാകാരൻ / കലാകാരി", malTag:"അവതാരകൻ"},
-  {v:"Teacher", tag:"Trainer / Guru", mal:"അധ്യാപകൻ / അധ്യാപിക", malTag:"ഗുരു"},
-  {v:"Institution", tag:"School / Academy", mal:"സ്ഥാപനം", malTag:"സ്കൂൾ / അക്കാദമി"},
-  {v:"Organization", tag:"Sabha / Society", mal:"സംഘടന", malTag:"സഭ"},
-  {v:"Artisan", tag:"Instrument / craft", mal:"കരകൗശല വിദഗ്ധൻ", malTag:"ഉപകരണം / കരകൗശലം"},
-  {v:"Sound Engineer", tag:"Sound Engineer", mal:"സൗണ്ട് എഞ്ചിനീയർ", malTag:""},
-  {v:"Instrument Maker/Repairer", tag:"Maker / Repairer", mal:"ഉപകരണ നിർമ്മാതാവ്", malTag:"നന്നാക്കുന്നയാൾ"}
+  {v:"Artist", tag:"Performer"},
+  {v:"Teacher", tag:"Trainer / Guru"},
+  {v:"Institution", tag:"Training institute"},
+  {v:"Organization", tag:"Sabha / Society / Trust / Club"},
+  {v:"Instrument Maker/Repairer", tag:"Maker / Repairer"}
 ];
 
 const BUCKETS = {
-  "Classical & Devotional Music": {
-    mal: "ശാസ്ത്രീയ & ഭക്തിസംഗീതം",
-    categories: ["Carnatic Music","Hindustani Music","Sopana Sangeetham","Devotional","Bhajans"],
-    specializations: ["Vocal","Violin","Veena","Mrudangam","Ghatam","Ganjira","Morsing","Tabla","Sitar","Harmonium","Flute","Nadaswaram","Thavil","Dolak","Pakhwaj"]
-  },
-  "Classical Dance": {
-    mal: "ശാസ്ത്രീയ നൃത്തം",
-    categories: ["Mohiniyattam","Bharatanatyam","Kuchipudi","Kathak","Odissi"],
-    specializations: []
-  },
-  "Kerala Traditional Classical Art Forms": {
-    mal: "കേരളത്തിന്റെ പരമ്പരാഗത കലാരൂപങ്ങൾ",
-    categories: ["Kathakali","Kathakali Music","Koodiyattam","Chakiar Koothu","Nangiar Koothu","Ottamthullal","Krishnanattam","Tholppavakoothu"],
-    specializations: []
-  },
-  "Kerala Percussion Arts": {
-    mal: "കേരളത്തിന്റെ താളവാദ്യകലകൾ",
-    categories: ["Thayambaka","Melam","Panchavadyam"],
-    specializations: ["Chenda","Thimila","Maddalam","Kombu","Kuzhal","Edakka","Ilathalam","Mizhavu"]
-  }
+  "Classical & Devotional Music":{
+    categories:["Carnatic Music","Hindustani Music","Sopana Sangeetham","Devotional","Bhajans"],
+    specializations:["Vocal","Violin","Veena","Mrudangam","Ghatam","Ganjira","Morsing","Tabla","Sitar","Harmonium","Flute","Nadaswaram","Thavil","Dolak","Pakhwaj"]},
+  "Classical Dance":{
+    categories:["Mohiniyattam","Bharatanatyam","Kuchipudi","Kathak","Odissi"],
+    specializations:[]},
+  "Kerala Traditional Classical Art Forms":{
+    categories:["Kathakali","Kathakali Music","Koodiyattam","Chakiar Koothu","Nangiar Koothu","Ottamthullal","Krishnanattam","Tholppavakoothu"],
+    // Specializations vary by category — Mizhavu only applies to the Sanskrit theatre forms.
+    specializations:{
+      "Koodiyattam":["Mizhavu"],
+      "Chakiar Koothu":["Mizhavu"],
+      "Nangiar Koothu":["Mizhavu"]
+    }},
+  "Kerala Percussion Arts":{
+    categories:["Thayambaka","Melam","Panchavadyam"],
+    // Specializations vary by category.
+    specializations:{
+      "Thayambaka":["Chenda","Kombu","Kuzhal","Ilathalam"],
+      "Melam":["Chenda","Kombu","Kuzhal","Ilathalam"],
+      "Panchavadyam":["Thimila","Maddalam","Kombu","Edakka","Ilathalam"]
+    }}
 };
 const BUCKET_ORDER = Object.keys(BUCKETS);
 
-// ---------- State ----------
-let state = {
-  who: "",
-  name: "", mobile: "", whatsapp: "", sameAsMobile: false,
-  address: "", email: "", socialMedia: "",
-  bucket: "", categories: [], specializations: [],
-  air: "", awards: "", books: "",
-  teachesPrivately: false, teachesPrivatelyDetails: "",
-  runsPrivate: false, runsPrivateDetails: "",
-  worksAt: false, worksAtDetails: "",
-  orgMember: false, orgMemberDetails: "",
-  consent: false
+// Returns the flat list of valid specialization options for the currently
+// selected categories within a bucket. Handles both a flat array (same
+// options regardless of category) and a per-category object.
+function specOptionsFor(bucket, categories){
+  const spec = BUCKETS[bucket].specializations;
+  if(Array.isArray(spec)) return spec;
+  const set = new Set();
+  categories.forEach(c=>{ (spec[c]||[]).forEach(s=>set.add(s)); });
+  return [...set];
+}
+
+const EDU_PROGRAMS = ["Workshops","Seminars","Chamber music-dance concerts"];
+const SUBJECTS_TAUGHT = ["Carnatic Vocal","Hindustani Vocal","Devotional & Bhajan","Bharatanatyam",
+  "Mohiniyattam","Kuchipudi","North Indian Classical Dances","Veena","Violin","Mrudangam","Tabla","Harmonium"];
+const ORG_PROGRAM_TYPES = ["Classical Music","Classical Dance","Kathakali","Koodiyattam"];
+const ORG_FREQUENCY = ["Monthly","Bi-monthly","Quarterly","Annual festival"];
+const ORG_FESTIVALS = ["Navarathri Music-Dance festival","Thyagaraja Aradhana","Swati Tirunal Festival"];
+const INSTRUMENT_TYPES = ["Leather","String","Wind"];
+const INSTRUMENTS_BY_TYPE = {
+  "Leather":["Mrudangam","Tabla","Chenda","Thimila","Maddalam","Edakka","Thavil","Ganjira","Dolak"],
+  "String":["Veena","Violin","Tamburu"],
+  "Wind":["Harmonium","Flute"]
 };
-let step = 1;
-const TOTAL_STEPS = 7;
+
+const FLOWS = {
+  "Artist":                    ["lang","who","contact","artform","category","specialization","artistExtras","review"],
+  "Teacher":                   ["lang","who","contact","artform","category","specialization","teacher","review"],
+  "Institution":               ["lang","who","contact","institution","review"],
+  "Organization":              ["lang","who","contact","organization","review"],
+  "Instrument Maker/Repairer": ["lang","who","contact","instrumentMaker","review"]
+};
+
+// ============ STATE ============
+function blankState(){
+  return {
+    language:"", who:"",
+    name:"", mobile:"", whatsapp:"", sameAsMobile:false,
+    address:"", pincode:"", email:"", socialMedia:"",
+    bucket:"", categories:[], specializations:[],
+    air:"", awards:"", books:"",
+    teachesPrivately:false, teachesPrivatelyDetails:"",
+    runsPrivate:false, runsPrivateDetails:"",
+    worksAt:false, worksAtDetails:"",
+    orgMember:false, orgMemberDetails:"",
+    designation:"", designationOther:"",
+    instName:"", instAddress:"", instEmail:"", instPhone:"", instMobile:"", instWebsite:"",
+    yearEstablished:"", subjectsTaught:[], subjectsTaughtOther:"",
+    hasBranches:false, branchCount:"", branchAddresses:"",
+    eduPrograms:[],
+    programTypes:[], programTypesOther:"", programFrequency:"",
+    festivals:[], festivalsOther:"",
+    instrumentTypes:[], leatherInstruments:[], stringInstruments:[], windInstruments:[],
+    consent:false
+  };
+}
+let state = blankState();
+let stepIndex = 0;
+
+function flow(){ return state.who ? FLOWS[state.who] : ["lang","who"]; }
+function totalSteps(){ return state.who ? FLOWS[state.who].length : 8; }
+function currentStep(){ return flow()[stepIndex]; }
 
 const cardArea = document.getElementById('cardArea');
 const stepLabel = document.getElementById('stepLabel');
 const progressBar = document.getElementById('progressBar');
+const wrapEl = document.querySelector('.wrap');
+const adminRoot = document.getElementById('adminRoot');
+
+function applyChrome(){
+  document.getElementById('appTitle').textContent = t('appTitle');
+  document.getElementById('appSub').textContent = t('appSub');
+  document.documentElement.lang = lang || 'en';
+  const ls = document.getElementById('langSwitch');
+  if(!lang){ ls.innerHTML = ''; return; }
+  ls.innerHTML = `
+    <button data-l="en" class="${lang==='en'?'active':''}">English</button>
+    <button data-l="ml" class="${lang==='ml'?'active':''}">മലയാളം</button>`;
+  ls.querySelectorAll('button').forEach(b=>{
+    b.onclick = ()=>{ lang = b.dataset.l; state.language = lang==='ml'?'Malayalam':'English'; render(); };
+  });
+}
 
 function renderProgress(){
+  const total = totalSteps();
   progressBar.innerHTML = "";
-  for(let i=1;i<=TOTAL_STEPS;i++){
+  for(let i=0;i<total;i++){
     const seg = document.createElement('div');
-    seg.className = 'seg' + (i < step ? ' done' : i === step ? ' active' : '');
+    seg.className = 'seg' + (i < stepIndex ? ' done' : i === stepIndex ? ' active' : '');
     progressBar.appendChild(seg);
   }
-  stepLabel.textContent = `Step ${step} of ${TOTAL_STEPS}`;
+  stepLabel.textContent = t('stepOf', stepIndex+1, total);
+}
+function go(delta){ stepIndex += delta; render(); window.scrollTo({top:0,behavior:'smooth'}); }
+
+const RENDERERS = {
+  lang: renderLang, who: renderWho, contact: renderContact, artform: renderArtform,
+  category: renderCategory, specialization: renderSpecialization,
+  artistExtras: renderArtistExtras, teacher: renderTeacher,
+  institution: renderInstitution, organization: renderOrganization,
+  instrumentMaker: renderInstrumentMaker, review: renderReview
+};
+function render(){ applyChrome(); renderProgress(); RENDERERS[currentStep()](); }
+
+// ============ HELPERS ============
+function esc(str){
+  if(str === undefined || str === null) return "";
+  return String(str).replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+}
+function val(id){ const el = document.getElementById(id); return el ? el.value.trim() : ""; }
+function checked(id){ const el = document.getElementById(id); return el ? el.checked : false; }
+function navHtml(nextKey){
+  return `<div class="nav-buttons">
+    ${stepIndex>0 ? `<button class="btn-secondary" id="backBtn">${esc(t('btnBack'))}</button>` : ''}
+    <button class="btn-primary" id="nextBtn">${esc(t(nextKey||'btnContinue'))}</button>
+  </div>`;
+}
+function wireNav(onNext, onBack){
+  const b = document.getElementById('backBtn');
+  if(b) b.onclick = ()=>{ if(onBack) onBack(); go(-1); };
+  document.getElementById('nextBtn').onclick = onNext;
+}
+function chipGroup(containerId, options, selectedArr, onChange){
+  const wrap = document.getElementById(containerId);
+  if(!wrap) return;
+  wrap.innerHTML = "";
+  options.forEach(o=>{
+    const chip = document.createElement('div');
+    chip.className = 'chip' + (selectedArr.includes(o) ? ' selected':'');
+    chip.innerHTML = esc(opt(o));
+    chip.onclick = ()=>{
+      const i = selectedArr.indexOf(o);
+      if(i>=0) selectedArr.splice(i,1); else selectedArr.push(o);
+      onChange();
+    };
+    wrap.appendChild(chip);
+  });
+}
+function showErr(id, msg){
+  const e = document.getElementById(id);
+  if(!e) return;
+  if(msg) e.textContent = msg;
+  e.classList.add('show');
+}
+function wireConditional(chkId, boxId){
+  const c = document.getElementById(chkId);
+  if(c) c.onchange = e=> document.getElementById(boxId).classList.toggle('show', e.target.checked);
+}
+function selectOptions(list, selected){
+  return `<option value="">${esc(t('selectPrompt'))}</option>` +
+    list.map(d=>`<option value="${esc(d)}" ${selected===d?'selected':''}>${esc(opt(d))}</option>`).join('');
 }
 
-function goTo(n){ step = n; render(); window.scrollTo({top:0, behavior:'smooth'}); }
-
-function render(){
-  renderProgress();
-  if(step===1) renderStep1();
-  else if(step===2) renderStep2();
-  else if(step===3) renderStep3();
-  else if(step===4) renderStep4();
-  else if(step===5) renderStep5();
-  else if(step===6) renderStep6();
-  else if(step===7) renderStep7();
-}
-
-// ---------- Step 1: Who is enrolling ----------
-function renderStep1(){
+// ============ STEP: LANGUAGE ============
+function renderLang(){
   cardArea.innerHTML = `
-    <h2>Who is enrolling?<span class="mal">ആരാണ് എൻറോൾ ചെയ്യുന്നത്?</span></h2>
-    <p class="sub">Choose the category that best describes you.</p>
-    <div class="option-grid" id="whoGrid"></div>
-    <div class="error-text" id="whoError">Please choose one option.</div>
-    <div class="nav-buttons">
-      <button class="btn-primary" id="nextBtn">Continue</button>
+    <h2>Choose your language<span class="mal">ഭാഷ തിരഞ്ഞെടുക്കുക</span></h2>
+    <p class="sub">Select the language you would like to use for this form.<br>
+      <span style="font-family:'Noto Sans Malayalam',sans-serif;">ഈ ഫോം പൂരിപ്പിക്കാൻ ആഗ്രഹിക്കുന്ന ഭാഷ തിരഞ്ഞെടുക്കുക.</span></p>
+    <div class="option-grid" id="langGrid">
+      <div class="option-card ${lang==='en'?'selected':''}" data-l="en" style="padding:24px 11px;">English</div>
+      <div class="option-card ${lang==='ml'?'selected':''}" data-l="ml" style="padding:24px 11px;font-family:'Noto Sans Malayalam',sans-serif;">മലയാളം</div>
     </div>
+    <div class="error-text" id="langError">Please choose a language. / ഭാഷ തിരഞ്ഞെടുക്കുക.</div>
+    <div class="nav-buttons"><button class="btn-primary" id="nextBtn">${lang?esc(t('btnContinue')):'Continue / തുടരുക'}</button></div>
   `;
-  const grid = document.getElementById('whoGrid');
-  WHO_OPTIONS.forEach(opt=>{
-    const el = document.createElement('div');
-    el.className = 'option-card' + (state.who===opt.v ? ' selected':'');
-    el.innerHTML = `${opt.v}<span class="mal">${opt.mal}</span><span class="tag">${opt.tag}</span>`;
-    el.onclick = ()=>{ state.who = opt.v; renderStep1(); };
-    grid.appendChild(el);
+  cardArea.querySelectorAll('#langGrid .option-card').forEach(el=>{
+    el.onclick = ()=>{
+      lang = el.dataset.l;
+      state.language = lang==='ml' ? 'Malayalam' : 'English';
+      render();
+    };
   });
   document.getElementById('nextBtn').onclick = ()=>{
-    if(!state.who){ document.getElementById('whoError').classList.add('show'); return; }
-    goTo(2);
+    if(!lang){ showErr('langError'); return; }
+    go(1);
   };
 }
 
-// ---------- Step 2: Basic details ----------
-function renderStep2(){
+// ============ STEP: WHO ============
+function renderWho(){
   cardArea.innerHTML = `
-    <h2>Your details<span class="mal">താങ്കളുടെ വിവരങ്ങൾ</span></h2>
-    <p class="sub">This helps us keep the directory accurate and lets other stakeholders reach you.</p>
+    <h2>${esc(t('whoTitle'))}${ml('whoTitle')}</h2>
+    <p class="sub">${esc(t('whoSub'))}</p>
+    <div class="option-grid" id="whoGrid"></div>
+    <div class="error-text" id="whoError">${esc(t('whoErr'))}</div>
+    ${navHtml()}
+  `;
+  const grid = document.getElementById('whoGrid');
+  WHO_OPTIONS.forEach(o=>{
+    const el = document.createElement('div');
+    el.className = 'option-card' + (state.who===o.v ? ' selected':'');
+    el.innerHTML = `${esc(opt(o.v))}${optSub(o.v)}<span class="tag">${esc(opt(o.tag))}</span>`;
+    el.onclick = ()=>{
+      if(state.who && state.who !== o.v){
+        const keep = {language:state.language, name:state.name, mobile:state.mobile,
+          whatsapp:state.whatsapp, sameAsMobile:state.sameAsMobile, address:state.address,
+          pincode:state.pincode, email:state.email, socialMedia:state.socialMedia};
+        state = Object.assign(blankState(), keep);
+      }
+      state.who = o.v;
+      renderProgress(); renderWho();
+    };
+    grid.appendChild(el);
+  });
+  wireNav(()=>{ if(!state.who){ showErr('whoError'); return; } go(1); });
+}
 
-    <label class="field-label">Full Name <span class="req">*</span><span class="mal">പേര്</span></label>
-    <input type="text" id="fName" value="${escapeHtml(state.name)}" placeholder="e.g. Ajith Neelakantan">
+// ============ STEP: CONTACT ============
+function renderContact(){
+  const isBody = ["Institution","Organization"].includes(state.who);
+  const tk = isBody ? 'contactTitleBody' : 'contactTitle';
+  const sk = isBody ? 'contactSubBody' : 'contactSub';
+  cardArea.innerHTML = `
+    <h2>${esc(t(tk))}${ml(tk)}</h2>
+    <p class="sub">${esc(t(sk))}</p>
 
-    <label class="field-label">Mobile Number <span class="req">*</span><span class="mal">മൊബൈൽ</span></label>
-    <input type="tel" id="fMobile" value="${escapeHtml(state.mobile)}" placeholder="10-digit mobile number">
+    <label class="field-label">${esc(t('fName'))} <span class="req">*</span>${ml('fName')}</label>
+    <input type="text" id="fName" value="${esc(state.name)}">
+
+    <label class="field-label">${esc(t('fMobile'))} <span class="req">*</span>${ml('fMobile')}</label>
+    <input type="tel" id="fMobile" value="${esc(state.mobile)}" placeholder="${esc(t('fMobilePh'))}">
 
     <div class="check-row">
       <input type="checkbox" id="fSame" ${state.sameAsMobile?'checked':''}>
-      <label for="fSame">WhatsApp number is same as mobile</label>
+      <label for="fSame">${esc(t('fSameWa'))}${ml('fSameWa')}</label>
     </div>
     <div id="waWrap" class="${state.sameAsMobile?'hidden':''}">
-      <label class="field-label">WhatsApp Number <span class="req">*</span><span class="mal">വാട്സാപ്പ് നമ്പർ</span></label>
-      <input type="tel" id="fWhatsapp" value="${escapeHtml(state.whatsapp)}" placeholder="10-digit WhatsApp number">
+      <label class="field-label">${esc(t('fWhatsapp'))} <span class="req">*</span>${ml('fWhatsapp')}</label>
+      <input type="tel" id="fWhatsapp" value="${esc(state.whatsapp)}">
     </div>
 
-    <label class="field-label">Postal Address <span class="req">*</span><span class="mal">വിലാസം</span></label>
-    <textarea id="fAddress" placeholder="House name, Place, Post, District, PIN">${escapeHtml(state.address)}</textarea>
+    <label class="field-label">${esc(t('fAddress'))} <span class="req">*</span>${ml('fAddress')}</label>
+    <textarea id="fAddress" placeholder="${esc(t('fAddressPh'))}">${esc(state.address)}</textarea>
 
-    <label class="field-label">Email <span class="req">*</span><span class="mal">ഇമെയിൽ</span></label>
-    <input type="email" id="fEmail" value="${escapeHtml(state.email)}" placeholder="you@example.com">
+    <label class="field-label">${esc(t('fPincode'))} <span class="req">*</span>${ml('fPincode')}</label>
+    <input type="tel" id="fPincode" value="${esc(state.pincode)}" placeholder="${esc(t('fPincodePh'))}">
 
-    <label class="field-label">Social Media Handles <span class="opt">(optional)</span><span class="mal">സാമൂഹ്യമാധ്യമ വിലാസങ്ങൾ (ഐച്ഛികം)</span></label>
-    <input type="text" id="fSocial" value="${escapeHtml(state.socialMedia)}" placeholder="Instagram / Facebook / YouTube links">
+    <label class="field-label">${esc(t('fEmail'))} <span class="req">*</span>${ml('fEmail')}</label>
+    <input type="email" id="fEmail" value="${esc(state.email)}">
 
-    <div class="error-text" id="step2Error">Please fill all mandatory fields correctly.</div>
+    <label class="field-label">${esc(t('fSocial'))} <span class="opt">${esc(t('optional'))}</span>${ml('fSocial')}</label>
+    <input type="text" id="fSocial" value="${esc(state.socialMedia)}" placeholder="${esc(t('fSocialPh'))}">
 
-    <div class="nav-buttons">
-      <button class="btn-secondary" id="backBtn">Back</button>
-      <button class="btn-primary" id="nextBtn">Continue</button>
-    </div>
+    <div class="error-text" id="contactError"></div>
+    ${navHtml()}
   `;
-  document.getElementById('fSame').onchange = (e)=>{
-    state.sameAsMobile = e.target.checked;
-    document.getElementById('waWrap').classList.toggle('hidden', state.sameAsMobile);
+  document.getElementById('fSame').onchange = e=>
+    document.getElementById('waWrap').classList.toggle('hidden', e.target.checked);
+  const save = ()=>{
+    state.name = val('fName'); state.mobile = val('fMobile');
+    state.sameAsMobile = checked('fSame');
+    state.whatsapp = state.sameAsMobile ? state.mobile : val('fWhatsapp');
+    state.address = val('fAddress'); state.pincode = val('fPincode');
+    state.email = val('fEmail'); state.socialMedia = val('fSocial');
   };
-  document.getElementById('backBtn').onclick = ()=>goTo(1);
-  document.getElementById('nextBtn').onclick = ()=>{
-    state.name = document.getElementById('fName').value.trim();
-    state.mobile = document.getElementById('fMobile').value.trim();
-    state.sameAsMobile = document.getElementById('fSame').checked;
-    state.whatsapp = state.sameAsMobile ? state.mobile : document.getElementById('fWhatsapp').value.trim();
-    state.address = document.getElementById('fAddress').value.trim();
-    state.email = document.getElementById('fEmail').value.trim();
-    state.socialMedia = document.getElementById('fSocial').value.trim();
-
-    const mobileOk = /^[0-9+\-\s]{10,14}$/.test(state.mobile);
-    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(state.email);
-    const waOk = /^[0-9+\-\s]{10,14}$/.test(state.whatsapp);
-
-    if(!state.name || !mobileOk || !waOk || !state.address || !emailOk){
-      document.getElementById('step2Error').classList.add('show');
-      return;
+  wireNav(()=>{
+    save();
+    const phoneOk = v => /^[0-9+\-\s]{10,14}$/.test(v);
+    if(!state.name || !phoneOk(state.mobile) || !phoneOk(state.whatsapp) || !state.address ||
+       !/^[0-9]{6}$/.test(state.pincode) || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(state.email)){
+      showErr('contactError', t('contactErr')); return;
     }
-    goTo(3);
-  };
+    go(1);
+  }, save);
 }
 
-// ---------- Step 3: Art form bucket ----------
-function renderStep3(){
+// ============ STEP: ART FORM ============
+function renderArtform(){
+  const tk = state.who === "Teacher" ? 'artformTitleT' : 'artformTitle';
   cardArea.innerHTML = `
-    <h2>Your art form<span class="mal">താങ്കളുടെ കലാരൂപം</span></h2>
-    <p class="sub">Choose the area you are primarily associated with.</p>
+    <h2>${esc(t(tk))}${ml(tk)}</h2>
+    <p class="sub">${esc(t('artformSub'))}</p>
     <div id="bucketList"></div>
-    <div class="error-text" id="bucketError">Please choose one area.</div>
-    <div class="nav-buttons">
-      <button class="btn-secondary" id="backBtn">Back</button>
-      <button class="btn-primary" id="nextBtn">Continue</button>
-    </div>
+    <div class="error-text" id="bucketError">${esc(t('artformErr'))}</div>
+    ${navHtml()}
   `;
   const list = document.getElementById('bucketList');
   BUCKET_ORDER.forEach(b=>{
     const el = document.createElement('div');
     el.className = 'option-card' + (state.bucket===b ? ' selected':'');
-    el.style.width = '100%';
-    el.style.marginBottom = '10px';
-    el.style.textAlign = 'left';
-    el.style.padding = '16px';
-    el.innerHTML = `${b}<span class="mal">${BUCKETS[b].mal}</span>`;
+    el.style.cssText = 'width:100%;margin-bottom:11px;text-align:left;padding:17px;';
+    el.innerHTML = `${esc(opt(b))}${optSub(b)}`;
     el.onclick = ()=>{
       if(state.bucket !== b){ state.categories = []; state.specializations = []; }
-      state.bucket = b;
-      renderStep3();
+      state.bucket = b; renderArtform();
     };
     list.appendChild(el);
   });
-  document.getElementById('backBtn').onclick = ()=>goTo(2);
-  document.getElementById('nextBtn').onclick = ()=>{
-    if(!state.bucket){ document.getElementById('bucketError').classList.add('show'); return; }
-    goTo(4);
-  };
+  wireNav(()=>{ if(!state.bucket){ showErr('bucketError'); return; } go(1); });
 }
 
-// ---------- Step 4: Category (within bucket) ----------
-function renderStep4(){
-  const cats = BUCKETS[state.bucket].categories;
+// ============ STEP: CATEGORY ============
+function renderCategory(){
   cardArea.innerHTML = `
-    <h2>Category<span class="mal">വിഭാഗം</span></h2>
-    <p class="sub">${state.bucket} — choose all that apply.</p>
+    <h2>${esc(t('catTitle'))}${ml('catTitle')}</h2>
+    <p class="sub">${esc(opt(state.bucket))} — ${esc(t('chooseAll'))}</p>
     <div class="chip-wrap" id="catWrap"></div>
-    <div class="error-text" id="catError">Please choose at least one category.</div>
-    <div class="nav-buttons">
-      <button class="btn-secondary" id="backBtn">Back</button>
-      <button class="btn-primary" id="nextBtn">Continue</button>
-    </div>
+    <div class="error-text" id="catError">${esc(t('catErr'))}</div>
+    ${navHtml()}
   `;
-  const wrap = document.getElementById('catWrap');
-  cats.forEach(c=>{
-    const chip = document.createElement('div');
-    chip.className = 'chip' + (state.categories.includes(c) ? ' selected':'');
-    chip.textContent = c;
-    chip.onclick = ()=>{
-      if(state.categories.includes(c)) state.categories = state.categories.filter(x=>x!==c);
-      else state.categories.push(c);
-      renderStep4();
-    };
-    wrap.appendChild(chip);
+  chipGroup('catWrap', BUCKETS[state.bucket].categories, state.categories, renderCategory);
+  wireNav(()=>{
+    if(state.categories.length===0){ showErr('catError'); return; }
+    const validOpts = specOptionsFor(state.bucket, state.categories);
+    state.specializations = state.specializations.filter(s=>validOpts.includes(s));
+    if(validOpts.length===0){
+      stepIndex += 2; render(); window.scrollTo({top:0,behavior:'smooth'});
+    } else go(1);
   });
-  document.getElementById('backBtn').onclick = ()=>goTo(3);
-  document.getElementById('nextBtn').onclick = ()=>{
-    if(state.categories.length===0){ document.getElementById('catError').classList.add('show'); return; }
-    // skip specialization step if bucket has none
-    if(BUCKETS[state.bucket].specializations.length===0){ goTo(6); }
-    else goTo(5);
-  };
 }
 
-// ---------- Step 5: Specialization ----------
-function renderStep5(){
-  const specs = BUCKETS[state.bucket].specializations;
+// ============ STEP: SPECIALIZATION ============
+function renderSpecialization(){
   cardArea.innerHTML = `
-    <h2>Specialization<span class="mal">വൈദഗ്ധ്യം</span></h2>
-    <p class="sub">Choose your instrument(s) or specialization — select all that apply.</p>
+    <h2>${esc(t('specTitle'))}${ml('specTitle')}</h2>
+    <p class="sub">${esc(t('specSub'))}</p>
     <div class="chip-wrap" id="specWrap"></div>
-    <div class="error-text" id="specError">Please choose at least one specialization.</div>
-    <div class="nav-buttons">
-      <button class="btn-secondary" id="backBtn">Back</button>
-      <button class="btn-primary" id="nextBtn">Continue</button>
-    </div>
+    <div class="error-text" id="specError">${esc(t('specErr'))}</div>
+    ${navHtml()}
   `;
-  const wrap = document.getElementById('specWrap');
-  specs.forEach(s=>{
-    const chip = document.createElement('div');
-    chip.className = 'chip' + (state.specializations.includes(s) ? ' selected':'');
-    chip.textContent = s;
-    chip.onclick = ()=>{
-      if(state.specializations.includes(s)) state.specializations = state.specializations.filter(x=>x!==s);
-      else state.specializations.push(s);
-      renderStep5();
-    };
-    wrap.appendChild(chip);
-  });
-  document.getElementById('backBtn').onclick = ()=>goTo(4);
-  document.getElementById('nextBtn').onclick = ()=>{
-    if(state.specializations.length===0){ document.getElementById('specError').classList.add('show'); return; }
-    goTo(6);
-  };
+  chipGroup('specWrap', specOptionsFor(state.bucket, state.categories), state.specializations, renderSpecialization);
+  wireNav(()=>{ if(state.specializations.length===0){ showErr('specError'); return; } go(1); });
 }
 
-// ---------- Step 6: Optional details ----------
-function renderStep6(){
+// ============ STEP: ARTIST EXTRAS ============
+function renderArtistExtras(){
   cardArea.innerHTML = `
-    <h2>A little more about you<span class="mal">താങ്കളെക്കുറിച്ച് കുറച്ചുകൂടി</span></h2>
-    <p class="sub">All fields on this page are optional. Skip anything you'd rather not share.</p>
+    <h2>${esc(t('extrasTitle'))}${ml('extrasTitle')}</h2>
+    <p class="sub">${esc(t('extrasSub'))}</p>
 
-    <label class="field-label">AIR / Doordarshan Grade <span class="opt">(optional)</span><span class="mal">AIR / ദൂരദർശൻ ഗ്രേഡ്</span></label>
-    <input type="text" id="fAir" value="${escapeHtml(state.air)}" placeholder="e.g. B High, Top Grade">
+    <label class="field-label">${esc(t('fAir'))} <span class="opt">${esc(t('optional'))}</span>${ml('fAir')}</label>
+    <input type="text" id="fAir" value="${esc(state.air)}" placeholder="${esc(t('fAirPh'))}">
 
-    <label class="field-label">Awards / Citations <span class="opt">(optional)</span><span class="mal">അവാർഡുകൾ / അംഗീകാരങ്ങൾ</span></label>
-    <textarea id="fAwards" placeholder="List any major awards or citations">${escapeHtml(state.awards)}</textarea>
+    <label class="field-label">${esc(t('fAwards'))} <span class="opt">${esc(t('optional'))}</span>${ml('fAwards')}</label>
+    <textarea id="fAwards">${esc(state.awards)}</textarea>
 
-    <label class="field-label">Books Published <span class="opt">(optional)</span><span class="mal">പ്രസിദ്ധീകരിച്ച പുസ്തകങ്ങൾ</span></label>
-    <textarea id="fBooks" placeholder="Titles of any books you have published">${escapeHtml(state.books)}</textarea>
+    <label class="field-label">${esc(t('fBooks'))} <span class="opt">${esc(t('optional'))}</span>${ml('fBooks')}</label>
+    <textarea id="fBooks">${esc(state.books)}</textarea>
 
     <div class="check-row">
       <input type="checkbox" id="fTeachesPrivately" ${state.teachesPrivately?'checked':''}>
-      <label for="fTeachesPrivately">I teach privately<span class="mal">താങ്കൾ പ്രൈവറ്റ് ക്ലാസ്സുകൾ എടുക്കാറുണ്ടോ?</span></label>
+      <label for="fTeachesPrivately">${esc(t('fTeachPriv'))}${ml('fTeachPriv')}</label>
     </div>
     <div class="conditional ${state.teachesPrivately?'show':''}" id="teachesPrivatelyBox">
-      <textarea id="fTeachesPrivatelyDetails" placeholder="Subject taught, online / offline / both">${escapeHtml(state.teachesPrivatelyDetails)}</textarea>
+      <textarea id="fTeachesPrivatelyDetails" placeholder="${esc(t('fTeachPrivPh'))}">${esc(state.teachesPrivatelyDetails)}</textarea>
     </div>
 
     <div class="check-row">
       <input type="checkbox" id="fRunsPrivate" ${state.runsPrivate?'checked':''}>
-      <label for="fRunsPrivate">I run a private institution<span class="mal">സ്വന്തമായി കലാപഠന കേന്ദ്രം നടത്തുന്നുണ്ടോ?</span></label>
+      <label for="fRunsPrivate">${esc(t('fRunsPriv'))}${ml('fRunsPriv')}</label>
     </div>
     <div class="conditional ${state.runsPrivate?'show':''}" id="runsPrivateBox">
-      <textarea id="fRunsPrivateDetails" placeholder="Institution name & address">${escapeHtml(state.runsPrivateDetails)}</textarea>
+      <textarea id="fRunsPrivateDetails" placeholder="${esc(t('fRunsPrivPh'))}">${esc(state.runsPrivateDetails)}</textarea>
     </div>
 
     <div class="check-row">
       <input type="checkbox" id="fWorksAt" ${state.worksAt?'checked':''}>
-      <label for="fWorksAt">I work at a Govt./Private institution<span class="mal">സ്ഥാപനത്തിൽ ജോലി ചെയ്യുന്നുണ്ടോ?</span></label>
+      <label for="fWorksAt">${esc(t('fWorksAt'))}${ml('fWorksAt')}</label>
     </div>
     <div class="conditional ${state.worksAt?'show':''}" id="worksAtBox">
-      <textarea id="fWorksAtDetails" placeholder="Institution name, address, your designation">${escapeHtml(state.worksAtDetails)}</textarea>
+      <textarea id="fWorksAtDetails" placeholder="${esc(t('fWorksAtPh'))}">${esc(state.worksAtDetails)}</textarea>
     </div>
 
     <div class="check-row">
       <input type="checkbox" id="fOrgMember" ${state.orgMember?'checked':''}>
-      <label for="fOrgMember">I am a member / office bearer of an organization<span class="mal">സംഘടനയിലെ ഭാരവാഹിയാണോ?</span></label>
+      <label for="fOrgMember">${esc(t('fOrgMember'))}${ml('fOrgMember')}</label>
     </div>
     <div class="conditional ${state.orgMember?'show':''}" id="orgMemberBox">
-      <textarea id="fOrgMemberDetails" placeholder="Organization name & your designation">${escapeHtml(state.orgMemberDetails)}</textarea>
+      <textarea id="fOrgMemberDetails" placeholder="${esc(t('fOrgMemberPh'))}">${esc(state.orgMemberDetails)}</textarea>
     </div>
 
-    <div class="nav-buttons">
-      <button class="btn-secondary" id="backBtn">Back</button>
-      <button class="btn-primary" id="nextBtn">Review & Submit</button>
-    </div>
+    ${navHtml('btnReview')}
   `;
-  const wire = (chkId, boxId)=>{
-    document.getElementById(chkId).onchange = (e)=>{
-      document.getElementById(boxId).classList.toggle('show', e.target.checked);
-    };
+  wireConditional('fTeachesPrivately','teachesPrivatelyBox');
+  wireConditional('fRunsPrivate','runsPrivateBox');
+  wireConditional('fWorksAt','worksAtBox');
+  wireConditional('fOrgMember','orgMemberBox');
+  const save = ()=>{
+    state.air = val('fAir'); state.awards = val('fAwards'); state.books = val('fBooks');
+    state.teachesPrivately = checked('fTeachesPrivately');
+    state.teachesPrivatelyDetails = val('fTeachesPrivatelyDetails');
+    state.runsPrivate = checked('fRunsPrivate'); state.runsPrivateDetails = val('fRunsPrivateDetails');
+    state.worksAt = checked('fWorksAt'); state.worksAtDetails = val('fWorksAtDetails');
+    state.orgMember = checked('fOrgMember'); state.orgMemberDetails = val('fOrgMemberDetails');
   };
-  wire('fTeachesPrivately','teachesPrivatelyBox');
-  wire('fRunsPrivate','runsPrivateBox');
-  wire('fWorksAt','worksAtBox');
-  wire('fOrgMember','orgMemberBox');
-
-  document.getElementById('backBtn').onclick = ()=>{
-    saveStep6Fields();
-    goTo(BUCKETS[state.bucket].specializations.length===0 ? 4 : 5);
-  };
-  document.getElementById('nextBtn').onclick = ()=>{
-    saveStep6Fields();
-    goTo(7);
-  };
-}
-function saveStep6Fields(){
-  state.air = document.getElementById('fAir').value.trim();
-  state.awards = document.getElementById('fAwards').value.trim();
-  state.books = document.getElementById('fBooks').value.trim();
-  state.teachesPrivately = document.getElementById('fTeachesPrivately').checked;
-  state.teachesPrivatelyDetails = document.getElementById('fTeachesPrivatelyDetails').value.trim();
-  state.runsPrivate = document.getElementById('fRunsPrivate').checked;
-  state.runsPrivateDetails = document.getElementById('fRunsPrivateDetails').value.trim();
-  state.worksAt = document.getElementById('fWorksAt').checked;
-  state.worksAtDetails = document.getElementById('fWorksAtDetails').value.trim();
-  state.orgMember = document.getElementById('fOrgMember').checked;
-  state.orgMemberDetails = document.getElementById('fOrgMemberDetails').value.trim();
+  wireNav(()=>{ save(); go(1); }, save);
 }
 
-// ---------- Step 7: Review & submit ----------
-function renderStep7(){
-  const rows = [
-    ["Enrolling as", state.who],
-    ["Name", state.name],
-    ["Mobile", state.mobile],
-    ["WhatsApp", state.whatsapp],
-    ["Address", state.address],
-    ["Email", state.email],
-    ["Art Form", state.bucket],
-    ["Category", state.categories.join(", ")],
-  ];
-  if(state.specializations.length) rows.push(["Specialization", state.specializations.join(", ")]);
-  if(state.socialMedia) rows.push(["Social Media", state.socialMedia]);
-  if(state.air) rows.push(["AIR/DD Grade", state.air]);
-  if(state.awards) rows.push(["Awards", state.awards]);
-  if(state.books) rows.push(["Books", state.books]);
-  if(state.teachesPrivately) rows.push(["Teaches privately", state.teachesPrivatelyDetails || "Yes"]);
-  if(state.runsPrivate) rows.push(["Runs private institution", state.runsPrivateDetails || "Yes"]);
-  if(state.worksAt) rows.push(["Works at institution", state.worksAtDetails || "Yes"]);
-  if(state.orgMember) rows.push(["Org. member/office bearer", state.orgMemberDetails || "Yes"]);
-
+// ============ STEP: TEACHER ============
+function renderTeacher(){
   cardArea.innerHTML = `
-    <h2>Review your details<span class="mal">വിവരങ്ങൾ പരിശോധിക്കുക</span></h2>
-    <p class="sub">Please check everything before submitting.</p>
-    <div id="summaryRows"></div>
+    <h2>${esc(t('teacherTitle'))}${ml('teacherTitle')}</h2>
+    <p class="sub">${esc(t('teacherSub'))}</p>
 
-    <div class="conditional show" style="margin-top:18px;">
+    <label class="field-label">${esc(t('fDesignation'))} <span class="req">*</span>${ml('fDesignation')}</label>
+    <select id="fDesignation">${selectOptions(["Teacher","Head of the Department","Principal","Other"], state.designation)}</select>
+    <div class="conditional ${state.designation==='Other'?'show':''}" id="designationOtherBox">
+      <input type="text" id="fDesignationOther" value="${esc(state.designationOther)}" placeholder="${esc(t('fDesignationPh'))}">
+    </div>
+
+    <label class="field-label">${esc(t('fInstName'))} <span class="req">*</span>${ml('fInstName')}</label>
+    <input type="text" id="fInstName" value="${esc(state.instName)}">
+
+    <label class="field-label">${esc(t('fInstAddress'))} <span class="opt">${esc(t('optional'))}</span>${ml('fInstAddress')}</label>
+    <textarea id="fInstAddress">${esc(state.instAddress)}</textarea>
+
+    <label class="field-label">${esc(t('fInstEmail'))} <span class="opt">${esc(t('optional'))}</span>${ml('fInstEmail')}</label>
+    <input type="email" id="fInstEmail" value="${esc(state.instEmail)}">
+
+    <label class="field-label">${esc(t('fEduPrograms'))} <span class="opt">${esc(t('optional'))}</span>${ml('fEduPrograms')}</label>
+    <div class="chip-wrap" id="eduWrap"></div>
+
+    <div class="error-text" id="teacherError"></div>
+    ${navHtml('btnReview')}
+  `;
+  document.getElementById('fDesignation').onchange = e=>{
+    state.designation = e.target.value;
+    document.getElementById('designationOtherBox').classList.toggle('show', e.target.value==='Other');
+  };
+  const redraw = ()=> chipGroup('eduWrap', EDU_PROGRAMS, state.eduPrograms, redraw);
+  redraw();
+  const save = ()=>{
+    state.designation = val('fDesignation'); state.designationOther = val('fDesignationOther');
+    state.instName = val('fInstName'); state.instAddress = val('fInstAddress');
+    state.instEmail = val('fInstEmail');
+  };
+  wireNav(()=>{
+    save();
+    if(!state.designation || !state.instName){ showErr('teacherError', t('teacherErr')); return; }
+    go(1);
+  }, save);
+}
+
+// ============ STEP: INSTITUTION ============
+function renderInstitution(){
+  cardArea.innerHTML = `
+    <h2>${esc(t('instTitle'))}${ml('instTitle')}</h2>
+    <p class="sub">${esc(t('instSub'))}</p>
+
+    <label class="field-label">${esc(t('fDesignation'))} <span class="req">*</span>${ml('fDesignation')}</label>
+    <select id="fDesignation">${selectOptions(["Founder","Principal","Other"], state.designation)}</select>
+    <div class="conditional ${state.designation==='Other'?'show':''}" id="designationOtherBox">
+      <input type="text" id="fDesignationOther" value="${esc(state.designationOther)}" placeholder="${esc(t('fDesignationPh'))}">
+    </div>
+
+    <label class="field-label">${esc(t('fInstName'))} <span class="req">*</span>${ml('fInstName')}</label>
+    <input type="text" id="fInstName" value="${esc(state.instName)}">
+
+    <label class="field-label">${esc(t('fInstAddress'))} <span class="req">*</span>${ml('fInstAddress')}</label>
+    <textarea id="fInstAddress">${esc(state.instAddress)}</textarea>
+
+    <label class="field-label">${esc(t('fInstEmail'))} <span class="req">*</span>${ml('fInstEmail')}</label>
+    <input type="email" id="fInstEmail" value="${esc(state.instEmail)}">
+
+    <label class="field-label">${esc(t('fInstPhone'))} <span class="opt">${esc(t('optional'))}</span>${ml('fInstPhone')}</label>
+    <input type="tel" id="fInstPhone" value="${esc(state.instPhone)}">
+
+    <label class="field-label">${esc(t('fWebsite'))} <span class="opt">${esc(t('optional'))}</span>${ml('fWebsite')}</label>
+    <input type="text" id="fInstWebsite" value="${esc(state.instWebsite)}">
+
+    <label class="field-label">${esc(t('fYear'))} <span class="req">*</span>${ml('fYear')}</label>
+    <input type="tel" id="fYear" value="${esc(state.yearEstablished)}" placeholder="${esc(t('fYearPh'))}">
+
+    <label class="field-label">${esc(t('fSubjects'))} <span class="req">*</span>${ml('fSubjects')}</label>
+    <div class="chip-wrap" id="subjWrap"></div>
+    <input type="text" id="fSubjOther" value="${esc(state.subjectsTaughtOther)}" placeholder="${esc(t('fOtherPh'))}" style="margin-top:11px;">
+
+    <div class="check-row">
+      <input type="checkbox" id="fHasBranches" ${state.hasBranches?'checked':''}>
+      <label for="fHasBranches">${esc(t('fHasBranches'))}${ml('fHasBranches')}</label>
+    </div>
+    <div class="conditional ${state.hasBranches?'show':''}" id="branchesBox">
+      <label class="field-label" style="margin-top:0;">${esc(t('fBranchCount'))}</label>
+      <input type="tel" id="fBranchCount" value="${esc(state.branchCount)}">
+      <label class="field-label">${esc(t('fBranchAddr'))}</label>
+      <textarea id="fBranchAddresses">${esc(state.branchAddresses)}</textarea>
+    </div>
+
+    <label class="field-label">${esc(t('fProgTypes'))} <span class="opt">${esc(t('optional'))}</span>${ml('fProgTypes')}</label>
+    <div class="chip-wrap" id="eduWrap"></div>
+
+    <div class="error-text" id="instError"></div>
+    ${navHtml('btnReview')}
+  `;
+  document.getElementById('fDesignation').onchange = e=>{
+    state.designation = e.target.value;
+    document.getElementById('designationOtherBox').classList.toggle('show', e.target.value==='Other');
+  };
+  wireConditional('fHasBranches','branchesBox');
+  const redraw = ()=>{
+    chipGroup('subjWrap', SUBJECTS_TAUGHT, state.subjectsTaught, redraw);
+    chipGroup('eduWrap', EDU_PROGRAMS, state.eduPrograms, redraw);
+  };
+  redraw();
+  const save = ()=>{
+    state.designation = val('fDesignation'); state.designationOther = val('fDesignationOther');
+    state.instName = val('fInstName'); state.instAddress = val('fInstAddress');
+    state.instEmail = val('fInstEmail'); state.instPhone = val('fInstPhone');
+    state.instWebsite = val('fInstWebsite'); state.yearEstablished = val('fYear');
+    state.subjectsTaughtOther = val('fSubjOther');
+    state.hasBranches = checked('fHasBranches');
+    state.branchCount = val('fBranchCount'); state.branchAddresses = val('fBranchAddresses');
+  };
+  wireNav(()=>{
+    save();
+    if(!state.designation || !state.instName || !state.instAddress ||
+       !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(state.instEmail) || !/^[0-9]{4}$/.test(state.yearEstablished) ||
+       (state.subjectsTaught.length===0 && !state.subjectsTaughtOther)){
+      showErr('instError', t('instErr')); return;
+    }
+    go(1);
+  }, save);
+}
+
+// ============ STEP: ORGANIZATION ============
+function renderOrganization(){
+  cardArea.innerHTML = `
+    <h2>${esc(t('orgTitle'))}${ml('orgTitle')}</h2>
+    <p class="sub">${esc(t('orgSub'))}</p>
+
+    <label class="field-label">${esc(t('fDesignation'))} <span class="req">*</span>${ml('fDesignation')}</label>
+    <select id="fDesignation">${selectOptions(["Founder","Office Bearer","Member","Other"], state.designation)}</select>
+    <div class="conditional ${state.designation==='Other'?'show':''}" id="designationOtherBox">
+      <input type="text" id="fDesignationOther" value="${esc(state.designationOther)}" placeholder="${esc(t('fDesignationPh'))}">
+    </div>
+
+    <label class="field-label">${esc(t('fOrgName'))} <span class="req">*</span>${ml('fOrgName')}</label>
+    <input type="text" id="fInstName" value="${esc(state.instName)}">
+
+    <label class="field-label">${esc(t('fOrgAddress'))} <span class="req">*</span>${ml('fOrgAddress')}</label>
+    <textarea id="fInstAddress">${esc(state.instAddress)}</textarea>
+
+    <label class="field-label">${esc(t('fOrgEmail'))} <span class="req">*</span>${ml('fOrgEmail')}</label>
+    <input type="email" id="fInstEmail" value="${esc(state.instEmail)}">
+
+    <label class="field-label">${esc(t('fOrgMobile'))} <span class="opt">${esc(t('optional'))}</span>${ml('fOrgMobile')}</label>
+    <input type="tel" id="fInstMobile" value="${esc(state.instMobile)}">
+
+    <label class="field-label">${esc(t('fWebsite'))} <span class="opt">${esc(t('optional'))}</span>${ml('fWebsite')}</label>
+    <input type="text" id="fInstWebsite" value="${esc(state.instWebsite)}">
+
+    <label class="field-label">${esc(t('fYear'))} <span class="req">*</span>${ml('fYear')}</label>
+    <input type="tel" id="fYear" value="${esc(state.yearEstablished)}" placeholder="${esc(t('fYearPh'))}">
+
+    <label class="field-label">${esc(t('fProgTypes'))} <span class="req">*</span>${ml('fProgTypes')}</label>
+    <div class="chip-wrap" id="progWrap"></div>
+    <input type="text" id="fProgOther" value="${esc(state.programTypesOther)}" placeholder="${esc(t('fOtherPh'))}" style="margin-top:11px;">
+
+    <label class="field-label">${esc(t('fFrequency'))}${ml('fFrequency')}</label>
+    <select id="fFrequency">${selectOptions(ORG_FREQUENCY, state.programFrequency)}</select>
+
+    <label class="field-label">${esc(t('fFestivals'))} <span class="opt">${esc(t('optional'))}</span>${ml('fFestivals')}</label>
+    <div class="chip-wrap" id="festWrap"></div>
+    <input type="text" id="fFestOther" value="${esc(state.festivalsOther)}" placeholder="${esc(t('fFestOtherPh'))}" style="margin-top:11px;">
+
+    <label class="field-label">${esc(t('fEduOrg'))} <span class="opt">${esc(t('optional'))}</span>${ml('fEduOrg')}</label>
+    <div class="chip-wrap" id="eduWrap"></div>
+
+    <div class="error-text" id="orgError"></div>
+    ${navHtml('btnReview')}
+  `;
+  document.getElementById('fDesignation').onchange = e=>{
+    state.designation = e.target.value;
+    document.getElementById('designationOtherBox').classList.toggle('show', e.target.value==='Other');
+  };
+  const redraw = ()=>{
+    chipGroup('progWrap', ORG_PROGRAM_TYPES, state.programTypes, redraw);
+    chipGroup('festWrap', ORG_FESTIVALS, state.festivals, redraw);
+    chipGroup('eduWrap', EDU_PROGRAMS, state.eduPrograms, redraw);
+  };
+  redraw();
+  const save = ()=>{
+    state.designation = val('fDesignation'); state.designationOther = val('fDesignationOther');
+    state.instName = val('fInstName'); state.instAddress = val('fInstAddress');
+    state.instEmail = val('fInstEmail'); state.instMobile = val('fInstMobile');
+    state.instWebsite = val('fInstWebsite'); state.yearEstablished = val('fYear');
+    state.programTypesOther = val('fProgOther'); state.programFrequency = val('fFrequency');
+    state.festivalsOther = val('fFestOther');
+  };
+  wireNav(()=>{
+    save();
+    if(!state.designation || !state.instName || !state.instAddress ||
+       !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(state.instEmail) || !/^[0-9]{4}$/.test(state.yearEstablished) ||
+       (state.programTypes.length===0 && !state.programTypesOther)){
+      showErr('orgError', t('orgErr')); return;
+    }
+    go(1);
+  }, save);
+}
+
+// ============ STEP: INSTRUMENT MAKER ============
+function renderInstrumentMaker(){
+  cardArea.innerHTML = `
+    <h2>${esc(t('makerTitle'))}${ml('makerTitle')}</h2>
+    <p class="sub">${esc(t('makerSub'))}</p>
+
+    <label class="field-label">${esc(t('fInstrTypes'))} <span class="req">*</span>${ml('fInstrTypes')}</label>
+    <div class="chip-wrap" id="typeWrap"></div>
+
+    <div id="leatherBox" class="conditional ${state.instrumentTypes.includes('Leather')?'show':''}">
+      <label class="field-label" style="margin-top:0;">${esc(t('qLeather'))}</label>
+      <div class="chip-wrap" id="leatherWrap"></div>
+    </div>
+    <div id="stringBox" class="conditional ${state.instrumentTypes.includes('String')?'show':''}">
+      <label class="field-label" style="margin-top:0;">${esc(t('qString'))}</label>
+      <div class="chip-wrap" id="stringWrap"></div>
+    </div>
+    <div id="windBox" class="conditional ${state.instrumentTypes.includes('Wind')?'show':''}">
+      <label class="field-label" style="margin-top:0;">${esc(t('qWind'))}</label>
+      <div class="chip-wrap" id="windWrap"></div>
+    </div>
+
+    <div class="error-text" id="makerError">${esc(t('makerErr'))}</div>
+    ${navHtml('btnReview')}
+  `;
+  const redraw = ()=>{
+    chipGroup('typeWrap', INSTRUMENT_TYPES, state.instrumentTypes, ()=>renderInstrumentMaker());
+    chipGroup('leatherWrap', INSTRUMENTS_BY_TYPE.Leather, state.leatherInstruments, redraw);
+    chipGroup('stringWrap', INSTRUMENTS_BY_TYPE.String, state.stringInstruments, redraw);
+    chipGroup('windWrap', INSTRUMENTS_BY_TYPE.Wind, state.windInstruments, redraw);
+  };
+  redraw();
+  wireNav(()=>{ if(state.instrumentTypes.length===0){ showErr('makerError'); return; } go(1); });
+}
+
+// ============ REVIEW ============
+function joinOpts(arr){ return arr.map(o=>opt(o)).join(", "); }
+
+function summaryRows(){
+  const R = [];
+  R.push([t('rWho'), opt(state.who)]);
+  R.push([t('rName'), state.name]);
+  R.push([t('rMobile'), state.mobile]);
+  R.push([t('rWhatsapp'), state.whatsapp]);
+  R.push([t('rAddress'), state.address]);
+  R.push([t('rPincode'), state.pincode]);
+  R.push([t('rEmail'), state.email]);
+  if(state.socialMedia) R.push([t('rSocial'), state.socialMedia]);
+  if(state.bucket) R.push([t('rArtForm'), opt(state.bucket)]);
+  if(state.categories.length) R.push([t('rCategory'), joinOpts(state.categories)]);
+  if(state.specializations.length) R.push([t('rSpecialization'), joinOpts(state.specializations)]);
+  if(state.designation) R.push([t('rDesignation'),
+    state.designation==='Other' ? state.designationOther : opt(state.designation)]);
+  if(state.instName) R.push([state.who==='Organization'?t('rOrganization'):t('rInstitution'), state.instName]);
+  if(state.instAddress) R.push([t('rTheirAddress'), state.instAddress]);
+  if(state.instEmail) R.push([t('rTheirEmail'), state.instEmail]);
+  if(state.instPhone) R.push([t('rTheirPhone'), state.instPhone]);
+  if(state.instMobile) R.push([t('rTheirMobile'), state.instMobile]);
+  if(state.instWebsite) R.push([t('rWebsite'), state.instWebsite]);
+  if(state.yearEstablished) R.push([t('rEstablished'), state.yearEstablished]);
+  if(state.subjectsTaught.length || state.subjectsTaughtOther)
+    R.push([t('rSubjects'), [joinOpts(state.subjectsTaught), state.subjectsTaughtOther].filter(Boolean).join(", ")]);
+  if(state.hasBranches) R.push([t('rBranches'),
+    (state.branchCount||t('yes')) + (state.branchAddresses ? ' — '+state.branchAddresses : '')]);
+  if(state.programTypes.length || state.programTypesOther)
+    R.push([t('rPrograms'), [joinOpts(state.programTypes), state.programTypesOther].filter(Boolean).join(", ")]);
+  if(state.programFrequency) R.push([t('rFrequency'), opt(state.programFrequency)]);
+  if(state.festivals.length || state.festivalsOther)
+    R.push([t('rFestivals'), [joinOpts(state.festivals), state.festivalsOther].filter(Boolean).join(", ")]);
+  if(state.eduPrograms.length) R.push([t('rEduPrograms'), joinOpts(state.eduPrograms)]);
+  if(state.instrumentTypes.length) R.push([t('rInstrTypes'), joinOpts(state.instrumentTypes)]);
+  if(state.leatherInstruments.length) R.push([t('rLeather'), joinOpts(state.leatherInstruments)]);
+  if(state.stringInstruments.length) R.push([t('rString'), joinOpts(state.stringInstruments)]);
+  if(state.windInstruments.length) R.push([t('rWind'), joinOpts(state.windInstruments)]);
+  if(state.air) R.push([t('rAir'), state.air]);
+  if(state.awards) R.push([t('rAwards'), state.awards]);
+  if(state.books) R.push([t('rBooks'), state.books]);
+  if(state.teachesPrivately) R.push([t('rTeachPriv'), state.teachesPrivatelyDetails || t('yes')]);
+  if(state.runsPrivate) R.push([t('rRunsPriv'), state.runsPrivateDetails || t('yes')]);
+  if(state.worksAt) R.push([t('rWorksAt'), state.worksAtDetails || t('yes')]);
+  if(state.orgMember) R.push([t('rOrgMember'), state.orgMemberDetails || t('yes')]);
+  return R;
+}
+
+function renderReview(){
+  cardArea.innerHTML = `
+    <h2>${esc(t('reviewTitle'))}${ml('reviewTitle')}</h2>
+    <p class="sub">${esc(t('reviewSub'))}</p>
+    <div id="summaryRows"></div>
+    <div class="conditional show" style="margin-top:20px;">
       <div class="check-row" style="margin:0;">
         <input type="checkbox" id="fConsent" ${state.consent?'checked':''}>
-        <label for="fConsent" style="font-weight:600;">I agree to publish my details in this directory<span class="mal" style="font-weight:500;">ഈ ഫോം സമർപ്പിക്കുന്നതിലൂടെ ഞാൻ നൽകിയിട്ടുള്ള വിവരങ്ങൾ ഡയറക്ടറിയിൽ പ്രസിദ്ധീകരിക്കാൻ സമ്മതിക്കുന്നു</span></label>
+        <label for="fConsent" style="font-weight:600;">${esc(t('consent'))}${ml('consent')}</label>
       </div>
-      <p style="font-size:13px;color:#6b5d4f;margin:8px 0 0;">All submissions go through a verification step before inclusion in the published directory.</p>
+      <p style="font-size:14px;color:var(--muted);margin:10px 0 0;">${esc(t('consentNote'))}</p>
     </div>
-
     <div class="error-text" id="submitError"></div>
-    <div class="nav-buttons">
-      <button class="btn-secondary" id="backBtn">Back</button>
-      <button class="btn-primary" id="submitBtn">Submit Enrollment</button>
-    </div>
+    ${navHtml('btnSubmit')}
   `;
   const container = document.getElementById('summaryRows');
-  rows.forEach(([k,v])=>{
+  summaryRows().forEach(([k,v])=>{
     const r = document.createElement('div');
     r.className = 'summary-row';
-    r.innerHTML = `<div class="k">${k}</div><div class="v">${escapeHtml(v)}</div>`;
+    r.innerHTML = `<div class="k">${esc(k)}</div><div class="v">${esc(v)}</div>`;
     container.appendChild(r);
   });
-  document.getElementById('backBtn').onclick = ()=>goTo(6);
+  document.getElementById('backBtn').onclick = ()=>go(-1);
+  document.getElementById('nextBtn').id = 'submitBtn';
   document.getElementById('submitBtn').onclick = ()=>{
-    state.consent = document.getElementById('fConsent').checked;
-    if(!state.consent){
-      const e = document.getElementById('submitError');
-      e.textContent = 'Please agree to the publishing consent above before submitting.';
-      e.classList.add('show');
-      return;
-    }
+    state.consent = checked('fConsent');
+    if(!state.consent){ showErr('submitError', t('consentErr')); return; }
     document.getElementById('submitError').classList.remove('show');
     submitForm();
   };
 }
 
-function sleep(ms){ return new Promise(r=>setTimeout(r, ms)); }
-
-// Live Google Apps Script Web App endpoint — writes to the "Kerala Classical
-// Arts Directory" Google Sheet. Must match the ADMIN_TOKEN set in the script
-// for the admin panel below to work.
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzoZM5vTsHZrRqsPxJikl8WBHp18ed8I9rFFGEco-RM_XJ8oV55wi7NUwPq7G4iFkiBHQ/exec";
-const ADMIN_TOKEN = "agni2026"; // must match ADMIN_TOKEN in the Apps Script
+// ============ SUBMIT ============
+function sleep(ms){ return new Promise(r=>setTimeout(r,ms)); }
 
 async function submitForm(){
   const btn = document.getElementById('submitBtn');
-  btn.disabled = true;
-  btn.textContent = 'Submitting...';
-
+  btn.disabled = true; btn.textContent = t('btnSubmitting');
   const refId = 'KPAD-' + Date.now().toString(36).toUpperCase().slice(-6) + Math.floor(Math.random()*90+10);
-  const entry = { ...state, refId, submittedAt: new Date().toISOString() };
-
+  const entry = Object.assign({}, state, {refId, submittedAt:new Date().toISOString()});
   let lastErr = null;
   for(let attempt=1; attempt<=3; attempt++){
     try{
       const res = await fetch(APPS_SCRIPT_URL, {
-        method: 'POST',
-        headers: {'Content-Type': 'text/plain;charset=utf-8'}, // avoids CORS preflight, which Apps Script can't handle
+        method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'},
         body: JSON.stringify(entry)
       });
-      let ok = res.ok;
       try{
         const data = await res.json();
-        if(data && data.success === false){ throw new Error(data.error || 'server rejected the submission'); }
-      }catch(parseErr){
-        // response body unreadable is common with Apps Script even on success — don't fail on this alone
-      }
-      if(!ok){ throw new Error('HTTP ' + res.status); }
+        if(data && data.success === false) throw new Error(data.error || 'server rejected');
+      }catch(e){}
+      if(!res.ok) throw new Error('HTTP ' + res.status);
       renderSuccess(refId);
       return;
     }catch(err){
       lastErr = err;
-      if(attempt < 3){ await sleep(600 * attempt); btn.textContent = `Retrying (${attempt+1}/3)...`; }
+      if(attempt < 3){ await sleep(600*attempt); btn.textContent = t('btnRetry', attempt+1); }
     }
   }
-
-  const e = document.getElementById('submitError');
-  e.style.display = 'block';
-  e.textContent = 'Could not save after 3 tries (' + (lastErr && lastErr.message ? lastErr.message : 'unknown error') + '). Please check your connection and tap Submit again.';
-  btn.disabled = false;
-  btn.textContent = 'Submit Enrollment';
+  showErr('submitError', t('submitErr', (lastErr && lastErr.message) || 'unknown'));
+  btn.disabled = false; btn.textContent = t('btnSubmit');
 }
 
-// Set this to the real public link once the app is hosted/published.
-const ENROLLMENT_LINK = "https://kerala-arts-directory.example.com";
-
 function renderSuccess(refId){
-  const shareText = `🙏 Kerala's classical and traditional arts have never had a proper record — until now.\n\nI just enrolled in the Kerala Classical & Traditional Performing Arts Directory by Agni Cultural Academy — the first documentation of its kind in the country, built to record every practicing artist, teacher, institution, organization and artisan keeping these art forms alive.\n\nIf you're a fellow artist, please take two minutes to enroll and be part of this record: ${ENROLLMENT_LINK}`;
+  const shareText = `The Kerala Classical & Traditional Performing Arts Directory, an initiative of Agni Cultural Academy, is the first project of its kind in the country to systematically document our classical and traditional performing arts community — artists, teachers, institutions, organizations and artisans alike.\n\nI have enrolled, and I would encourage you to do the same. It takes only a few minutes:\n${ENROLLMENT_LINK}`;
   const waLink = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
-
+  progressBar.innerHTML = ''; stepLabel.textContent = '';
   cardArea.innerHTML = `
     <div class="success-icon">✓</div>
-    <h2 style="text-align:center;">Thank you, ${escapeHtml(state.name)}!</h2>
-    <p class="sub" style="text-align:center;">You have been enrolled in the Kerala Classical &amp; Traditional Performing Arts Directory.</p>
+    <h2 style="text-align:center;">${esc(t('thankYou', state.name))}</h2>
+    <p class="sub" style="text-align:center;">${esc(t('successMsg'))}</p>
     <div class="ref-box">
-      <div style="font-size:13px; color:#6b5d4f;">Your Reference ID</div>
-      <div class="refid">${refId}</div>
+      <div style="font-size:14px;color:var(--muted);">${esc(t('refLabel'))}</div>
+      <div class="refid">${esc(refId)}</div>
     </div>
-    <p style="font-size:15px; color:#6b5d4f; text-align:center;">Please save this reference number. Our team may contact you by phone or WhatsApp if any details need verification.</p>
+    <p style="font-size:16px;color:var(--muted);text-align:center;">${esc(t('refNote'))}</p>
     <div class="nav-buttons">
-      <a href="${waLink}" target="_blank" rel="noopener" class="btn-primary" id="shareBtn" style="display:flex;align-items:center;justify-content:center;text-decoration:none;background:#25947a;">Share with Fellow Artists on WhatsApp</a>
+      <a href="${waLink}" target="_blank" rel="noopener" class="btn-primary"
+         style="display:flex;align-items:center;justify-content:center;text-decoration:none;background:var(--green);color:#0B0A09;">${esc(t('btnShare'))}</a>
     </div>
     <div class="nav-buttons">
-      <button class="btn-secondary" id="anotherBtn" style="width:100%;">Enroll Another Person</button>
+      <button class="btn-secondary" id="anotherBtn" style="width:100%;">${esc(t('btnAnother'))}</button>
     </div>
   `;
   document.getElementById('anotherBtn').onclick = ()=>{
-    state = {
-      who:"", name:"", mobile:"", whatsapp:"", sameAsMobile:false,
-      address:"", email:"", socialMedia:"", bucket:"", categories:[], specializations:[],
-      air:"", awards:"", books:"",
-      teachesPrivately:false, teachesPrivatelyDetails:"",
-      runsPrivate:false, runsPrivateDetails:"",
-      worksAt:false, worksAtDetails:"",
-      orgMember:false, orgMemberDetails:"",
-      consent:false
-    };
-    goTo(1);
+    const keepLang = state.language;
+    state = blankState(); state.language = keepLang;
+    stepIndex = 1; // skip language step, keep chosen language
+    render(); window.scrollTo({top:0,behavior:'smooth'});
   };
 }
 
-function escapeHtml(str){
-  if(!str) return "";
-  return String(str).replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
-}
-
-// ---------- Admin ----------
-// NOTE: this is a simple client-side gate to keep casual visitors out of the
-// list, not real security — anyone who reads the page source can see the
-// password. Don't rely on this alone if the data needs to stay confidential.
-const ADMIN_PASSWORD = "agni2026";
+// ============ ADMIN ============
 let adminEntries = [];
-
-const wrapEl = document.querySelector('.wrap');
-const adminRoot = document.getElementById('adminRoot');
-
 document.getElementById('adminLinkBtn').onclick = openAdminLogin;
 
 function openAdminLogin(){
   const overlay = document.createElement('div');
   overlay.className = 'modal-overlay';
-  overlay.id = 'loginOverlay';
   overlay.innerHTML = `
     <div class="modal-box">
       <h3>Admin Login</h3>
-      <p style="font-size:14px;color:#6b5d4f;margin:0 0 14px;">Enter the admin password to view and export enrollments.</p>
-      <input type="text" id="adminPwInput" placeholder="Password" style="width:100%;font-size:17px;padding:12px;border:2px solid var(--line);border-radius:10px;">
+      <p style="font-size:15px;color:var(--muted);margin:0 0 14px;">Enter the admin password to view and export enrollments.</p>
+      <input type="password" id="adminPwInput" placeholder="Password">
       <div class="error-text" id="pwError">Incorrect password.</div>
       <div class="nav-buttons">
         <button class="btn-secondary" id="pwCancel">Cancel</button>
         <button class="btn-primary" id="pwSubmit">Login</button>
       </div>
-    </div>
-  `;
+    </div>`;
   document.body.appendChild(overlay);
   document.getElementById('pwCancel').onclick = ()=> overlay.remove();
   document.getElementById('pwSubmit').onclick = ()=>{
-    const val = document.getElementById('adminPwInput').value;
-    if(val === ADMIN_PASSWORD){
-      overlay.remove();
-      showAdminPanel();
-    } else {
-      document.getElementById('pwError').classList.add('show');
-    }
+    if(document.getElementById('adminPwInput').value === ADMIN_TOKEN){ overlay.remove(); showAdminPanel(); }
+    else showErr('pwError');
   };
-  document.getElementById('adminPwInput').addEventListener('keydown', (e)=>{
+  document.getElementById('adminPwInput').addEventListener('keydown', e=>{
     if(e.key === 'Enter') document.getElementById('pwSubmit').click();
   });
 }
 
 async function showAdminPanel(){
   wrapEl.classList.add('hidden');
-  adminRoot.innerHTML = `<div class="admin-wrap"><p style="text-align:center;color:#6b5d4f;">Loading enrollments...</p></div>`;
+  adminRoot.innerHTML = `<div class="admin-wrap"><p style="text-align:center;color:var(--muted);">Loading enrollments...</p></div>`;
   try{
     const res = await fetch(APPS_SCRIPT_URL + '?token=' + encodeURIComponent(ADMIN_TOKEN));
     const data = await res.json();
-    if(!data || data.success === false){ throw new Error((data && data.error) || 'Could not load'); }
-    const entries = (data.entries || []).slice().sort((a,b)=> String(b.submittedAt||'').localeCompare(String(a.submittedAt||'')));
-    adminEntries = entries;
-    renderAdminPanel(entries);
+    if(!data || data.success === false) throw new Error((data && data.error) || 'Could not load');
+    adminEntries = (data.entries||[]).slice().sort((a,b)=>
+      String(b.submittedAt||'').localeCompare(String(a.submittedAt||'')));
+    renderAdminPanel(adminEntries);
   }catch(err){
-    adminRoot.innerHTML = `<div class="admin-wrap"><p style="text-align:center;color:var(--danger);">Could not load enrollments (${escapeHtml(err.message||'')}). Please try again.</p>
+    adminRoot.innerHTML = `<div class="admin-wrap">
+      <p style="text-align:center;color:var(--danger);">Could not load enrollments (${esc(err.message||'')}).</p>
       <div class="nav-buttons"><button class="btn-secondary" id="adminBackErr">Back</button></div></div>`;
     document.getElementById('adminBackErr').onclick = backToEnrollment;
   }
@@ -864,11 +1301,9 @@ function listStr(v){ return Array.isArray(v) ? v.join(', ') : (v || ''); }
 
 function renderAdminPanel(entries, filterText){
   filterText = (filterText||'').toLowerCase();
-  const filtered = filterText ? entries.filter(e=>{
-    return [e.name, e.who, e.bucket, e.mobile, e.email, listStr(e.categories), listStr(e.specializations)]
-      .join(' ').toLowerCase().includes(filterText);
-  }) : entries;
-
+  const filtered = filterText ? entries.filter(e=>
+    [e.name,e.who,e.bucket,e.instName,e.mobile,e.email,listStr(e.categories),listStr(e.specializations)]
+      .join(' ').toLowerCase().includes(filterText)) : entries;
   adminRoot.innerHTML = `
     <div class="admin-wrap">
       <div class="admin-header">
@@ -876,78 +1311,82 @@ function renderAdminPanel(entries, filterText){
         <div class="admin-stats">${entries.length} total${filterText ? ` · ${filtered.length} shown` : ''}</div>
       </div>
       <div class="admin-toolbar">
-        <input type="text" id="adminSearch" placeholder="Search by name, mobile, art form..." value="${escapeHtml(filterText)}">
+        <input type="text" id="adminSearch" placeholder="Search by name, mobile, art form..." value="${esc(filterText)}">
         <button class="btn-gold" id="exportBtn">Export to Sheet (CSV)</button>
         <button class="btn-outline" id="refreshBtn">Refresh</button>
         <button class="btn-outline" id="logoutBtn">Log out</button>
       </div>
       <div id="entryList"></div>
-    </div>
-  `;
+    </div>`;
   const listEl = document.getElementById('entryList');
   if(filtered.length === 0){
-    listEl.innerHTML = `<div class="empty-state">No enrollments${filterText ? ' match your search' : ' yet'}.</div>`;
+    listEl.innerHTML = `<div class="empty-state">No enrollments${filterText?' match your search':' yet'}.</div>`;
   } else {
     filtered.forEach(e=>{
       const card = document.createElement('div');
       card.className = 'entry-card';
-      const dateStr = e.submittedAt ? new Date(e.submittedAt).toLocaleString() : '';
+      const detail = listStr(e.categories) || listStr(e.programTypes) || listStr(e.instrumentTypes) || '';
+      const spec = listStr(e.specializations);
       card.innerHTML = `
         <div class="entry-top">
-          <span class="entry-name">${escapeHtml(e.name)}</span>
-          <span class="entry-ref">${escapeHtml(e.refId||'')}</span>
+          <span class="entry-name">${esc(e.name)}</span>
+          <span class="entry-ref">${esc(e.refId||'')}</span>
         </div>
-        <div class="entry-meta"><b>${escapeHtml(e.who)}</b> · ${escapeHtml(e.bucket)}</div>
-        <div class="entry-meta">${escapeHtml(e.mobile)} · ${escapeHtml(e.email)}</div>
-        <div class="entry-meta">${escapeHtml(listStr(e.categories))}${listStr(e.specializations) ? ' — ' + escapeHtml(listStr(e.specializations)) : ''}</div>
-        <div class="entry-meta" style="font-size:12px;color:#9a8c7a;">${dateStr}</div>
-      `;
+        <div class="entry-meta"><b>${esc(e.who)}</b>${e.bucket?' · '+esc(e.bucket):''}${e.instName?' · '+esc(e.instName):''}</div>
+        <div class="entry-meta">${esc(e.mobile)} · ${esc(e.email)}</div>
+        <div class="entry-meta">${esc(detail)}${spec?' — '+esc(spec):''}</div>
+        <div class="entry-meta" style="font-size:13px;">${e.submittedAt?new Date(e.submittedAt).toLocaleString():''}</div>`;
       listEl.appendChild(card);
     });
   }
-  document.getElementById('adminSearch').oninput = (e)=> renderAdminPanel(entries, e.target.value);
+  document.getElementById('adminSearch').oninput = e=> renderAdminPanel(entries, e.target.value);
   document.getElementById('exportBtn').onclick = ()=> exportCSV(adminEntries);
   document.getElementById('refreshBtn').onclick = showAdminPanel;
   document.getElementById('logoutBtn').onclick = backToEnrollment;
 }
 
-function backToEnrollment(){
-  adminRoot.innerHTML = '';
-  wrapEl.classList.remove('hidden');
-}
+function backToEnrollment(){ adminRoot.innerHTML = ''; wrapEl.classList.remove('hidden'); }
+
+const EXPORT_COLS = [
+  ['refId','Reference ID'],['submittedAt','Submitted At'],['language','Language'],['who','Enrolling As'],
+  ['name','Name'],['mobile','Mobile'],['whatsapp','WhatsApp'],['address','Address'],
+  ['pincode','Pincode'],['email','Email'],['socialMedia','Social Media'],
+  ['bucket','Art Form Bucket'],['categories','Category'],['specializations','Specialization'],
+  ['designation','Designation'],['designationOther','Designation (Other)'],
+  ['instName','Institution/Organization Name'],['instAddress','Institution/Org Address'],
+  ['instEmail','Institution/Org Email'],['instPhone','Institution Phone'],
+  ['instMobile','Organization Mobile'],['instWebsite','Website'],
+  ['yearEstablished','Year of Establishment'],
+  ['subjectsTaught','Subjects Taught'],['subjectsTaughtOther','Subjects Taught (Other)'],
+  ['hasBranches','Has Branches'],['branchCount','No. of Branches'],['branchAddresses','Branch Addresses'],
+  ['programTypes','Program Types'],['programTypesOther','Program Types (Other)'],
+  ['programFrequency','Program Frequency'],['festivals','Festivals'],['festivalsOther','Festivals (Other)'],
+  ['eduPrograms','Education Programs'],
+  ['instrumentTypes','Instrument Types'],['leatherInstruments','Leather Instruments'],
+  ['stringInstruments','String Instruments'],['windInstruments','Wind Instruments'],
+  ['air','AIR/DD Grade'],['awards','Awards'],['books','Books Published'],
+  ['teachesPrivately','Teaches Privately'],['teachesPrivatelyDetails','Private Teaching Details'],
+  ['runsPrivate','Runs Private Institution'],['runsPrivateDetails','Private Institution Details'],
+  ['worksAt','Works At Institution'],['worksAtDetails','Institution Details'],
+  ['orgMember','Org Member/Office Bearer'],['orgMemberDetails','Organization Details'],
+  ['consent','Consent to Publish']
+];
 
 function exportCSV(entries){
-  const cols = [
-    ['refId','Reference ID'], ['submittedAt','Submitted At'], ['who','Enrolling As'],
-    ['name','Name'], ['mobile','Mobile'], ['whatsapp','WhatsApp'], ['address','Address'],
-    ['email','Email'], ['socialMedia','Social Media'], ['bucket','Art Form Bucket'], ['categories','Category'],
-    ['specializations','Specialization'], ['air','AIR/DD Grade'], ['awards','Awards'],
-    ['books','Books Published'],
-    ['teachesPrivately','Teaches Privately'], ['teachesPrivatelyDetails','Private Teaching Details'],
-    ['runsPrivate','Runs Private Institution'],
-    ['runsPrivateDetails','Private Institution Details'], ['worksAt','Works At Institution'],
-    ['worksAtDetails','Institution Details'], ['orgMember','Org Member/Office Bearer'],
-    ['orgMemberDetails','Organization Details'], ['consent','Consent to Publish']
-  ];
-  const csvEsc = (v)=>{
+  const csvEsc = v=>{
     if(Array.isArray(v)) v = v.join('; ');
     if(v === undefined || v === null) v = '';
     if(typeof v === 'boolean') v = v ? 'Yes' : 'No';
-    v = String(v).replace(/"/g,'""');
-    return `"${v}"`;
+    return `"${String(v).replace(/"/g,'""')}"`;
   };
-  let csv = cols.map(c=>csvEsc(c[1])).join(',') + '\r\n';
-  entries.forEach(e=>{
-    csv += cols.map(c=>csvEsc(e[c[0]])).join(',') + '\r\n';
-  });
+  let csv = '\uFEFF' + EXPORT_COLS.map(c=>csvEsc(c[1])).join(',') + '\r\n';
+  entries.forEach(e=>{ csv += EXPORT_COLS.map(c=>csvEsc(e[c[0]])).join(',') + '\r\n'; });
   const blob = new Blob([csv], {type:'text/csv;charset=utf-8;'});
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
   a.download = `kerala-arts-directory-enrollments-${new Date().toISOString().slice(0,10)}.csv`;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
   URL.revokeObjectURL(url);
 }
 
