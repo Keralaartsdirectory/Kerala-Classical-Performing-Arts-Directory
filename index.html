@@ -220,8 +220,8 @@ const STR = {
   fEmail:{en:"Email", ml:"ഇമെയിൽ"},
   fSocial:{en:"Social Media Handles", ml:"സാമൂഹ്യമാധ്യമ വിലാസങ്ങൾ"},
   fSocialPh:{en:"Instagram / Facebook / YouTube", ml:"ഇൻസ്റ്റഗ്രാം / ഫേസ്ബുക്ക് / യൂട്യൂബ്"},
-  contactErr:{en:"Please fill all mandatory fields correctly (pincode must be 6 digits).",
-              ml:"നിർബന്ധിത വിവരങ്ങളെല്ലാം കൃത്യമായി പൂരിപ്പിക്കുക (പിൻകോഡ് 6 അക്കമായിരിക്കണം)."},
+  contactErr:{en:"Please fill all mandatory fields correctly. Mobile and WhatsApp must be valid 10-digit Indian numbers (pincode must be 6 digits).",
+              ml:"നിർബന്ധിത വിവരങ്ങളെല്ലാം കൃത്യമായി പൂരിപ്പിക്കുക. മൊബൈൽ, വാട്സാപ്പ് നമ്പറുകൾ ശരിയായ 10 അക്ക നമ്പറുകളായിരിക്കണം (പിൻകോഡ് 6 അക്കമായിരിക്കണം)."},
 
   artformTitle:{en:"Your art form", ml:"താങ്കളുടെ കലാരൂപം"},
   artformTitleT:{en:"Art form you teach", ml:"താങ്കൾ പഠിപ്പിക്കുന്ന കലാരൂപം"},
@@ -237,19 +237,32 @@ const STR = {
   specErr:{en:"Please choose at least one specialization.", ml:"കുറഞ്ഞത് ഒരു വൈദഗ്ധ്യമെങ്കിലും തിരഞ്ഞെടുക്കുക."},
 
   extrasTitle:{en:"A little more about you", ml:"താങ്കളെക്കുറിച്ച് കുറച്ചുകൂടി"},
-  extrasSub:{en:"All fields on this page are optional.", ml:"ഈ പേജിലെ എല്ലാ വിവരങ്ങളും ഐച്ഛികമാണ്."},
+  extrasSub:{en:"The rest of this page is optional, except years of experience.",
+             ml:"പരിചയമുള്ള വർഷങ്ങൾ ഒഴികെ ഈ പേജിലെ ബാക്കി വിവരങ്ങൾ ഐച്ഛികമാണ്."},
+  fYearsExp:{en:"Years of Experience", ml:"പരിചയമുള്ള വർഷങ്ങൾ"},
+  fYearsExpPh:{en:"e.g. 15", ml:"ഉദാ: 15"},
+  extrasErr:{en:"Please enter your years of experience.", ml:"താങ്കളുടെ പരിചയമുള്ള വർഷങ്ങൾ നൽകുക."},
   fAir:{en:"AIR / Doordarshan Grade", ml:"ആകാശവാണി / ദൂരദർശൻ ഗ്രേഡ്"},
   fAirPh:{en:"e.g. B High, Top Grade", ml:"ഉദാ: B High, Top Grade"},
   fAwards:{en:"Awards / Citations", ml:"പുരസ്കാരങ്ങൾ / അംഗീകാരങ്ങൾ"},
-  fBooks:{en:"Books Published", ml:"പ്രസിദ്ധീകരിച്ച പുസ്തകങ്ങൾ"},
+  fBooks:{en:"Give as many details about you (any books published, prestigious events performed, etc.)",
+          ml:"താങ്കളെക്കുറിച്ച് കഴിയുന്നത്ര വിവരങ്ങൾ നൽകുക (പ്രസിദ്ധീകരിച്ച പുസ്തകങ്ങൾ, പ്രധാനപ്പെട്ട വേദികളിൽ അവതരിപ്പിച്ചത് തുടങ്ങിയവ)"},
   fTeachPriv:{en:"I teach privately", ml:"ഞാൻ സ്വകാര്യമായി ക്ലാസ്സുകൾ എടുക്കുന്നു"},
   fTeachPrivPh:{en:"Subject taught, online / offline / both",
                 ml:"പഠിപ്പിക്കുന്ന വിഷയം, ഓൺലൈൻ / ഓഫ്‌ലൈൻ / രണ്ടും"},
+  artistTeachesPrivQ:{en:"I teach private classes", ml:"ഞാൻ സ്വകാര്യ ക്ലാസ്സുകൾ എടുക്കാറുണ്ട്"},
+  artistWorksAtQ:{en:"I work as a teacher at an institution", ml:"ഞാൻ ഒരു സ്ഥാപനത്തിൽ അധ്യാപകനായി ജോലി ചെയ്യുന്നു"},
+  artistWorksAtErr:{en:"Please give the institution type, name and address.",
+                    ml:"സ്ഥാപന തരം, പേര്, വിലാസം എന്നിവ നൽകുക."},
   fRunsPriv:{en:"I run a private institution", ml:"ഞാൻ ഒരു സ്വകാര്യ സ്ഥാപനം നടത്തുന്നു"},
   fRunsPrivPh:{en:"Institution name & address", ml:"സ്ഥാപനത്തിന്റെ പേരും വിലാസവും"},
-  fWorksAt:{en:"I work at a Govt./Private institution",
-            ml:"ഞാൻ ഒരു സർക്കാർ / സ്വകാര്യ സ്ഥാപനത്തിൽ ജോലി ചെയ്യുന്നു"},
-  fWorksAtPh:{en:"Institution name, address, designation", ml:"സ്ഥാപനത്തിന്റെ പേര്, വിലാസം, പദവി"},
+  fWorksAtGovt:{en:"I work as a teacher in a Govt./Govt.-aided school or college",
+            ml:"ഞാൻ ഒരു സർക്കാർ / സർക്കാർ എയ്ഡഡ് സ്കൂളിലോ കോളേജിലോ അധ്യാപകനായി ജോലി ചെയ്യുന്നു"},
+  fWorksAtGovtPh:{en:"Institution name, address, designation", ml:"സ്ഥാപനത്തിന്റെ പേര്, വിലാസം, പദവി"},
+  fWorksAtPrivate:{en:"I work as a teacher in private institution(s)",
+            ml:"ഞാൻ സ്വകാര്യ സ്ഥാപനങ്ങളിൽ അധ്യാപകനായി ജോലി ചെയ്യുന്നു"},
+  fWorksAtPrivatePh:{en:"Institution name(s), address, designation — list all if more than one",
+            ml:"സ്ഥാപനങ്ങളുടെ പേര്, വിലാസം, പദവി — ഒന്നിലധികമുണ്ടെങ്കിൽ എല്ലാം എഴുതുക"},
   fOrgMember:{en:"I am a member / office bearer of an organization",
               ml:"ഞാൻ ഒരു സംഘടനയിലെ അംഗം / ഭാരവാഹിയാണ്"},
   fOrgMemberPh:{en:"Organization name & designation", ml:"സംഘടനയുടെ പേരും പദവിയും"},
@@ -269,8 +282,17 @@ const STR = {
   fWebsite:{en:"Website", ml:"വെബ്സൈറ്റ്"},
   fEduPrograms:{en:"Do you organize any education programs?",
                 ml:"താങ്കൾ വിദ്യാഭ്യാസ പരിപാടികൾ സംഘടിപ്പിക്കാറുണ്ടോ?"},
-  teacherErr:{en:"Please fill your designation and the institution name.",
-              ml:"താങ്കളുടെ പദവിയും സ്ഥാപനത്തിന്റെ പേരും പൂരിപ്പിക്കുക."},
+  teacherErr:{en:"Please fill your designation, where you teach, the institution name and address.",
+              ml:"താങ്കളുടെ പദവി, ജോലി ചെയ്യുന്ന സ്ഥാപന തരം, സ്ഥാപനത്തിന്റെ പേരും വിലാസവും പൂരിപ്പിക്കുക."},
+  teacherInstTypeQ:{en:"Where do you teach?", ml:"താങ്കൾ എവിടെയാണ് പഠിപ്പിക്കുന്നത്?"},
+  teacherInstTypeGovt:{en:"Govt./Govt.-aided School or College", ml:"സർക്കാർ / സർക്കാർ എയ്ഡഡ് സ്കൂൾ അല്ലെങ്കിൽ കോളേജ്"},
+  teacherInstTypePrivate:{en:"Private Institution(s)", ml:"സ്വകാര്യ സ്ഥാപനം/സ്ഥാപനങ്ങൾ"},
+  teacherPrivClassesQ:{en:"I also teach private classes", ml:"ഞാൻ സ്വകാര്യ ക്ലാസ്സുകളും എടുക്കാറുണ്ട്"},
+  teacherPrivClassesModeQ:{en:"Online, offline, or both?", ml:"ഓൺലൈൻ, ഓഫ്‌ലൈൻ, അതോ രണ്ടും?"},
+  modeOnline:{en:"Online", ml:"ഓൺലൈൻ"},
+  modeOffline:{en:"Offline", ml:"ഓഫ്‌ലൈൻ"},
+  rTeacherInstType:{en:"Where They Teach", ml:"ജോലി ചെയ്യുന്ന സ്ഥാപന തരം"},
+  rTeachesPrivClasses:{en:"Also Teaches Private Classes", ml:"സ്വകാര്യ ക്ലാസ്സുകളും എടുക്കുന്നു"},
 
   instTitle:{en:"Institution details", ml:"സ്ഥാപന വിവരങ്ങൾ"},
   instSub:{en:"About your training institute.", ml:"താങ്കളുടെ പരിശീലന സ്ഥാപനത്തെക്കുറിച്ച്."},
@@ -304,6 +326,16 @@ const STR = {
   qLeather:{en:"Which Leather instruments?", ml:"ഏതെല്ലാം തുകൽ വാദ്യങ്ങൾ?"},
   qString:{en:"Which String instruments?", ml:"ഏതെല്ലാം തന്ത്രി വാദ്യങ്ങൾ?"},
   qWind:{en:"Which Wind instruments?", ml:"ഏതെല്ലാം സുഷിര വാദ്യങ്ങൾ?"},
+  qCostume:{en:"Costumes for which art forms?", ml:"ഏത് കലാരൂപങ്ങൾക്കുള്ള കോപ്പുകൾ?"},
+  makerCatTitle:{en:"What do you make?", ml:"താങ്കൾ എന്താണ് നിർമ്മിക്കുന്നത്?"},
+  makerCatSub:{en:"Choose one.", ml:"ഒന്ന് തിരഞ്ഞെടുക്കുക."},
+  makerCatErr:{en:"Please choose one option.", ml:"ഒരു ഓപ്ഷൻ തിരഞ്ഞെടുക്കുക."},
+  makerSpecTitle:{en:"Specialization", ml:"വൈദഗ്ധ്യം"},
+  makerSpecSubInstr:{en:"Which instruments do you make or repair? Choose all that apply.",
+                     ml:"താങ്കൾ ഏതെല്ലാം ഉപകരണങ്ങളാണ് നിർമ്മിക്കുന്നത് / നന്നാക്കുന്നത്? ബാധകമായവയെല്ലാം തിരഞ്ഞെടുക്കുക."},
+  makerSpecSubCostume:{en:"Which costumes do you make? Choose all that apply.",
+                       ml:"താങ്കൾ ഏതെല്ലാം കോപ്പുകളാണ് നിർമ്മിക്കുന്നത്? ബാധകമായവയെല്ലാം തിരഞ്ഞെടുക്കുക."},
+  makerSpecErr:{en:"Please choose at least one.", ml:"കുറഞ്ഞത് ഒന്നെങ്കിലും തിരഞ്ഞെടുക്കുക."},
   makerErr:{en:"Please choose at least one instrument type.",
             ml:"കുറഞ്ഞത് ഒരു ഉപകരണ തരമെങ്കിലും തിരഞ്ഞെടുക്കുക."},
 
@@ -357,14 +389,34 @@ const STR = {
   rLeather:{en:"Leather instruments", ml:"തുകൽ വാദ്യങ്ങൾ"},
   rString:{en:"String instruments", ml:"തന്ത്രി വാദ്യങ്ങൾ"},
   rWind:{en:"Wind instruments", ml:"സുഷിര വാദ്യങ്ങൾ"},
+  rCostume:{en:"Costumes for", ml:"കോപ്പ് നിർമ്മാണം"},
+  rMakerCategory:{en:"Makes", ml:"നിർമ്മിക്കുന്നത്"},
+  rMakerSpecialization:{en:"Specialization", ml:"വൈദഗ്ധ്യം"},
+  rYearsExp:{en:"Years of Experience", ml:"പരിചയമുള്ള വർഷങ്ങൾ"},
   rAir:{en:"AIR/DD Grade", ml:"ആകാശവാണി/ദൂരദർശൻ ഗ്രേഡ്"},
   rAwards:{en:"Awards", ml:"പുരസ്കാരങ്ങൾ"},
   rBooks:{en:"Books", ml:"പുസ്തകങ്ങൾ"},
   rTeachPriv:{en:"Teaches privately", ml:"സ്വകാര്യ ക്ലാസ്സുകൾ"},
   rRunsPriv:{en:"Runs private institution", ml:"സ്വകാര്യ സ്ഥാപനം നടത്തുന്നു"},
-  rWorksAt:{en:"Works at institution", ml:"ജോലി ചെയ്യുന്ന സ്ഥാപനം"},
+  rWorksAt:{en:"Works at Govt./Govt.-aided institution", ml:"സർക്കാർ / എയ്ഡഡ് സ്ഥാപനത്തിൽ ജോലി"},
+  rWorksAtPrivate:{en:"Works at private institution(s)", ml:"സ്വകാര്യ സ്ഥാപനത്തിൽ ജോലി"},
   rOrgMember:{en:"Org. member/office bearer", ml:"സംഘടനാ അംഗം/ഭാരവാഹി"},
-  yes:{en:"Yes", ml:"ഉണ്ട്"}
+  yes:{en:"Yes", ml:"ഉണ്ട്"},
+  no:{en:"No", ml:"ഇല്ല"},
+
+  orgRegQ:{en:"Is your organization a registered body?", ml:"താങ്കളുടെ സംഘടന രജിസ്റ്റർ ചെയ്തതാണോ?"},
+  orgRegType:{en:"Type of registration", ml:"രജിസ്ട്രേഷൻ തരം"},
+  orgRegTypeOtherPh:{en:"Other (please specify)", ml:"മറ്റുള്ളവ (എഴുതുക)"},
+  orgRegAddress:{en:"Registered Address", ml:"രജിസ്റ്റർ ചെയ്ത വിലാസം"},
+  orgRegErr:{en:"Please give the registration type and registered address.",
+             ml:"രജിസ്ട്രേഷൻ തരവും രജിസ്റ്റർ ചെയ്ത വിലാസവും നൽകുക."},
+  eventHallQ:{en:"Do you have your own event hall / auditorium?",
+              ml:"താങ്കൾക്ക് സ്വന്തമായി ഒരു വേദി / ഹാൾ ഉണ്ടോ?"},
+  eventHallPh:{en:"Hall name, address, approximate capacity", ml:"ഹാളിന്റെ പേര്, വിലാസം, ഏകദേശ ശേഷി"},
+  rIsRegistered:{en:"Registered Body", ml:"രജിസ്റ്റർ ചെയ്ത സ്ഥാപനം"},
+  rRegType:{en:"Registration Type", ml:"രജിസ്ട്രേഷൻ തരം"},
+  rRegAddress:{en:"Registered Address", ml:"രജിസ്റ്റർ ചെയ്ത വിലാസം"},
+  rEventHall:{en:"Own Event Hall", ml:"സ്വന്തം വേദി/ഹാൾ"},
 };
 
 // English option value -> Malayalam label
@@ -372,7 +424,7 @@ const OPT_ML = {
   // who
   "Artist":"കലാകാരൻ / കലാകാരി","Teacher":"അധ്യാപകൻ / അധ്യാപിക",
   "Institution":"സ്ഥാപനം","Organization":"സംഘടന",
-  "Instrument Maker/Repairer":"ഉപകരണ നിർമ്മാതാവ് / അറ്റകുറ്റപ്പണിക്കാരൻ",
+  "Instrument Maker / Costume Maker":"വാദ്യോപകരണ നിർമ്മാണം / കോപ്പ് നിർമ്മാണം",
   // tags
   "Performer":"അവതാരകൻ","Trainer / Guru":"പരിശീലകൻ / ഗുരു",
   "Training institute":"പരിശീലന സ്ഥാപനം",
@@ -385,20 +437,23 @@ const OPT_ML = {
   "Kerala Percussion Arts":"കേരളത്തിന്റെ താളവാദ്യകലകൾ",
   // music categories
   "Carnatic Music":"കർണാടക സംഗീതം","Hindustani Music":"ഹിന്ദുസ്ഥാനി സംഗീതം",
-  "Sopana Sangeetham":"സോപാന സംഗീതം","Devotional":"ഭക്തിഗാനം","Bhajans":"ഭജൻ",
+  "Sopana Sangeetham":"സോപാന സംഗീതം","Devotional & Bhajans":"ഭക്തിഗാനം & ഭജൻ",
   // specializations
   "Vocal":"ആലാപനം","Violin":"വയലിൻ","Veena":"വീണ","Mrudangam":"മൃദംഗം",
   "Ghatam":"ഘടം","Ganjira":"ഗഞ്ചിറ","Morsing":"മോർസിംഗ്","Tabla":"തബല",
   "Sitar":"സിതാർ","Harmonium":"ഹാർമോണിയം","Flute":"ഓടക്കുഴൽ",
   "Nadaswaram":"നാദസ്വരം","Thavil":"തവിൽ","Dolak":"ദോലക്ക്","Pakhwaj":"പഖവാജ്",
+  "Santoor":"സന്തൂർ","Sarod":"സരോദ്",
+  "Chenda (Idamthala)":"ചെണ്ട (ഇടംതല)","Chenda (Valamthala)":"ചെണ്ട (വലംതല)",
   "Tamburu":"തംബുരു",
   // dance
   "Mohiniyattam":"മോഹിനിയാട്ടം","Bharatanatyam":"ഭരതനാട്യം","Kuchipudi":"കുച്ചിപ്പുടി",
-  "Kathak":"കഥക്","Odissi":"ഒഡീസി",
+  "Kathak":"കഥക്","Odissi":"ഒഡീസി","Dance Music":"നൃത്ത സംഗീതം","Nattuvangam":"നട്ടുവാംഗം",
   // traditional
   "Kathakali":"കഥകളി","Kathakali Music":"കഥകളി സംഗീതം","Koodiyattam":"കൂടിയാട്ടം",
   "Chakiar Koothu":"ചാക്യാർ കൂത്ത്","Nangiar Koothu":"നങ്ങ്യാർ കൂത്ത്",
-  "Ottamthullal":"ഓട്ടൻതുള്ളൽ","Krishnanattam":"കൃഷ്ണനാട്ടം","Tholppavakoothu":"തോൽപ്പാവക്കൂത്ത്",
+  "Ottamthullal":"ഓട്ടൻതുള്ളൽ","Krishnanattam":"കൃഷ്ണനാട്ടം","Ramanattam":"രാമനാട്ടം","Tholppavakoothu":"തോൽപ്പാവക്കൂത്ത്",
+  "Acting":"അഭിനയം","Chutti":"ചുട്ടി",
   // percussion
   "Thayambaka":"തായമ്പക","Melam":"മേളം","Panchavadyam":"പഞ്ചവാദ്യം",
   "Chenda":"ചെണ്ട","Thimila":"തിമില","Maddalam":"മദ്ദളം","Kombu":"കൊമ്പ്",
@@ -419,10 +474,14 @@ const OPT_ML = {
   "Navarathri Music-Dance festival":"നവരാത്രി സംഗീത-നൃത്ത ഉത്സവം",
   "Thyagaraja Aradhana":"ത്യാഗരാജ ആരാധന","Swati Tirunal Festival":"സ്വാതി തിരുനാൾ ഉത്സവം",
   // instrument types
-  "Leather":"തുകൽ വാദ്യങ്ങൾ","String":"തന്ത്രി വാദ്യങ്ങൾ","Wind":"സുഷിര വാദ്യങ്ങൾ",
+  "Leather":"തുകൽ വാദ്യങ്ങൾ","String":"തന്ത്രി വാദ്യങ്ങൾ","Wind":"സുഷിര വാദ്യങ്ങൾ","Costume":"കോപ്പ്",
+  "Instrument Maker":"വാദ്യോപകരണ നിർമ്മാണം","Costume Maker":"കോപ്പ് നിർമ്മാണം",
+  "Koothu":"കൂത്ത്","Krishnanattam/Ramanattam":"കൃഷ്ണനാട്ടം/രാമനാട്ടം",
+  "Classical Dance dresses and ornaments":"ശാസ്ത്രീയ നൃത്ത വേഷങ്ങളും ആഭരണങ്ങളും",
   // designations
   "Head of the Department":"വകുപ്പ് മേധാവി","Principal":"പ്രിൻസിപ്പൽ",
-  "Founder":"സ്ഥാപകൻ","Office Bearer":"ഭാരവാഹി","Member":"അംഗം","Other":"മറ്റുള്ളവ"
+  "Founder":"സ്ഥാപകൻ","Office Bearer":"ഭാരവാഹി","Member":"അംഗം","Other":"മറ്റുള്ളവ",
+  "Trust":"ട്രസ്റ്റ്","Society":"സൊസൈറ്റി"
 };
 
 function t(key, ...args){
@@ -455,40 +514,84 @@ const WHO_OPTIONS = [
   {v:"Teacher", tag:"Trainer / Guru"},
   {v:"Institution", tag:"Training institute"},
   {v:"Organization", tag:"Sabha / Society / Trust / Club"},
-  {v:"Instrument Maker/Repairer", tag:"Maker / Repairer"}
+  {v:"Instrument Maker / Costume Maker", tag:"Maker / Repairer"}
 ];
 
 const BUCKETS = {
   "Classical & Devotional Music":{
-    categories:["Carnatic Music","Hindustani Music","Sopana Sangeetham","Devotional","Bhajans"],
-    specializations:["Vocal","Violin","Veena","Mrudangam","Ghatam","Ganjira","Morsing","Tabla","Sitar","Harmonium","Flute","Nadaswaram","Thavil","Dolak","Pakhwaj"]},
-  "Classical Dance":{
-    categories:["Mohiniyattam","Bharatanatyam","Kuchipudi","Kathak","Odissi"],
-    specializations:[]},
-  "Kerala Traditional Classical Art Forms":{
-    categories:["Kathakali","Kathakali Music","Koodiyattam","Chakiar Koothu","Nangiar Koothu","Ottamthullal","Krishnanattam","Tholppavakoothu"],
-    // Specializations vary by category — Mizhavu only applies to the Sanskrit theatre forms.
+    categories:["Carnatic Music","Hindustani Music","Devotional & Bhajans","Sopana Sangeetham"],
+    // Specializations vary both by category AND by role (Artist vs Teacher).
     specializations:{
-      "Koodiyattam":["Mizhavu"],
-      "Chakiar Koothu":["Mizhavu"],
-      "Nangiar Koothu":["Mizhavu"]
+      "Artist":{
+        "Carnatic Music":["Vocal","Veena","Flute","Nadaswaram","Mrudangam","Thavil","Violin","Ghatam","Ganjira","Morsing"],
+        "Hindustani Music":["Vocal","Tabla","Harmonium","Sitar","Santoor","Sarod"],
+        "Devotional & Bhajans":["Vocal","Mrudangam","Dolak","Harmonium","Violin","Flute"],
+        "Sopana Sangeetham":["Vocal","Edakka"]
+      },
+      "Teacher":{
+        "Carnatic Music":["Vocal","Veena","Flute","Nadaswaram","Mrudangam","Thavil","Violin"],
+        "Hindustani Music":["Vocal","Tabla","Harmonium","Sitar","Santoor","Sarod"],
+        "Devotional & Bhajans":["Vocal","Mrudangam","Dolak","Harmonium"],
+        "Sopana Sangeetham":["Vocal","Edakka"]
+      }
+    }},
+  "Classical Dance":{
+    categories:["Mohiniyattam","Bharatanatyam","Kuchipudi","Dance Music","Kathak","Odissi"],
+    // Only Dance Music has a specialization step — the pure dance forms
+    // don't need one, since the category itself is the specialization.
+    specializations:{
+      "Dance Music":["Vocal","Violin","Mrudangam","Veena","Flute","Edakka"]
+    }},
+  "Kerala Traditional Classical Art Forms":{
+    categories:["Kathakali","Kathakali Music","Koodiyattam","Chakiar Koothu","Nangiar Koothu","Ottamthullal","Krishnanattam","Ramanattam","Tholppavakoothu"],
+    // Specializations vary by category.
+    specializations:{
+      "Kathakali":["Acting","Chutti"],
+      "Kathakali Music":["Vocal","Chenda","Maddalam"],
+      "Koodiyattam":["Acting","Mizhavu"],
+      "Chakiar Koothu":["Acting","Mizhavu"],
+      "Nangiar Koothu":["Acting","Mizhavu"],
+      "Krishnanattam":["Acting","Vocal","Chenda","Maddalam"],
+      "Ramanattam":["Acting","Vocal","Chenda","Maddalam"]
     }},
   "Kerala Percussion Arts":{
     categories:["Thayambaka","Melam","Panchavadyam"],
-    // Specializations vary by category.
+    // Specializations vary by category AND role — Artist gets the Chenda
+    // hand-position split, Teacher doesn't.
     specializations:{
-      "Thayambaka":["Chenda","Kombu","Kuzhal","Ilathalam"],
-      "Melam":["Chenda","Kombu","Kuzhal","Ilathalam"],
-      "Panchavadyam":["Thimila","Maddalam","Kombu","Edakka","Ilathalam"]
+      "Artist":{
+        "Thayambaka":["Chenda (Idamthala)","Chenda (Valamthala)","Ilathalam"],
+        "Melam":["Chenda (Idamthala)","Chenda (Valamthala)","Ilathalam","Kombu","Kuzhal"],
+        "Panchavadyam":["Thimila","Edakka","Maddalam","Kombu","Ilathalam"]
+      },
+      "Teacher":{
+        "Thayambaka":["Chenda","Ilathalam"],
+        "Melam":["Chenda","Ilathalam","Kombu","Kuzhal"],
+        "Panchavadyam":["Thimila","Edakka","Maddalam","Kombu","Ilathalam"]
+      }
     }}
 };
+// Categories where an "Others (please specify)" free-text box should
+// appear alongside the specialization chips.
+const OTHER_SPEC_CATEGORIES = {
+  "Classical & Devotional Music": ["Carnatic Music","Hindustani Music","Devotional & Bhajans"]
+};
+function categoryNeedsOtherSpec(bucket, categories){
+  const list = OTHER_SPEC_CATEGORIES[bucket] || [];
+  return categories.some(c=>list.includes(c));
+}
 const BUCKET_ORDER = Object.keys(BUCKETS);
 
 // Returns the flat list of valid specialization options for the currently
 // selected categories within a bucket. Handles both a flat array (same
 // options regardless of category) and a per-category object.
-function specOptionsFor(bucket, categories){
-  const spec = BUCKETS[bucket].specializations;
+function specOptionsFor(bucket, categories, who){
+  let spec = BUCKETS[bucket].specializations;
+  // Some buckets key specializations by role first (Artist/Teacher), since
+  // the choices differ by who's enrolling, not just by category.
+  if(spec && typeof spec === 'object' && !Array.isArray(spec) && spec[who] !== undefined){
+    spec = spec[who];
+  }
   if(Array.isArray(spec)) return spec;
   const set = new Set();
   categories.forEach(c=>{ (spec[c]||[]).forEach(s=>set.add(s)); });
@@ -501,11 +604,18 @@ const SUBJECTS_TAUGHT = ["Carnatic Vocal","Hindustani Vocal","Devotional & Bhaja
 const ORG_PROGRAM_TYPES = ["Classical Music","Classical Dance","Kathakali","Koodiyattam"];
 const ORG_FREQUENCY = ["Monthly","Bi-monthly","Quarterly","Annual festival"];
 const ORG_FESTIVALS = ["Navarathri Music-Dance festival","Thyagaraja Aradhana","Swati Tirunal Festival"];
-const INSTRUMENT_TYPES = ["Leather","String","Wind"];
+const INSTRUMENT_TYPES = ["Leather","String","Wind","Costume"];
 const INSTRUMENTS_BY_TYPE = {
   "Leather":["Mrudangam","Tabla","Chenda","Thimila","Maddalam","Edakka","Thavil","Ganjira","Dolak"],
   "String":["Veena","Violin","Tamburu"],
-  "Wind":["Harmonium","Flute"]
+  "Wind":["Harmonium","Flute"],
+  "Costume":["Kathakali","Koodiyattam","Koothu","Krishnanattam/Ramanattam","Classical Dance dresses and ornaments","Tholppavakoothu"]
+};
+
+const MAKER_CATEGORIES = ["Instrument Maker","Costume Maker"];
+const MAKER_SPECIALIZATIONS = {
+  "Instrument Maker":["Mrudangam","Tabla","Chenda","Thimila","Maddalam","Edakka","Thavil","Ganjira","Dolak","Veena","Violin","Tamburu","Harmonium","Flute"],
+  "Costume Maker":["Kathakali","Koodiyattam","Koothu","Krishnanattam/Ramanattam","Classical Dance dresses and ornaments","Tholppavakoothu"]
 };
 
 const FLOWS = {
@@ -513,7 +623,7 @@ const FLOWS = {
   "Teacher":                   ["lang","who","contact","artform","category","specialization","teacher","review"],
   "Institution":               ["lang","who","contact","institution","review"],
   "Organization":              ["lang","who","contact","organization","review"],
-  "Instrument Maker/Repairer": ["lang","who","contact","instrumentMaker","review"]
+  "Instrument Maker / Costume Maker": ["lang","who","contact","makerCategory","makerSpecialization","review"]
 };
 
 // ============ STATE ============
@@ -522,20 +632,24 @@ function blankState(){
     language:"", who:"",
     name:"", mobile:"", whatsapp:"", sameAsMobile:false,
     address:"", pincode:"", email:"", socialMedia:"",
-    bucket:"", categories:[], specializations:[],
-    air:"", awards:"", books:"",
-    teachesPrivately:false, teachesPrivatelyDetails:"",
+    bucket:"", categories:[], specializations:[], specializationOther:"",
+    yearsExperience:"", air:"", awards:"", books:"",
+    teachesPrivately:false,
     runsPrivate:false, runsPrivateDetails:"",
-    worksAt:false, worksAtDetails:"",
+    worksAtInstitution:false,
     orgMember:false, orgMemberDetails:"",
     designation:"", designationOther:"",
+    teacherInstType:"", teachesPrivateClasses:false, teachesPrivateClassesModes:[],
     instName:"", instAddress:"", instEmail:"", instPhone:"", instMobile:"", instWebsite:"",
     yearEstablished:"", subjectsTaught:[], subjectsTaughtOther:"",
     hasBranches:false, branchCount:"", branchAddresses:"",
     eduPrograms:[],
     programTypes:[], programTypesOther:"", programFrequency:"",
     festivals:[], festivalsOther:"",
-    instrumentTypes:[], leatherInstruments:[], stringInstruments:[], windInstruments:[],
+    isRegistered:false, registrationType:"", registrationTypeOther:"", registeredAddress:"",
+    hasEventHall:false, eventHallDetails:"",
+    instrumentTypes:[], leatherInstruments:[], stringInstruments:[], windInstruments:[], costumeInstruments:[],
+    makerCategory:"", makerSpecializations:[],
     consent:false
   };
 }
@@ -583,7 +697,8 @@ const RENDERERS = {
   category: renderCategory, specialization: renderSpecialization,
   artistExtras: renderArtistExtras, teacher: renderTeacher,
   institution: renderInstitution, organization: renderOrganization,
-  instrumentMaker: renderInstrumentMaker, review: renderReview
+  instrumentMaker: renderInstrumentMaker, makerCategory: renderMakerCategory,
+  makerSpecialization: renderMakerSpecialization, review: renderReview
 };
 function render(){ applyChrome(); renderProgress(); RENDERERS[currentStep()](); }
 
@@ -591,6 +706,34 @@ function render(){ applyChrome(); renderProgress(); RENDERERS[currentStep()](); 
 function esc(str){
   if(str === undefined || str === null) return "";
   return String(str).replace(/[&<>"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+}
+
+// ---- Mobile number validation ----
+// Normalizes to a bare 10-digit Indian mobile number (stripping +91/91/0
+// prefixes and any spacing/punctuation), or returns null if it can't.
+function normalizeIndianMobile(raw){
+  let d = String(raw||'').replace(/\D/g,'');
+  if(d.length===12 && d.startsWith('91')) d = d.slice(2);
+  else if(d.length===11 && d.startsWith('0')) d = d.slice(1);
+  return d.length===10 ? d : null;
+}
+function isObviouslyFakeNumber(d){
+  if(/^(\d)\1{9}$/.test(d)) return true;        // all one digit, e.g. 9999999999
+  if(/^(\d{2})\1{4}$/.test(d)) return true;      // repeating pair, e.g. 9898989898
+  let asc=true, desc=true;
+  for(let i=1;i<d.length;i++){
+    const diff = d.charCodeAt(i)-d.charCodeAt(i-1);
+    if(diff!==1) asc=false;
+    if(diff!==-1) desc=false;
+  }
+  return asc || desc;                             // e.g. 0123456789 or 9876543210
+}
+function isValidIndianMobile(raw){
+  const d = normalizeIndianMobile(raw);
+  if(!d) return false;
+  if(!/^[6-9]/.test(d)) return false;             // Indian mobiles start 6-9
+  if(isObviouslyFakeNumber(d)) return false;
+  return true;
 }
 function val(id){ const el = document.getElementById(id); return el ? el.value.trim() : ""; }
 function checked(id){ const el = document.getElementById(id); return el ? el.checked : false; }
@@ -600,10 +743,16 @@ function navHtml(nextKey){
     <button class="btn-primary" id="nextBtn">${esc(t(nextKey||'btnContinue'))}</button>
   </div>`;
 }
-function wireNav(onNext, onBack){
+function wireNav(onNext, onBack, backDelta){
   const b = document.getElementById('backBtn');
-  if(b) b.onclick = ()=>{ if(onBack) onBack(); go(-1); };
+  if(b) b.onclick = ()=>{ if(onBack) onBack(); go(-(backDelta||1)); };
   document.getElementById('nextBtn').onclick = onNext;
+}
+// How far Back should jump from the step right after "specialization" —
+// 2 if that step was skipped forward (no specialization options existed
+// for the chosen categories), otherwise the normal 1.
+function backStepsAfterSpecialization(){
+  return specOptionsFor(state.bucket, state.categories, state.who).length===0 ? 2 : 1;
 }
 function chipGroup(containerId, options, selectedArr, onChange){
   const wrap = document.getElementById(containerId);
@@ -647,19 +796,16 @@ function renderLang(){
       <div class="option-card ${lang==='ml'?'selected':''}" data-l="ml" style="padding:24px 11px;font-family:'Noto Sans Malayalam',sans-serif;">മലയാളം</div>
     </div>
     <div class="error-text" id="langError">Please choose a language. / ഭാഷ തിരഞ്ഞെടുക്കുക.</div>
-    <div class="nav-buttons"><button class="btn-primary" id="nextBtn">${lang?esc(t('btnContinue')):'Continue / തുടരുക'}</button></div>
   `;
   cardArea.querySelectorAll('#langGrid .option-card').forEach(el=>{
     el.onclick = ()=>{
       lang = el.dataset.l;
       state.language = lang==='ml' ? 'Malayalam' : 'English';
-      render();
+      applyChrome();
+      cardArea.querySelectorAll('#langGrid .option-card').forEach(c=>c.classList.toggle('selected', c===el));
+      setTimeout(()=>{ if(currentStep()==='lang') go(1); }, 280);
     };
   });
-  document.getElementById('nextBtn').onclick = ()=>{
-    if(!lang){ showErr('langError'); return; }
-    go(1);
-  };
 }
 
 // ============ STEP: WHO ============
@@ -669,7 +815,7 @@ function renderWho(){
     <p class="sub">${esc(t('whoSub'))}</p>
     <div class="option-grid" id="whoGrid"></div>
     <div class="error-text" id="whoError">${esc(t('whoErr'))}</div>
-    ${navHtml()}
+    ${stepIndex>0 ? `<div class="nav-buttons"><button class="btn-secondary" id="backBtn">${esc(t('btnBack'))}</button></div>` : ''}
   `;
   const grid = document.getElementById('whoGrid');
   WHO_OPTIONS.forEach(o=>{
@@ -684,11 +830,14 @@ function renderWho(){
         state = Object.assign(blankState(), keep);
       }
       state.who = o.v;
-      renderProgress(); renderWho();
+      grid.querySelectorAll('.option-card').forEach(c=>c.classList.remove('selected'));
+      el.classList.add('selected');
+      setTimeout(()=>{ if(currentStep()==='who') go(1); }, 280);
     };
     grid.appendChild(el);
   });
-  wireNav(()=>{ if(!state.who){ showErr('whoError'); return; } go(1); });
+  const b = document.getElementById('backBtn');
+  if(b) b.onclick = ()=>go(-1);
 }
 
 // ============ STEP: CONTACT ============
@@ -741,7 +890,7 @@ function renderContact(){
   };
   wireNav(()=>{
     save();
-    const phoneOk = v => /^[0-9+\-\s]{10,14}$/.test(v);
+    const phoneOk = v => isValidIndianMobile(v);
     if(!state.name || !phoneOk(state.mobile) || !phoneOk(state.whatsapp) || !state.address ||
        !/^[0-9]{6}$/.test(state.pincode) || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(state.email)){
       showErr('contactError', t('contactErr')); return;
@@ -758,7 +907,7 @@ function renderArtform(){
     <p class="sub">${esc(t('artformSub'))}</p>
     <div id="bucketList"></div>
     <div class="error-text" id="bucketError">${esc(t('artformErr'))}</div>
-    ${navHtml()}
+    <div class="nav-buttons"><button class="btn-secondary" id="backBtn">${esc(t('btnBack'))}</button></div>
   `;
   const list = document.getElementById('bucketList');
   BUCKET_ORDER.forEach(b=>{
@@ -768,11 +917,14 @@ function renderArtform(){
     el.innerHTML = `${esc(opt(b))}${optSub(b)}`;
     el.onclick = ()=>{
       if(state.bucket !== b){ state.categories = []; state.specializations = []; }
-      state.bucket = b; renderArtform();
+      state.bucket = b;
+      list.querySelectorAll('.option-card').forEach(c=>c.classList.remove('selected'));
+      el.classList.add('selected');
+      setTimeout(()=>{ if(currentStep()==='artform') go(1); }, 280);
     };
     list.appendChild(el);
   });
-  wireNav(()=>{ if(!state.bucket){ showErr('bucketError'); return; } go(1); });
+  document.getElementById('backBtn').onclick = ()=>go(-1);
 }
 
 // ============ STEP: CATEGORY ============
@@ -787,7 +939,7 @@ function renderCategory(){
   chipGroup('catWrap', BUCKETS[state.bucket].categories, state.categories, renderCategory);
   wireNav(()=>{
     if(state.categories.length===0){ showErr('catError'); return; }
-    const validOpts = specOptionsFor(state.bucket, state.categories);
+    const validOpts = specOptionsFor(state.bucket, state.categories, state.who);
     state.specializations = state.specializations.filter(s=>validOpts.includes(s));
     if(validOpts.length===0){
       stepIndex += 2; render(); window.scrollTo({top:0,behavior:'smooth'});
@@ -797,15 +949,21 @@ function renderCategory(){
 
 // ============ STEP: SPECIALIZATION ============
 function renderSpecialization(){
+  const showOther = categoryNeedsOtherSpec(state.bucket, state.categories);
   cardArea.innerHTML = `
     <h2>${esc(t('specTitle'))}${ml('specTitle')}</h2>
     <p class="sub">${esc(t('specSub'))}</p>
     <div class="chip-wrap" id="specWrap"></div>
+    ${showOther ? `<input type="text" id="fSpecOther" value="${esc(state.specializationOther)}" placeholder="${esc(t('fOtherPh'))}" style="margin-top:11px;">` : ''}
     <div class="error-text" id="specError">${esc(t('specErr'))}</div>
     ${navHtml()}
   `;
-  chipGroup('specWrap', specOptionsFor(state.bucket, state.categories), state.specializations, renderSpecialization);
-  wireNav(()=>{ if(state.specializations.length===0){ showErr('specError'); return; } go(1); });
+  chipGroup('specWrap', specOptionsFor(state.bucket, state.categories, state.who), state.specializations, renderSpecialization);
+  wireNav(()=>{
+    if(showOther) state.specializationOther = val('fSpecOther');
+    if(state.specializations.length===0 && !(showOther && state.specializationOther)){ showErr('specError'); return; }
+    go(1);
+  });
 }
 
 // ============ STEP: ARTIST EXTRAS ============
@@ -814,21 +972,27 @@ function renderArtistExtras(){
     <h2>${esc(t('extrasTitle'))}${ml('extrasTitle')}</h2>
     <p class="sub">${esc(t('extrasSub'))}</p>
 
+    <label class="field-label">${esc(t('fYearsExp'))} <span class="req">*</span>${ml('fYearsExp')}</label>
+    <input type="tel" id="fYearsExp" value="${esc(state.yearsExperience)}" placeholder="${esc(t('fYearsExpPh'))}">
+
     <label class="field-label">${esc(t('fAir'))} <span class="opt">${esc(t('optional'))}</span>${ml('fAir')}</label>
     <input type="text" id="fAir" value="${esc(state.air)}" placeholder="${esc(t('fAirPh'))}">
 
     <label class="field-label">${esc(t('fAwards'))} <span class="opt">${esc(t('optional'))}</span>${ml('fAwards')}</label>
     <textarea id="fAwards">${esc(state.awards)}</textarea>
 
-    <label class="field-label">${esc(t('fBooks'))} <span class="opt">${esc(t('optional'))}</span>${ml('fBooks')}</label>
+    <label class="field-label">${esc(t('fBooks'))}${ml('fBooks')}</label>
     <textarea id="fBooks">${esc(state.books)}</textarea>
+
+    <div class="error-text" id="extrasError">${esc(t('extrasErr'))}</div>
 
     <div class="check-row">
       <input type="checkbox" id="fTeachesPrivately" ${state.teachesPrivately?'checked':''}>
-      <label for="fTeachesPrivately">${esc(t('fTeachPriv'))}${ml('fTeachPriv')}</label>
+      <label for="fTeachesPrivately">${esc(t('artistTeachesPrivQ'))}${ml('artistTeachesPrivQ')}</label>
     </div>
     <div class="conditional ${state.teachesPrivately?'show':''}" id="teachesPrivatelyBox">
-      <textarea id="fTeachesPrivatelyDetails" placeholder="${esc(t('fTeachPrivPh'))}">${esc(state.teachesPrivatelyDetails)}</textarea>
+      <label class="field-label" style="margin-top:0;">${esc(t('teacherPrivClassesModeQ'))}</label>
+      <div class="chip-wrap" id="artistPrivModeWrap"></div>
     </div>
 
     <div class="check-row">
@@ -840,11 +1004,20 @@ function renderArtistExtras(){
     </div>
 
     <div class="check-row">
-      <input type="checkbox" id="fWorksAt" ${state.worksAt?'checked':''}>
-      <label for="fWorksAt">${esc(t('fWorksAt'))}${ml('fWorksAt')}</label>
+      <input type="checkbox" id="fWorksAtInstitution" ${state.worksAtInstitution?'checked':''}>
+      <label for="fWorksAtInstitution">${esc(t('artistWorksAtQ'))}${ml('artistWorksAtQ')}</label>
     </div>
-    <div class="conditional ${state.worksAt?'show':''}" id="worksAtBox">
-      <textarea id="fWorksAtDetails" placeholder="${esc(t('fWorksAtPh'))}">${esc(state.worksAtDetails)}</textarea>
+    <div class="conditional ${state.worksAtInstitution?'show':''}" id="worksAtInstitutionBox">
+      <label class="field-label" style="margin-top:0;">${esc(t('teacherInstTypeQ'))} <span class="req">*</span>${ml('teacherInstTypeQ')}</label>
+      <select id="fTeacherInstType">
+        <option value="">${esc(t('selectPrompt'))}</option>
+        <option value="Govt./Govt.-aided" ${state.teacherInstType==='Govt./Govt.-aided'?'selected':''}>${esc(t('teacherInstTypeGovt'))}</option>
+        <option value="Private" ${state.teacherInstType==='Private'?'selected':''}>${esc(t('teacherInstTypePrivate'))}</option>
+      </select>
+      <label class="field-label">${esc(t('fInstName'))} <span class="req">*</span>${ml('fInstName')}</label>
+      <input type="text" id="fInstName" value="${esc(state.instName)}">
+      <label class="field-label">${esc(t('fInstAddress'))} <span class="req">*</span>${ml('fInstAddress')}</label>
+      <textarea id="fInstAddress">${esc(state.instAddress)}</textarea>
     </div>
 
     <div class="check-row">
@@ -859,17 +1032,28 @@ function renderArtistExtras(){
   `;
   wireConditional('fTeachesPrivately','teachesPrivatelyBox');
   wireConditional('fRunsPrivate','runsPrivateBox');
-  wireConditional('fWorksAt','worksAtBox');
+  wireConditional('fWorksAtInstitution','worksAtInstitutionBox');
   wireConditional('fOrgMember','orgMemberBox');
+  const redraw = ()=> chipGroup('artistPrivModeWrap', ["Online","Offline"], state.teachesPrivateClassesModes, redraw);
+  redraw();
   const save = ()=>{
+    state.yearsExperience = val('fYearsExp');
     state.air = val('fAir'); state.awards = val('fAwards'); state.books = val('fBooks');
     state.teachesPrivately = checked('fTeachesPrivately');
-    state.teachesPrivatelyDetails = val('fTeachesPrivatelyDetails');
     state.runsPrivate = checked('fRunsPrivate'); state.runsPrivateDetails = val('fRunsPrivateDetails');
-    state.worksAt = checked('fWorksAt'); state.worksAtDetails = val('fWorksAtDetails');
+    state.worksAtInstitution = checked('fWorksAtInstitution');
+    state.teacherInstType = val('fTeacherInstType');
+    state.instName = val('fInstName'); state.instAddress = val('fInstAddress');
     state.orgMember = checked('fOrgMember'); state.orgMemberDetails = val('fOrgMemberDetails');
   };
-  wireNav(()=>{ save(); go(1); }, save);
+  wireNav(()=>{
+    save();
+    if(!/^[0-9]{1,2}$/.test(state.yearsExperience)){ showErr('extrasError'); return; }
+    if(state.worksAtInstitution && (!state.teacherInstType || !state.instName || !state.instAddress)){
+      showErr('extrasError', t('artistWorksAtErr')); return;
+    }
+    go(1);
+  }, save, backStepsAfterSpecialization());
 }
 
 // ============ STEP: TEACHER ============
@@ -884,14 +1068,30 @@ function renderTeacher(){
       <input type="text" id="fDesignationOther" value="${esc(state.designationOther)}" placeholder="${esc(t('fDesignationPh'))}">
     </div>
 
+    <label class="field-label">${esc(t('teacherInstTypeQ'))} <span class="req">*</span>${ml('teacherInstTypeQ')}</label>
+    <select id="fTeacherInstType">
+      <option value="">${esc(t('selectPrompt'))}</option>
+      <option value="Govt./Govt.-aided" ${state.teacherInstType==='Govt./Govt.-aided'?'selected':''}>${esc(t('teacherInstTypeGovt'))}</option>
+      <option value="Private" ${state.teacherInstType==='Private'?'selected':''}>${esc(t('teacherInstTypePrivate'))}</option>
+    </select>
+
     <label class="field-label">${esc(t('fInstName'))} <span class="req">*</span>${ml('fInstName')}</label>
     <input type="text" id="fInstName" value="${esc(state.instName)}">
 
-    <label class="field-label">${esc(t('fInstAddress'))} <span class="opt">${esc(t('optional'))}</span>${ml('fInstAddress')}</label>
+    <label class="field-label">${esc(t('fInstAddress'))} <span class="req">*</span>${ml('fInstAddress')}</label>
     <textarea id="fInstAddress">${esc(state.instAddress)}</textarea>
 
     <label class="field-label">${esc(t('fInstEmail'))} <span class="opt">${esc(t('optional'))}</span>${ml('fInstEmail')}</label>
     <input type="email" id="fInstEmail" value="${esc(state.instEmail)}">
+
+    <div class="check-row">
+      <input type="checkbox" id="fTeachesPrivClasses" ${state.teachesPrivateClasses?'checked':''}>
+      <label for="fTeachesPrivClasses">${esc(t('teacherPrivClassesQ'))}${ml('teacherPrivClassesQ')}</label>
+    </div>
+    <div class="conditional ${state.teachesPrivateClasses?'show':''}" id="privClassesModeBox">
+      <label class="field-label" style="margin-top:0;">${esc(t('teacherPrivClassesModeQ'))}</label>
+      <div class="chip-wrap" id="privModeWrap"></div>
+    </div>
 
     <label class="field-label">${esc(t('fEduPrograms'))} <span class="opt">${esc(t('optional'))}</span>${ml('fEduPrograms')}</label>
     <div class="chip-wrap" id="eduWrap"></div>
@@ -903,18 +1103,27 @@ function renderTeacher(){
     state.designation = e.target.value;
     document.getElementById('designationOtherBox').classList.toggle('show', e.target.value==='Other');
   };
-  const redraw = ()=> chipGroup('eduWrap', EDU_PROGRAMS, state.eduPrograms, redraw);
+  document.getElementById('fTeachesPrivClasses').onchange = e=>
+    document.getElementById('privClassesModeBox').classList.toggle('show', e.target.checked);
+  const redraw = ()=>{
+    chipGroup('eduWrap', EDU_PROGRAMS, state.eduPrograms, redraw);
+    chipGroup('privModeWrap', ["Online","Offline"], state.teachesPrivateClassesModes, redraw);
+  };
   redraw();
   const save = ()=>{
     state.designation = val('fDesignation'); state.designationOther = val('fDesignationOther');
+    state.teacherInstType = val('fTeacherInstType');
     state.instName = val('fInstName'); state.instAddress = val('fInstAddress');
     state.instEmail = val('fInstEmail');
+    state.teachesPrivateClasses = checked('fTeachesPrivClasses');
   };
   wireNav(()=>{
     save();
-    if(!state.designation || !state.instName){ showErr('teacherError', t('teacherErr')); return; }
+    if(!state.designation || !state.teacherInstType || !state.instName || !state.instAddress){
+      showErr('teacherError', t('teacherErr')); return;
+    }
     go(1);
-  }, save);
+  }, save, backStepsAfterSpecialization());
 }
 
 // ============ STEP: INSTITUTION ============
@@ -965,6 +1174,14 @@ function renderInstitution(){
     <label class="field-label">${esc(t('fProgTypes'))} <span class="opt">${esc(t('optional'))}</span>${ml('fProgTypes')}</label>
     <div class="chip-wrap" id="eduWrap"></div>
 
+    <div class="check-row">
+      <input type="checkbox" id="fHasEventHall" ${state.hasEventHall?'checked':''}>
+      <label for="fHasEventHall">${esc(t('eventHallQ'))} <span class="opt">${esc(t('optional'))}</span>${ml('eventHallQ')}</label>
+    </div>
+    <div class="conditional ${state.hasEventHall?'show':''}" id="eventHallBox">
+      <textarea id="fEventHallDetails" placeholder="${esc(t('eventHallPh'))}">${esc(state.eventHallDetails)}</textarea>
+    </div>
+
     <div class="error-text" id="instError"></div>
     ${navHtml('btnReview')}
   `;
@@ -973,6 +1190,7 @@ function renderInstitution(){
     document.getElementById('designationOtherBox').classList.toggle('show', e.target.value==='Other');
   };
   wireConditional('fHasBranches','branchesBox');
+  wireConditional('fHasEventHall','eventHallBox');
   const redraw = ()=>{
     chipGroup('subjWrap', SUBJECTS_TAUGHT, state.subjectsTaught, redraw);
     chipGroup('eduWrap', EDU_PROGRAMS, state.eduPrograms, redraw);
@@ -986,6 +1204,7 @@ function renderInstitution(){
     state.subjectsTaughtOther = val('fSubjOther');
     state.hasBranches = checked('fHasBranches');
     state.branchCount = val('fBranchCount'); state.branchAddresses = val('fBranchAddresses');
+    state.hasEventHall = checked('fHasEventHall'); state.eventHallDetails = val('fEventHallDetails');
   };
   wireNav(()=>{
     save();
@@ -1015,6 +1234,28 @@ function renderOrganization(){
 
     <label class="field-label">${esc(t('fOrgAddress'))} <span class="req">*</span>${ml('fOrgAddress')}</label>
     <textarea id="fInstAddress">${esc(state.instAddress)}</textarea>
+
+    <div class="check-row">
+      <input type="checkbox" id="fIsRegistered" ${state.isRegistered?'checked':''}>
+      <label for="fIsRegistered">${esc(t('orgRegQ'))}${ml('orgRegQ')}</label>
+    </div>
+    <div class="conditional ${state.isRegistered?'show':''}" id="registeredBox">
+      <label class="field-label" style="margin-top:0;">${esc(t('orgRegType'))} <span class="req">*</span>${ml('orgRegType')}</label>
+      <select id="fRegType">${selectOptions(["Trust","Society","Other"], state.registrationType)}</select>
+      <div class="conditional ${state.registrationType==='Other'?'show':''}" id="regTypeOtherBox">
+        <input type="text" id="fRegTypeOther" value="${esc(state.registrationTypeOther)}" placeholder="${esc(t('orgRegTypeOtherPh'))}">
+      </div>
+      <label class="field-label">${esc(t('orgRegAddress'))} <span class="req">*</span>${ml('orgRegAddress')}</label>
+      <textarea id="fRegAddress">${esc(state.registeredAddress)}</textarea>
+    </div>
+
+    <div class="check-row">
+      <input type="checkbox" id="fHasEventHall" ${state.hasEventHall?'checked':''}>
+      <label for="fHasEventHall">${esc(t('eventHallQ'))}${ml('eventHallQ')}</label>
+    </div>
+    <div class="conditional ${state.hasEventHall?'show':''}" id="eventHallBox">
+      <textarea id="fEventHallDetails" placeholder="${esc(t('eventHallPh'))}">${esc(state.eventHallDetails)}</textarea>
+    </div>
 
     <label class="field-label">${esc(t('fOrgEmail'))} <span class="req">*</span>${ml('fOrgEmail')}</label>
     <input type="email" id="fInstEmail" value="${esc(state.instEmail)}">
@@ -1049,6 +1290,15 @@ function renderOrganization(){
     state.designation = e.target.value;
     document.getElementById('designationOtherBox').classList.toggle('show', e.target.value==='Other');
   };
+  document.getElementById('fIsRegistered').onchange = e=>
+    document.getElementById('registeredBox').classList.toggle('show', e.target.checked);
+  document.getElementById('fHasEventHall').onchange = e=>
+    document.getElementById('eventHallBox').classList.toggle('show', e.target.checked);
+  const regTypeSel = document.getElementById('fRegType');
+  if(regTypeSel) regTypeSel.onchange = e=>{
+    state.registrationType = e.target.value;
+    document.getElementById('regTypeOtherBox').classList.toggle('show', e.target.value==='Other');
+  };
   const redraw = ()=>{
     chipGroup('progWrap', ORG_PROGRAM_TYPES, state.programTypes, redraw);
     chipGroup('festWrap', ORG_FESTIVALS, state.festivals, redraw);
@@ -1062,6 +1312,10 @@ function renderOrganization(){
     state.instWebsite = val('fInstWebsite'); state.yearEstablished = val('fYear');
     state.programTypesOther = val('fProgOther'); state.programFrequency = val('fFrequency');
     state.festivalsOther = val('fFestOther');
+    state.isRegistered = checked('fIsRegistered');
+    state.registrationType = val('fRegType'); state.registrationTypeOther = val('fRegTypeOther');
+    state.registeredAddress = val('fRegAddress');
+    state.hasEventHall = checked('fHasEventHall'); state.eventHallDetails = val('fEventHallDetails');
   };
   wireNav(()=>{
     save();
@@ -1069,6 +1323,10 @@ function renderOrganization(){
        !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(state.instEmail) || !/^[0-9]{4}$/.test(state.yearEstablished) ||
        (state.programTypes.length===0 && !state.programTypesOther)){
       showErr('orgError', t('orgErr')); return;
+    }
+    if(state.isRegistered && ((!state.registrationType) ||
+       (state.registrationType==='Other' && !state.registrationTypeOther) || !state.registeredAddress)){
+      showErr('orgError', t('orgRegErr')); return;
     }
     go(1);
   }, save);
@@ -1095,6 +1353,10 @@ function renderInstrumentMaker(){
       <label class="field-label" style="margin-top:0;">${esc(t('qWind'))}</label>
       <div class="chip-wrap" id="windWrap"></div>
     </div>
+    <div id="costumeBox" class="conditional ${state.instrumentTypes.includes('Costume')?'show':''}">
+      <label class="field-label" style="margin-top:0;">${esc(t('qCostume'))}</label>
+      <div class="chip-wrap" id="costumeWrap"></div>
+    </div>
 
     <div class="error-text" id="makerError">${esc(t('makerErr'))}</div>
     ${navHtml('btnReview')}
@@ -1104,9 +1366,55 @@ function renderInstrumentMaker(){
     chipGroup('leatherWrap', INSTRUMENTS_BY_TYPE.Leather, state.leatherInstruments, redraw);
     chipGroup('stringWrap', INSTRUMENTS_BY_TYPE.String, state.stringInstruments, redraw);
     chipGroup('windWrap', INSTRUMENTS_BY_TYPE.Wind, state.windInstruments, redraw);
+    chipGroup('costumeWrap', INSTRUMENTS_BY_TYPE.Costume, state.costumeInstruments, redraw);
   };
   redraw();
   wireNav(()=>{ if(state.instrumentTypes.length===0){ showErr('makerError'); return; } go(1); });
+}
+
+// ============ STEP: MAKER CATEGORY (auto-advance) ============
+function renderMakerCategory(){
+  cardArea.innerHTML = `
+    <h2>${esc(t('makerCatTitle'))}${ml('makerCatTitle')}</h2>
+    <p class="sub">${esc(t('makerCatSub'))}</p>
+    <div class="option-grid" id="makerCatGrid"></div>
+    <div class="error-text" id="makerCatError">${esc(t('makerCatErr'))}</div>
+    <div class="nav-buttons"><button class="btn-secondary" id="backBtn">${esc(t('btnBack'))}</button></div>
+  `;
+  const grid = document.getElementById('makerCatGrid');
+  MAKER_CATEGORIES.forEach(cat=>{
+    const el = document.createElement('div');
+    el.className = 'option-card' + (state.makerCategory===cat ? ' selected':'');
+    el.style.cssText = 'width:100%;margin-bottom:11px;text-align:left;padding:17px;';
+    el.innerHTML = `${esc(opt(cat))}${optSub(cat)}`;
+    el.onclick = ()=>{
+      if(state.makerCategory !== cat){ state.makerSpecializations = []; }
+      state.makerCategory = cat;
+      grid.querySelectorAll('.option-card').forEach(c=>c.classList.remove('selected'));
+      el.classList.add('selected');
+      setTimeout(()=>{ if(currentStep()==='makerCategory') go(1); }, 280);
+    };
+    grid.appendChild(el);
+  });
+  document.getElementById('backBtn').onclick = ()=>go(-1);
+}
+
+// ============ STEP: MAKER SPECIALIZATION ============
+function renderMakerSpecialization(){
+  const isCostume = state.makerCategory === 'Costume Maker';
+  const options = MAKER_SPECIALIZATIONS[state.makerCategory] || [];
+  cardArea.innerHTML = `
+    <h2>${esc(t('makerSpecTitle'))}${ml('makerSpecTitle')}</h2>
+    <p class="sub">${esc(t(isCostume ? 'makerSpecSubCostume' : 'makerSpecSubInstr'))}</p>
+    <div class="chip-wrap" id="makerSpecWrap"></div>
+    <div class="error-text" id="makerSpecError">${esc(t('makerSpecErr'))}</div>
+    ${navHtml('btnReview')}
+  `;
+  chipGroup('makerSpecWrap', options, state.makerSpecializations, renderMakerSpecialization);
+  wireNav(()=>{
+    if(state.makerSpecializations.length===0){ showErr('makerSpecError'); return; }
+    go(1);
+  });
 }
 
 // ============ REVIEW ============
@@ -1124,9 +1432,11 @@ function summaryRows(){
   if(state.socialMedia) R.push([t('rSocial'), state.socialMedia]);
   if(state.bucket) R.push([t('rArtForm'), opt(state.bucket)]);
   if(state.categories.length) R.push([t('rCategory'), joinOpts(state.categories)]);
-  if(state.specializations.length) R.push([t('rSpecialization'), joinOpts(state.specializations)]);
+  if(state.specializations.length || state.specializationOther)
+    R.push([t('rSpecialization'), [joinOpts(state.specializations), state.specializationOther].filter(Boolean).join(", ")]);
   if(state.designation) R.push([t('rDesignation'),
     state.designation==='Other' ? state.designationOther : opt(state.designation)]);
+  if(state.teacherInstType) R.push([t('rTeacherInstType'), state.teacherInstType==='Govt./Govt.-aided' ? t('teacherInstTypeGovt') : t('teacherInstTypePrivate')]);
   if(state.instName) R.push([state.who==='Organization'?t('rOrganization'):t('rInstitution'), state.instName]);
   if(state.instAddress) R.push([t('rTheirAddress'), state.instAddress]);
   if(state.instEmail) R.push([t('rTheirEmail'), state.instEmail]);
@@ -1134,6 +1444,14 @@ function summaryRows(){
   if(state.instMobile) R.push([t('rTheirMobile'), state.instMobile]);
   if(state.instWebsite) R.push([t('rWebsite'), state.instWebsite]);
   if(state.yearEstablished) R.push([t('rEstablished'), state.yearEstablished]);
+  if(state.who==='Organization'){
+    R.push([t('rIsRegistered'), state.isRegistered ? t('yes') : t('no')]);
+    if(state.isRegistered){
+      R.push([t('rRegType'), state.registrationType==='Other' ? state.registrationTypeOther : opt(state.registrationType)]);
+      R.push([t('rRegAddress'), state.registeredAddress]);
+    }
+  }
+  if(state.hasEventHall) R.push([t('rEventHall'), state.eventHallDetails || t('yes')]);
   if(state.subjectsTaught.length || state.subjectsTaughtOther)
     R.push([t('rSubjects'), [joinOpts(state.subjectsTaught), state.subjectsTaughtOther].filter(Boolean).join(", ")]);
   if(state.hasBranches) R.push([t('rBranches'),
@@ -1144,16 +1462,20 @@ function summaryRows(){
   if(state.festivals.length || state.festivalsOther)
     R.push([t('rFestivals'), [joinOpts(state.festivals), state.festivalsOther].filter(Boolean).join(", ")]);
   if(state.eduPrograms.length) R.push([t('rEduPrograms'), joinOpts(state.eduPrograms)]);
+  if(state.teachesPrivateClasses) R.push([t('rTeachesPrivClasses'), joinOpts(state.teachesPrivateClassesModes) || t('yes')]);
   if(state.instrumentTypes.length) R.push([t('rInstrTypes'), joinOpts(state.instrumentTypes)]);
   if(state.leatherInstruments.length) R.push([t('rLeather'), joinOpts(state.leatherInstruments)]);
   if(state.stringInstruments.length) R.push([t('rString'), joinOpts(state.stringInstruments)]);
   if(state.windInstruments.length) R.push([t('rWind'), joinOpts(state.windInstruments)]);
+  if(state.costumeInstruments.length) R.push([t('rCostume'), joinOpts(state.costumeInstruments)]);
+  if(state.makerCategory) R.push([t('rMakerCategory'), opt(state.makerCategory)]);
+  if(state.makerSpecializations.length) R.push([t('rMakerSpecialization'), joinOpts(state.makerSpecializations)]);
+  if(state.yearsExperience) R.push([t('rYearsExp'), state.yearsExperience]);
   if(state.air) R.push([t('rAir'), state.air]);
   if(state.awards) R.push([t('rAwards'), state.awards]);
   if(state.books) R.push([t('rBooks'), state.books]);
-  if(state.teachesPrivately) R.push([t('rTeachPriv'), state.teachesPrivatelyDetails || t('yes')]);
+  if(state.teachesPrivately) R.push([t('rTeachPriv'), joinOpts(state.teachesPrivateClassesModes) || t('yes')]);
   if(state.runsPrivate) R.push([t('rRunsPriv'), state.runsPrivateDetails || t('yes')]);
-  if(state.worksAt) R.push([t('rWorksAt'), state.worksAtDetails || t('yes')]);
   if(state.orgMember) R.push([t('rOrgMember'), state.orgMemberDetails || t('yes')]);
   return R;
 }
@@ -1327,13 +1649,19 @@ function renderAdminPanel(entries, filterText){
       card.className = 'entry-card';
       const detail = listStr(e.categories) || listStr(e.programTypes) || listStr(e.instrumentTypes) || '';
       const spec = listStr(e.specializations);
+      const waNum = normalizeIndianMobile(e.mobile);
+      const waMsg = `Hi ${e.name||''}, this is Agni Cultural Academy. We're verifying your recent enrollment in the Kerala Classical & Traditional Performing Arts Directory. Could you please confirm your details?`;
+      const waLink = waNum ? `https://wa.me/91${waNum}?text=${encodeURIComponent(waMsg)}` : null;
       card.innerHTML = `
         <div class="entry-top">
           <span class="entry-name">${esc(e.name)}</span>
           <span class="entry-ref">${esc(e.refId||'')}</span>
         </div>
         <div class="entry-meta"><b>${esc(e.who)}</b>${e.bucket?' · '+esc(e.bucket):''}${e.instName?' · '+esc(e.instName):''}</div>
-        <div class="entry-meta">${esc(e.mobile)} · ${esc(e.email)}</div>
+        <div class="entry-meta">${esc(e.mobile)} · ${esc(e.email)}
+          ${waLink ? ` · <a href="${waLink}" target="_blank" rel="noopener" style="color:var(--green);text-decoration:none;font-weight:600;">Verify on WhatsApp ↗</a>`
+                   : ` · <span style="color:var(--danger);">⚠ invalid number format</span>`}
+        </div>
         <div class="entry-meta">${esc(detail)}${spec?' — '+esc(spec):''}</div>
         <div class="entry-meta" style="font-size:13px;">${e.submittedAt?new Date(e.submittedAt).toLocaleString():''}</div>`;
       listEl.appendChild(card);
@@ -1352,11 +1680,17 @@ const EXPORT_COLS = [
   ['name','Name'],['mobile','Mobile'],['whatsapp','WhatsApp'],['address','Address'],
   ['pincode','Pincode'],['email','Email'],['socialMedia','Social Media'],
   ['bucket','Art Form Bucket'],['categories','Category'],['specializations','Specialization'],
+  ['specializationOther','Specialization (Other)'],
   ['designation','Designation'],['designationOther','Designation (Other)'],
+  ['teacherInstType','Teacher Institution Type'],
+  ['teachesPrivateClasses','Also Teaches Private Classes'],['teachesPrivateClassesModes','Private Classes Mode'],
   ['instName','Institution/Organization Name'],['instAddress','Institution/Org Address'],
   ['instEmail','Institution/Org Email'],['instPhone','Institution Phone'],
   ['instMobile','Organization Mobile'],['instWebsite','Website'],
   ['yearEstablished','Year of Establishment'],
+  ['isRegistered','Is Registered Body'],['registrationType','Registration Type'],
+  ['registrationTypeOther','Registration Type (Other)'],['registeredAddress','Registered Address'],
+  ['hasEventHall','Has Own Event Hall'],['eventHallDetails','Event Hall Details'],
   ['subjectsTaught','Subjects Taught'],['subjectsTaughtOther','Subjects Taught (Other)'],
   ['hasBranches','Has Branches'],['branchCount','No. of Branches'],['branchAddresses','Branch Addresses'],
   ['programTypes','Program Types'],['programTypesOther','Program Types (Other)'],
@@ -1364,10 +1698,13 @@ const EXPORT_COLS = [
   ['eduPrograms','Education Programs'],
   ['instrumentTypes','Instrument Types'],['leatherInstruments','Leather Instruments'],
   ['stringInstruments','String Instruments'],['windInstruments','Wind Instruments'],
-  ['air','AIR/DD Grade'],['awards','Awards'],['books','Books Published'],
-  ['teachesPrivately','Teaches Privately'],['teachesPrivatelyDetails','Private Teaching Details'],
+  ['costumeInstruments','Costumes For'],
+  ['makerCategory','Maker Category'],['makerSpecializations','Maker Specialization'],
+  ['yearsExperience','Years of Experience'],
+  ['air','AIR/DD Grade'],['awards','Awards'],['books','Books Published / Other Details'],
+  ['teachesPrivately','Teaches Private Classes (Artist)'],
   ['runsPrivate','Runs Private Institution'],['runsPrivateDetails','Private Institution Details'],
-  ['worksAt','Works At Institution'],['worksAtDetails','Institution Details'],
+  ['worksAtInstitution','Works As Teacher At Institution (Artist)'],
   ['orgMember','Org Member/Office Bearer'],['orgMemberDetails','Organization Details'],
   ['consent','Consent to Publish']
 ];
