@@ -242,6 +242,16 @@ const STR = {
   fYearsExp:{en:"Years of Experience", ml:"പരിചയമുള്ള വർഷങ്ങൾ"},
   fYearsExpPh:{en:"e.g. 15", ml:"ഉദാ: 15"},
   extrasErr:{en:"Please enter your years of experience.", ml:"താങ്കളുടെ പരിചയമുള്ള വർഷങ്ങൾ നൽകുക."},
+  phdQ:{en:"Are you a PhD holder?", ml:"താങ്കൾ ഒരു PhD ബിരുദധാരിയാണോ?"},
+  phdThesisTitle:{en:"Title of your Doctoral Thesis", ml:"ഡോക്ടറൽ പ്രബന്ധത്തിന്റെ ശീർഷകം"},
+  phdUniversity:{en:"University that conferred your Doctoral Degree", ml:"ബിരുദം നൽകിയ സർവകലാശാല"},
+  phdYear:{en:"Year of Conferring", ml:"ബിരുദം ലഭിച്ച വർഷം"},
+  phdYearPh:{en:"e.g. 2015", ml:"ഉദാ: 2015"},
+  phdErr:{en:"Please give the thesis title, university and year.", ml:"പ്രബന്ധ ശീർഷകം, സർവകലാശാല, വർഷം എന്നിവ നൽകുക."},
+  rIsPhd:{en:"PhD Holder", ml:"PhD ബിരുദധാരി"},
+  rPhdThesis:{en:"Thesis Title", ml:"പ്രബന്ധ ശീർഷകം"},
+  rPhdUniversity:{en:"University", ml:"സർവകലാശാല"},
+  rPhdYear:{en:"Year Conferred", ml:"ബിരുദം ലഭിച്ച വർഷം"},
   fAir:{en:"AIR / Doordarshan Grade", ml:"ആകാശവാണി / ദൂരദർശൻ ഗ്രേഡ്"},
   fAirPh:{en:"e.g. B High, Top Grade", ml:"ഉദാ: B High, Top Grade"},
   fAwards:{en:"Awards / Citations", ml:"പുരസ്കാരങ്ങൾ / അംഗീകാരങ്ങൾ"},
@@ -250,7 +260,7 @@ const STR = {
   fTeachPriv:{en:"I teach privately", ml:"ഞാൻ സ്വകാര്യമായി ക്ലാസ്സുകൾ എടുക്കുന്നു"},
   fTeachPrivPh:{en:"Subject taught, online / offline / both",
                 ml:"പഠിപ്പിക്കുന്ന വിഷയം, ഓൺലൈൻ / ഓഫ്‌ലൈൻ / രണ്ടും"},
-  artistTeachesPrivQ:{en:"I teach private classes", ml:"ഞാൻ സ്വകാര്യ ക്ലാസ്സുകൾ എടുക്കാറുണ്ട്"},
+  artistTeachesPrivQ:{en:"I take private classes", ml:"ഞാൻ സ്വകാര്യ ക്ലാസ്സുകൾ എടുക്കാറുണ്ട്"},
   artistWorksAtQ:{en:"I work as a teacher at an institution", ml:"ഞാൻ ഒരു സ്ഥാപനത്തിൽ അധ്യാപകനായി ജോലി ചെയ്യുന്നു"},
   artistWorksAtErr:{en:"Please give the institution type, name and address.",
                     ml:"സ്ഥാപന തരം, പേര്, വിലാസം എന്നിവ നൽകുക."},
@@ -271,6 +281,10 @@ const STR = {
   teacherSub:{en:"About where you teach.", ml:"താങ്കൾ പഠിപ്പിക്കുന്ന സ്ഥലത്തെക്കുറിച്ച്."},
   fDesignation:{en:"Your Designation", ml:"താങ്കളുടെ പദവി"},
   fDesignationPh:{en:"Please specify your designation", ml:"താങ്കളുടെ പദവി എഴുതുക"},
+  orgOfficeBearerQ:{en:"Which office do you hold?", ml:"താങ്കൾ വഹിക്കുന്ന പദവി ഏതാണ്?"},
+  orgOfficeBearerOtherPh:{en:"Please specify", ml:"എഴുതുക"},
+  orgOfficeBearerErr:{en:"Please specify which office you hold.", ml:"താങ്കൾ വഹിക്കുന്ന പദവി എഴുതുക."},
+  rOfficeBearerRole:{en:"Office Held", ml:"വഹിക്കുന്ന പദവി"},
   fInstName:{en:"Name of the Institution", ml:"സ്ഥാപനത്തിന്റെ പേര്"},
   fOrgName:{en:"Name of the Organization", ml:"സംഘടനയുടെ പേര്"},
   fInstAddress:{en:"Address of the Institution", ml:"സ്ഥാപനത്തിന്റെ വിലാസം"},
@@ -287,7 +301,7 @@ const STR = {
   teacherInstTypeQ:{en:"Where do you teach?", ml:"താങ്കൾ എവിടെയാണ് പഠിപ്പിക്കുന്നത്?"},
   teacherInstTypeGovt:{en:"Govt./Govt.-aided School or College", ml:"സർക്കാർ / സർക്കാർ എയ്ഡഡ് സ്കൂൾ അല്ലെങ്കിൽ കോളേജ്"},
   teacherInstTypePrivate:{en:"Private Institution(s)", ml:"സ്വകാര്യ സ്ഥാപനം/സ്ഥാപനങ്ങൾ"},
-  teacherPrivClassesQ:{en:"I also teach private classes", ml:"ഞാൻ സ്വകാര്യ ക്ലാസ്സുകളും എടുക്കാറുണ്ട്"},
+  teacherPrivClassesQ:{en:"I also take private classes", ml:"ഞാൻ സ്വകാര്യ ക്ലാസ്സുകളും എടുക്കാറുണ്ട്"},
   teacherPrivClassesModeQ:{en:"Online, offline, or both?", ml:"ഓൺലൈൻ, ഓഫ്‌ലൈൻ, അതോ രണ്ടും?"},
   modeOnline:{en:"Online", ml:"ഓൺലൈൻ"},
   modeOffline:{en:"Offline", ml:"ഓഫ്‌ലൈൻ"},
@@ -439,7 +453,7 @@ const OPT_ML = {
   "Carnatic Music":"കർണാടക സംഗീതം","Hindustani Music":"ഹിന്ദുസ്ഥാനി സംഗീതം",
   "Sopana Sangeetham":"സോപാന സംഗീതം","Devotional & Bhajans":"ഭക്തിഗാനം & ഭജൻ",
   // specializations
-  "Vocal":"ആലാപനം","Violin":"വയലിൻ","Veena":"വീണ","Mrudangam":"മൃദംഗം",
+  "Vocal":"വായ്പ്പാട്ട്","Violin":"വയലിൻ","Veena":"വീണ","Mrudangam":"മൃദംഗം",
   "Ghatam":"ഘടം","Ganjira":"ഗഞ്ചിറ","Morsing":"മോർസിംഗ്","Tabla":"തബല",
   "Sitar":"സിതാർ","Harmonium":"ഹാർമോണിയം","Flute":"ഓടക്കുഴൽ",
   "Nadaswaram":"നാദസ്വരം","Thavil":"തവിൽ","Dolak":"ദോലക്ക്","Pakhwaj":"പഖവാജ്",
@@ -455,7 +469,7 @@ const OPT_ML = {
   "Ottamthullal":"ഓട്ടൻതുള്ളൽ","Krishnanattam":"കൃഷ്ണനാട്ടം","Ramanattam":"രാമനാട്ടം","Tholppavakoothu":"തോൽപ്പാവക്കൂത്ത്",
   "Acting":"അഭിനയം","Chutti":"ചുട്ടി",
   // percussion
-  "Thayambaka":"തായമ്പക","Melam":"മേളം","Panchavadyam":"പഞ്ചവാദ്യം",
+  "Thayambaka":"തായമ്പക","Melam":"മേളം","Panchavadyam":"പഞ്ചവാദ്യം","Thayambaka/Melam":"തായമ്പക/മേളം",
   "Chenda":"ചെണ്ട","Thimila":"തിമില","Maddalam":"മദ്ദളം","Kombu":"കൊമ്പ്",
   "Kuzhal":"കുഴൽ","Edakka":"ഇടയ്ക്ക","Ilathalam":"ഇലത്താളം","Mizhavu":"മിഴാവ്",
   // edu programs
@@ -481,7 +495,8 @@ const OPT_ML = {
   // designations
   "Head of the Department":"വകുപ്പ് മേധാവി","Principal":"പ്രിൻസിപ്പൽ",
   "Founder":"സ്ഥാപകൻ","Office Bearer":"ഭാരവാഹി","Member":"അംഗം","Other":"മറ്റുള്ളവ",
-  "Trust":"ട്രസ്റ്റ്","Society":"സൊസൈറ്റി"
+  "Trust":"ട്രസ്റ്റ്","Society":"സൊസൈറ്റി",
+  "President":"പ്രസിഡന്റ്","Secretary":"സെക്രട്ടറി","Treasurer":"ട്രഷറർ"
 };
 
 function t(key, ...args){
@@ -536,7 +551,11 @@ const BUCKETS = {
       }
     }},
   "Classical Dance":{
-    categories:["Mohiniyattam","Bharatanatyam","Kuchipudi","Dance Music","Kathak","Odissi"],
+    // Dance Music is Artist-only — teachers don't have a "Dance Music" subject to teach.
+    categories:{
+      "Artist":["Mohiniyattam","Bharatanatyam","Kuchipudi","Dance Music","Kathak","Odissi"],
+      "Teacher":["Mohiniyattam","Bharatanatyam","Kuchipudi","Kathak","Odissi"]
+    },
     // Only Dance Music has a specialization step — the pure dance forms
     // don't need one, since the category itself is the specialization.
     specializations:{
@@ -555,7 +574,12 @@ const BUCKETS = {
       "Ramanattam":["Acting","Vocal","Chenda","Maddalam"]
     }},
   "Kerala Percussion Arts":{
-    categories:["Thayambaka","Melam","Panchavadyam"],
+    // Teacher combines Thayambaka and Melam into one category, since the
+    // instruments taught are the same either way.
+    categories:{
+      "Artist":["Thayambaka","Melam","Panchavadyam"],
+      "Teacher":["Thayambaka/Melam","Panchavadyam"]
+    },
     // Specializations vary by category AND role — Artist gets the Chenda
     // hand-position split, Teacher doesn't.
     specializations:{
@@ -565,12 +589,17 @@ const BUCKETS = {
         "Panchavadyam":["Thimila","Edakka","Maddalam","Kombu","Ilathalam"]
       },
       "Teacher":{
-        "Thayambaka":["Chenda","Ilathalam"],
-        "Melam":["Chenda","Ilathalam","Kombu","Kuzhal"],
+        "Thayambaka/Melam":["Chenda","Ilathalam","Kombu","Kuzhal"],
         "Panchavadyam":["Thimila","Edakka","Maddalam","Kombu","Ilathalam"]
       }
     }}
 };
+// Returns the category list for a bucket, accounting for buckets where the
+// list itself differs by role (Artist vs Teacher).
+function categoryOptionsFor(bucket, who){
+  const cats = BUCKETS[bucket].categories;
+  return Array.isArray(cats) ? cats : (cats[who] || []);
+}
 // Categories where an "Others (please specify)" free-text box should
 // appear alongside the specialization chips.
 const OTHER_SPEC_CATEGORIES = {
@@ -579,6 +608,47 @@ const OTHER_SPEC_CATEGORIES = {
 function categoryNeedsOtherSpec(bucket, categories){
   const list = OTHER_SPEC_CATEGORIES[bucket] || [];
   return categories.some(c=>list.includes(c));
+}
+// PhD question is hidden for Kathakali "Chutti" specialists and for the
+// Krishnanattam / Ramanattam / Tholppavakoothu categories — these crafts
+// don't have an associated doctoral research tradition.
+function hidePhDQuestion(){
+  const noPhdCategories = ["Krishnanattam","Ramanattam","Tholppavakoothu"];
+  if(state.bucket === "Kerala Traditional Classical Art Forms" &&
+     state.categories.some(c=>noPhdCategories.includes(c))) return true;
+  if(state.specializations.includes("Chutti")) return true;
+  return false;
+}
+function phdSectionHtml(){
+  if(hidePhDQuestion()) return '';
+  return `
+    <div class="check-row">
+      <input type="checkbox" id="fIsPhd" ${state.isPhdHolder?'checked':''}>
+      <label for="fIsPhd">${esc(t('phdQ'))}${ml('phdQ')}</label>
+    </div>
+    <div class="conditional ${state.isPhdHolder?'show':''}" id="phdBox">
+      <label class="field-label" style="margin-top:0;">${esc(t('phdThesisTitle'))} <span class="req">*</span>${ml('phdThesisTitle')}</label>
+      <input type="text" id="fPhdThesis" value="${esc(state.phdThesisTitle)}">
+      <label class="field-label">${esc(t('phdUniversity'))} <span class="req">*</span>${ml('phdUniversity')}</label>
+      <input type="text" id="fPhdUniversity" value="${esc(state.phdUniversity)}">
+      <label class="field-label">${esc(t('phdYear'))} <span class="req">*</span>${ml('phdYear')}</label>
+      <input type="tel" id="fPhdYear" value="${esc(state.phdYear)}" placeholder="${esc(t('phdYearPh'))}">
+    </div>
+  `;
+}
+function wirePhDSection(){
+  if(hidePhDQuestion()) return;
+  wireConditional('fIsPhd','phdBox');
+}
+function savePhDSection(){
+  if(hidePhDQuestion()){ state.isPhdHolder=false; state.phdThesisTitle=""; state.phdUniversity=""; state.phdYear=""; return; }
+  state.isPhdHolder = checked('fIsPhd');
+  state.phdThesisTitle = val('fPhdThesis'); state.phdUniversity = val('fPhdUniversity'); state.phdYear = val('fPhdYear');
+}
+function validatePhDSection(){
+  if(hidePhDQuestion()) return true;
+  if(state.isPhdHolder && (!state.phdThesisTitle || !state.phdUniversity || !state.phdYear)) return false;
+  return true;
 }
 const BUCKET_ORDER = Object.keys(BUCKETS);
 
@@ -634,6 +704,7 @@ function blankState(){
     address:"", pincode:"", email:"", socialMedia:"",
     bucket:"", categories:[], specializations:[], specializationOther:"",
     yearsExperience:"", air:"", awards:"", books:"",
+    isPhdHolder:false, phdThesisTitle:"", phdUniversity:"", phdYear:"",
     teachesPrivately:false,
     runsPrivate:false, runsPrivateDetails:"",
     worksAtInstitution:false,
@@ -647,6 +718,7 @@ function blankState(){
     programTypes:[], programTypesOther:"", programFrequency:"",
     festivals:[], festivalsOther:"",
     isRegistered:false, registrationType:"", registrationTypeOther:"", registeredAddress:"",
+    officeBearerRole:"", officeBearerRoleOther:"",
     hasEventHall:false, eventHallDetails:"",
     instrumentTypes:[], leatherInstruments:[], stringInstruments:[], windInstruments:[], costumeInstruments:[],
     makerCategory:"", makerSpecializations:[],
@@ -936,7 +1008,7 @@ function renderCategory(){
     <div class="error-text" id="catError">${esc(t('catErr'))}</div>
     ${navHtml()}
   `;
-  chipGroup('catWrap', BUCKETS[state.bucket].categories, state.categories, renderCategory);
+  chipGroup('catWrap', categoryOptionsFor(state.bucket, state.who), state.categories, renderCategory);
   wireNav(()=>{
     if(state.categories.length===0){ showErr('catError'); return; }
     const validOpts = specOptionsFor(state.bucket, state.categories, state.who);
@@ -983,6 +1055,8 @@ function renderArtistExtras(){
 
     <label class="field-label">${esc(t('fBooks'))}${ml('fBooks')}</label>
     <textarea id="fBooks">${esc(state.books)}</textarea>
+
+    ${phdSectionHtml()}
 
     <div class="error-text" id="extrasError">${esc(t('extrasErr'))}</div>
 
@@ -1034,6 +1108,7 @@ function renderArtistExtras(){
   wireConditional('fRunsPrivate','runsPrivateBox');
   wireConditional('fWorksAtInstitution','worksAtInstitutionBox');
   wireConditional('fOrgMember','orgMemberBox');
+  wirePhDSection();
   const redraw = ()=> chipGroup('artistPrivModeWrap', ["Online","Offline"], state.teachesPrivateClassesModes, redraw);
   redraw();
   const save = ()=>{
@@ -1045,6 +1120,7 @@ function renderArtistExtras(){
     state.teacherInstType = val('fTeacherInstType');
     state.instName = val('fInstName'); state.instAddress = val('fInstAddress');
     state.orgMember = checked('fOrgMember'); state.orgMemberDetails = val('fOrgMemberDetails');
+    savePhDSection();
   };
   wireNav(()=>{
     save();
@@ -1052,6 +1128,7 @@ function renderArtistExtras(){
     if(state.worksAtInstitution && (!state.teacherInstType || !state.instName || !state.instAddress)){
       showErr('extrasError', t('artistWorksAtErr')); return;
     }
+    if(!validatePhDSection()){ showErr('extrasError', t('phdErr')); return; }
     go(1);
   }, save, backStepsAfterSpecialization());
 }
@@ -1061,6 +1138,9 @@ function renderTeacher(){
   cardArea.innerHTML = `
     <h2>${esc(t('teacherTitle'))}${ml('teacherTitle')}</h2>
     <p class="sub">${esc(t('teacherSub'))}</p>
+
+    <label class="field-label">${esc(t('fYearsExp'))} <span class="req">*</span>${ml('fYearsExp')}</label>
+    <input type="tel" id="fYearsExp" value="${esc(state.yearsExperience)}" placeholder="${esc(t('fYearsExpPh'))}">
 
     <label class="field-label">${esc(t('fDesignation'))} <span class="req">*</span>${ml('fDesignation')}</label>
     <select id="fDesignation">${selectOptions(["Teacher","Head of the Department","Principal","Other"], state.designation)}</select>
@@ -1093,6 +1173,8 @@ function renderTeacher(){
       <div class="chip-wrap" id="privModeWrap"></div>
     </div>
 
+    ${phdSectionHtml()}
+
     <label class="field-label">${esc(t('fEduPrograms'))} <span class="opt">${esc(t('optional'))}</span>${ml('fEduPrograms')}</label>
     <div class="chip-wrap" id="eduWrap"></div>
 
@@ -1105,23 +1187,28 @@ function renderTeacher(){
   };
   document.getElementById('fTeachesPrivClasses').onchange = e=>
     document.getElementById('privClassesModeBox').classList.toggle('show', e.target.checked);
+  wirePhDSection();
   const redraw = ()=>{
     chipGroup('eduWrap', EDU_PROGRAMS, state.eduPrograms, redraw);
     chipGroup('privModeWrap', ["Online","Offline"], state.teachesPrivateClassesModes, redraw);
   };
   redraw();
   const save = ()=>{
+    state.yearsExperience = val('fYearsExp');
     state.designation = val('fDesignation'); state.designationOther = val('fDesignationOther');
     state.teacherInstType = val('fTeacherInstType');
     state.instName = val('fInstName'); state.instAddress = val('fInstAddress');
     state.instEmail = val('fInstEmail');
     state.teachesPrivateClasses = checked('fTeachesPrivClasses');
+    savePhDSection();
   };
   wireNav(()=>{
     save();
+    if(!/^[0-9]{1,2}$/.test(state.yearsExperience)){ showErr('teacherError', t('extrasErr')); return; }
     if(!state.designation || !state.teacherInstType || !state.instName || !state.instAddress){
       showErr('teacherError', t('teacherErr')); return;
     }
+    if(!validatePhDSection()){ showErr('teacherError', t('phdErr')); return; }
     go(1);
   }, save, backStepsAfterSpecialization());
 }
@@ -1228,6 +1315,13 @@ function renderOrganization(){
     <div class="conditional ${state.designation==='Other'?'show':''}" id="designationOtherBox">
       <input type="text" id="fDesignationOther" value="${esc(state.designationOther)}" placeholder="${esc(t('fDesignationPh'))}">
     </div>
+    <div class="conditional ${state.designation==='Office Bearer'?'show':''}" id="officeBearerBox">
+      <label class="field-label" style="margin-top:0;">${esc(t('orgOfficeBearerQ'))} <span class="req">*</span>${ml('orgOfficeBearerQ')}</label>
+      <select id="fOfficeBearerRole">${selectOptions(["President","Secretary","Treasurer","Other"], state.officeBearerRole)}</select>
+      <div class="conditional ${state.officeBearerRole==='Other'?'show':''}" id="officeBearerOtherBox">
+        <input type="text" id="fOfficeBearerRoleOther" value="${esc(state.officeBearerRoleOther)}" placeholder="${esc(t('orgOfficeBearerOtherPh'))}">
+      </div>
+    </div>
 
     <label class="field-label">${esc(t('fOrgName'))} <span class="req">*</span>${ml('fOrgName')}</label>
     <input type="text" id="fInstName" value="${esc(state.instName)}">
@@ -1289,6 +1383,12 @@ function renderOrganization(){
   document.getElementById('fDesignation').onchange = e=>{
     state.designation = e.target.value;
     document.getElementById('designationOtherBox').classList.toggle('show', e.target.value==='Other');
+    document.getElementById('officeBearerBox').classList.toggle('show', e.target.value==='Office Bearer');
+  };
+  const officeBearerSel = document.getElementById('fOfficeBearerRole');
+  if(officeBearerSel) officeBearerSel.onchange = e=>{
+    state.officeBearerRole = e.target.value;
+    document.getElementById('officeBearerOtherBox').classList.toggle('show', e.target.value==='Other');
   };
   document.getElementById('fIsRegistered').onchange = e=>
     document.getElementById('registeredBox').classList.toggle('show', e.target.checked);
@@ -1307,6 +1407,7 @@ function renderOrganization(){
   redraw();
   const save = ()=>{
     state.designation = val('fDesignation'); state.designationOther = val('fDesignationOther');
+    state.officeBearerRole = val('fOfficeBearerRole'); state.officeBearerRoleOther = val('fOfficeBearerRoleOther');
     state.instName = val('fInstName'); state.instAddress = val('fInstAddress');
     state.instEmail = val('fInstEmail'); state.instMobile = val('fInstMobile');
     state.instWebsite = val('fInstWebsite'); state.yearEstablished = val('fYear');
@@ -1323,6 +1424,10 @@ function renderOrganization(){
        !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(state.instEmail) || !/^[0-9]{4}$/.test(state.yearEstablished) ||
        (state.programTypes.length===0 && !state.programTypesOther)){
       showErr('orgError', t('orgErr')); return;
+    }
+    if(state.designation==='Office Bearer' && (!state.officeBearerRole ||
+       (state.officeBearerRole==='Other' && !state.officeBearerRoleOther))){
+      showErr('orgError', t('orgOfficeBearerErr')); return;
     }
     if(state.isRegistered && ((!state.registrationType) ||
        (state.registrationType==='Other' && !state.registrationTypeOther) || !state.registeredAddress)){
@@ -1436,6 +1541,8 @@ function summaryRows(){
     R.push([t('rSpecialization'), [joinOpts(state.specializations), state.specializationOther].filter(Boolean).join(", ")]);
   if(state.designation) R.push([t('rDesignation'),
     state.designation==='Other' ? state.designationOther : opt(state.designation)]);
+  if(state.designation==='Office Bearer' && state.officeBearerRole)
+    R.push([t('rOfficeBearerRole'), state.officeBearerRole==='Other' ? state.officeBearerRoleOther : opt(state.officeBearerRole)]);
   if(state.teacherInstType) R.push([t('rTeacherInstType'), state.teacherInstType==='Govt./Govt.-aided' ? t('teacherInstTypeGovt') : t('teacherInstTypePrivate')]);
   if(state.instName) R.push([state.who==='Organization'?t('rOrganization'):t('rInstitution'), state.instName]);
   if(state.instAddress) R.push([t('rTheirAddress'), state.instAddress]);
@@ -1474,6 +1581,12 @@ function summaryRows(){
   if(state.air) R.push([t('rAir'), state.air]);
   if(state.awards) R.push([t('rAwards'), state.awards]);
   if(state.books) R.push([t('rBooks'), state.books]);
+  if(state.isPhdHolder){
+    R.push([t('rIsPhd'), t('yes')]);
+    R.push([t('rPhdThesis'), state.phdThesisTitle]);
+    R.push([t('rPhdUniversity'), state.phdUniversity]);
+    R.push([t('rPhdYear'), state.phdYear]);
+  }
   if(state.teachesPrivately) R.push([t('rTeachPriv'), joinOpts(state.teachesPrivateClassesModes) || t('yes')]);
   if(state.runsPrivate) R.push([t('rRunsPriv'), state.runsPrivateDetails || t('yes')]);
   if(state.orgMember) R.push([t('rOrgMember'), state.orgMemberDetails || t('yes')]);
@@ -1682,6 +1795,7 @@ const EXPORT_COLS = [
   ['bucket','Art Form Bucket'],['categories','Category'],['specializations','Specialization'],
   ['specializationOther','Specialization (Other)'],
   ['designation','Designation'],['designationOther','Designation (Other)'],
+  ['officeBearerRole','Office Bearer Role'],['officeBearerRoleOther','Office Bearer Role (Other)'],
   ['teacherInstType','Teacher Institution Type'],
   ['teachesPrivateClasses','Also Teaches Private Classes'],['teachesPrivateClassesModes','Private Classes Mode'],
   ['instName','Institution/Organization Name'],['instAddress','Institution/Org Address'],
@@ -1701,6 +1815,8 @@ const EXPORT_COLS = [
   ['costumeInstruments','Costumes For'],
   ['makerCategory','Maker Category'],['makerSpecializations','Maker Specialization'],
   ['yearsExperience','Years of Experience'],
+  ['isPhdHolder','PhD Holder'],['phdThesisTitle','PhD Thesis Title'],
+  ['phdUniversity','PhD University'],['phdYear','PhD Year Conferred'],
   ['air','AIR/DD Grade'],['awards','Awards'],['books','Books Published / Other Details'],
   ['teachesPrivately','Teaches Private Classes (Artist)'],
   ['runsPrivate','Runs Private Institution'],['runsPrivateDetails','Private Institution Details'],
