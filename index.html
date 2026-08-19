@@ -785,8 +785,14 @@ function esc(str){
 // prefixes and any spacing/punctuation), or returns null if it can't.
 function normalizeIndianMobile(raw){
   let d = String(raw||'').replace(/\D/g,'');
-  if(d.length===12 && d.startsWith('91')) d = d.slice(2);
-  else if(d.length===11 && d.startsWith('0')) d = d.slice(1);
+  // Strip leading 0 and/or 91 country code, in either order/combination —
+  // autofill sometimes produces both together (e.g. "0" + "91" + number).
+  let changed = true;
+  while(d.length > 10 && changed){
+    changed = false;
+    if(d.length - 2 >= 10 && d.startsWith('91')){ d = d.slice(2); changed = true; continue; }
+    if(d.length - 1 >= 10 && d.startsWith('0')){ d = d.slice(1); changed = true; continue; }
+  }
   return d.length===10 ? d : null;
 }
 function isObviouslyFakeNumber(d){
