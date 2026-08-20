@@ -193,6 +193,10 @@ const STR = {
   btnAnother:{en:"Enroll Another Person", ml:"മറ്റൊരാളെ രജിസ്റ്റർ ചെയ്യുക"},
   btnShare:{en:"Share with Fellow Artists on WhatsApp",
             ml:"സഹകലാകാരന്മാരുമായി വാട്സാപ്പിൽ പങ്കുവയ്ക്കുക"},
+  btnShareProfile:{en:"Share My Profile (PDF) on WhatsApp", ml:"എന്റെ പ്രൊഫൈൽ (PDF) വാട്സാപ്പിൽ പങ്കുവയ്ക്കുക"},
+  btnShareProfilePreparing:{en:"Preparing PDF...", ml:"PDF തയ്യാറാക്കുന്നു..."},
+  shareProfileNote:{en:"Optional — sends a PDF copy of your submitted details for verification.",
+                    ml:"ഐച്ഛികം — സമർപ്പിച്ച വിവരങ്ങളുടെ ഒരു PDF പകർപ്പ് പരിശോധനയ്ക്കായി അയയ്ക്കുന്നു."},
   optional:{en:"(optional)", ml:"(ഐച്ഛികം)"},
   selectPrompt:{en:"-- Select --", ml:"-- തിരഞ്ഞെടുക്കുക --"},
   chooseAll:{en:"Choose all that apply.", ml:"ബാധകമായവയെല്ലാം തിരഞ്ഞെടുക്കുക."},
@@ -208,12 +212,12 @@ const STR = {
               ml:"ഡയറക്ടറി കൃത്യമായി സൂക്ഷിക്കാനും മറ്റുള്ളവർക്ക് താങ്കളെ ബന്ധപ്പെടാനും ഇത് സഹായിക്കും."},
   contactSubBody:{en:"Details of the person we should contact about this listing.",
                   ml:"ഈ രജിസ്ട്രേഷനെക്കുറിച്ച് ഞങ്ങൾ ബന്ധപ്പെടേണ്ട വ്യക്തിയുടെ വിവരങ്ങൾ."},
-  fName:{en:"Full Name", ml:"പൂർണ്ണ നാമം"},
+  fName:{en:"Full Name", ml:"പൂർണ്ണമായ പേര്"},
   fMobile:{en:"Mobile Number", ml:"മൊബൈൽ നമ്പർ"},
   fMobilePh:{en:"10-digit mobile number", ml:"10 അക്ക മൊബൈൽ നമ്പർ"},
   fSameWa:{en:"WhatsApp number is same as mobile", ml:"വാട്സാപ്പ് നമ്പർ മൊബൈൽ നമ്പർ തന്നെയാണ്"},
   fWhatsapp:{en:"WhatsApp Number", ml:"വാട്സാപ്പ് നമ്പർ"},
-  fAddress:{en:"Postal Address", ml:"തപാൽ വിലാസം"},
+  fAddress:{en:"Postal Address", ml:"വിലാസം"},
   fAddressPh:{en:"House name, Place, Post, District", ml:"വീട്ടുപേര്, സ്ഥലം, പോസ്റ്റ്, ജില്ല"},
   fPincode:{en:"Pincode", ml:"പിൻകോഡ്"},
   fPincodePh:{en:"6-digit pincode", ml:"6 അക്ക പിൻകോഡ്"},
@@ -239,10 +243,10 @@ const STR = {
   extrasTitle:{en:"A little more about you", ml:"താങ്കളെക്കുറിച്ച് കുറച്ചുകൂടി"},
   extrasSub:{en:"The rest of this page is optional, except years of experience.",
              ml:"പരിചയമുള്ള വർഷങ്ങൾ ഒഴികെ ഈ പേജിലെ ബാക്കി വിവരങ്ങൾ ഐച്ഛികമാണ്."},
-  fYearsExp:{en:"Years of Experience", ml:"പരിചയമുള്ള വർഷങ്ങൾ"},
+  fYearsExp:{en:"Years of Experience", ml:"എത്ര വർഷത്തെ അനുഭവ പരിചയമുണ്ട്"},
   fYearsExpPh:{en:"e.g. 15", ml:"ഉദാ: 15"},
   extrasErr:{en:"Please enter your years of experience.", ml:"താങ്കളുടെ പരിചയമുള്ള വർഷങ്ങൾ നൽകുക."},
-  phdQ:{en:"Are you a PhD holder?", ml:"താങ്കൾ ഒരു PhD ബിരുദധാരിയാണോ?"},
+  phdQ:{en:"I'm a PhD holder", ml:"ഞാൻ PhD ബിരുദധാരിയാണ്"},
   phdThesisTitle:{en:"Title of your Doctoral Thesis", ml:"ഡോക്ടറൽ പ്രബന്ധത്തിന്റെ ശീർഷകം"},
   phdUniversity:{en:"University that conferred your Doctoral Degree", ml:"ബിരുദം നൽകിയ സർവകലാശാല"},
   phdYear:{en:"Year of Conferring", ml:"ബിരുദം ലഭിച്ച വർഷം"},
@@ -256,15 +260,15 @@ const STR = {
   fAirPh:{en:"e.g. B High, Top Grade", ml:"ഉദാ: B High, Top Grade"},
   fAwards:{en:"Awards / Citations", ml:"പുരസ്കാരങ്ങൾ / അംഗീകാരങ്ങൾ"},
   fBooks:{en:"Give as many details about you (any books published, prestigious events performed, etc.)",
-          ml:"താങ്കളെക്കുറിച്ച് കഴിയുന്നത്ര വിവരങ്ങൾ നൽകുക (പ്രസിദ്ധീകരിച്ച പുസ്തകങ്ങൾ, പ്രധാനപ്പെട്ട വേദികളിൽ അവതരിപ്പിച്ചത് തുടങ്ങിയവ)"},
+          ml:"താങ്കളെക്കുറിച്ച് കഴിയുന്നത്ര വിവരങ്ങൾ നൽകുക (പ്രസിദ്ധീകരിച്ച പുസ്തകങ്ങൾ, പ്രധാനപ്പെട്ട വേദികളിൽ അവതരിപ്പിച്ചത്, താങ്കളുടെ ഗുരുക്കന്മാർ, കല പഠിച്ച സ്ഥാപനങ്ങൾ, അന്യ ദേശങ്ങളിലെ പര്യടനങ്ങൾ തുടങ്ങിയവ)"},
   fTeachPriv:{en:"I teach privately", ml:"ഞാൻ സ്വകാര്യമായി ക്ലാസ്സുകൾ എടുക്കുന്നു"},
   fTeachPrivPh:{en:"Subject taught, online / offline / both",
                 ml:"പഠിപ്പിക്കുന്ന വിഷയം, ഓൺലൈൻ / ഓഫ്‌ലൈൻ / രണ്ടും"},
-  artistTeachesPrivQ:{en:"I take private classes", ml:"ഞാൻ സ്വകാര്യ ക്ലാസ്സുകൾ എടുക്കാറുണ്ട്"},
-  artistWorksAtQ:{en:"I work as a teacher at an institution", ml:"ഞാൻ ഒരു സ്ഥാപനത്തിൽ അധ്യാപകനായി ജോലി ചെയ്യുന്നു"},
+  artistTeachesPrivQ:{en:"I take private classes (Online / Offline)", ml:"ഞാൻ പ്രൈവറ്റ് ക്ലാസുകൾ നടത്തുന്നുണ്ട് (ഓൺലൈൻ/ഓഫ്‌ലൈൻ )"},
+  artistWorksAtQ:{en:"I serve as a teacher in a School/College", ml:"ഞാൻ ഒരു സ്കൂളിൽ/കോളേജിൽ കലാ അധ്യാപകൻ/അദ്ധ്യാപിക ആയി സേവനം അനുഷ്ഠിക്കുന്നുണ്ട്"},
   artistWorksAtErr:{en:"Please give the institution type, name and address.",
                     ml:"സ്ഥാപന തരം, പേര്, വിലാസം എന്നിവ നൽകുക."},
-  fRunsPriv:{en:"I run a private institution", ml:"ഞാൻ ഒരു സ്വകാര്യ സ്ഥാപനം നടത്തുന്നു"},
+  fRunsPriv:{en:"I run a private Arts Institution", ml:"ഞാൻ ഒരു കലാ വിദ്യാലയം നടത്തുന്നുണ്ട്"},
   fRunsPrivPh:{en:"Institution name & address", ml:"സ്ഥാപനത്തിന്റെ പേരും വിലാസവും"},
   fWorksAtGovt:{en:"I work as a teacher in a Govt./Govt.-aided school or college",
             ml:"ഞാൻ ഒരു സർക്കാർ / സർക്കാർ എയ്ഡഡ് സ്കൂളിലോ കോളേജിലോ അധ്യാപകനായി ജോലി ചെയ്യുന്നു"},
@@ -273,8 +277,8 @@ const STR = {
             ml:"ഞാൻ സ്വകാര്യ സ്ഥാപനങ്ങളിൽ അധ്യാപകനായി ജോലി ചെയ്യുന്നു"},
   fWorksAtPrivatePh:{en:"Institution name(s), address, designation — list all if more than one",
             ml:"സ്ഥാപനങ്ങളുടെ പേര്, വിലാസം, പദവി — ഒന്നിലധികമുണ്ടെങ്കിൽ എല്ലാം എഴുതുക"},
-  fOrgMember:{en:"I am a member / office bearer of an organization",
-              ml:"ഞാൻ ഒരു സംഘടനയിലെ അംഗം / ഭാരവാഹിയാണ്"},
+  fOrgMember:{en:"I'm a member/Office Bearer of an Arts/Cultural Organization",
+              ml:"ഞാൻ ഒരു കലാ സംഘടനയിലെ അംഗം/ഭാരവാഹി ആണ്"},
   fOrgMemberPh:{en:"Organization name & designation", ml:"സംഘടനയുടെ പേരും പദവിയും"},
 
   teacherTitle:{en:"Teaching details", ml:"അധ്യാപന വിവരങ്ങൾ"},
@@ -301,7 +305,7 @@ const STR = {
   teacherInstTypeQ:{en:"Where do you teach?", ml:"താങ്കൾ എവിടെയാണ് പഠിപ്പിക്കുന്നത്?"},
   teacherInstTypeGovt:{en:"Govt./Govt.-aided School or College", ml:"സർക്കാർ / സർക്കാർ എയ്ഡഡ് സ്കൂൾ അല്ലെങ്കിൽ കോളേജ്"},
   teacherInstTypePrivate:{en:"Private Institution(s)", ml:"സ്വകാര്യ സ്ഥാപനം/സ്ഥാപനങ്ങൾ"},
-  teacherPrivClassesQ:{en:"I also take private classes", ml:"ഞാൻ സ്വകാര്യ ക്ലാസ്സുകളും എടുക്കാറുണ്ട്"},
+  teacherPrivClassesQ:{en:"I also take private classes (Online / Offline)", ml:"ഞാൻ പ്രൈവറ്റ് ക്ലാസുകളും നടത്തുന്നുണ്ട് (ഓൺലൈൻ/ഓഫ്‌ലൈൻ )"},
   teacherPrivClassesModeQ:{en:"Online, offline, or both?", ml:"ഓൺലൈൻ, ഓഫ്‌ലൈൻ, അതോ രണ്ടും?"},
   modeOnline:{en:"Online", ml:"ഓൺലൈൻ"},
   modeOffline:{en:"Offline", ml:"ഓഫ്‌ലൈൻ"},
@@ -461,7 +465,7 @@ const OPT_ML = {
   "Chenda (Idamthala)":"ചെണ്ട (ഇടംതല)","Chenda (Valamthala)":"ചെണ്ട (വലംതല)",
   "Tamburu":"തംബുരു",
   // dance
-  "Mohiniyattam":"മോഹിനിയാട്ടം","Bharatanatyam":"ഭരതനാട്യം","Kuchipudi":"കുച്ചിപ്പുടി",
+  "Mohiniyattam":"മോഹിനിയാട്ടം","Bharatanatyam":"ഭരതനാട്യം","Kuchupudi":"കൂച്ചുപ്പുഡി",
   "Kathak":"കഥക്","Odissi":"ഒഡീസി","Dance Music":"നൃത്ത സംഗീതം","Nattuvangam":"നട്ടുവാംഗം",
   // traditional
   "Kathakali":"കഥകളി","Kathakali Music":"കഥകളി സംഗീതം","Koodiyattam":"കൂടിയാട്ടം",
@@ -514,12 +518,22 @@ function ml(key, ...args){
   const eng = typeof v === 'function' ? v(...args) : v;
   return `<span class="mal">${esc(eng)}</span>`;
 }
+// A few options have a shorter/clearer display label than their internal
+// data key — used for both English and Malayalam display.
+const OPT_LABEL_OVERRIDE = {
+  "Classical & Devotional Music": {en:"Classical Music/ Devotion / Bhajan", ml:"ശാസ്ത്രീയ സംഗീതം/ ഭക്തി സംഗീതം/ഭജൻ"}
+};
 function opt(v){
+  const override = OPT_LABEL_OVERRIDE[v];
+  if(override) return lang==='ml' ? override.ml : override.en;
   if(lang !== 'ml') return v;
   return OPT_ML[v] ? `${OPT_ML[v]}` : v;
 }
 function optSub(v){
-  if(lang !== 'ml' || !OPT_ML[v]) return '';
+  const override = OPT_LABEL_OVERRIDE[v];
+  if(lang !== 'ml') return '';
+  if(override) return `<span class="mal">${esc(override.en)}</span>`;
+  if(!OPT_ML[v]) return '';
   return `<span class="mal">${esc(v)}</span>`;
 }
 
@@ -553,8 +567,8 @@ const BUCKETS = {
   "Classical Dance":{
     // Dance Music is Artist-only — teachers don't have a "Dance Music" subject to teach.
     categories:{
-      "Artist":["Mohiniyattam","Bharatanatyam","Kuchipudi","Dance Music","Kathak","Odissi"],
-      "Teacher":["Mohiniyattam","Bharatanatyam","Kuchipudi","Kathak","Odissi"]
+      "Artist":["Mohiniyattam","Bharatanatyam","Kuchupudi","Dance Music","Kathak","Odissi"],
+      "Teacher":["Mohiniyattam","Bharatanatyam","Kuchupudi","Kathak","Odissi"]
     },
     // Only Dance Music has a specialization step — the pure dance forms
     // don't need one, since the category itself is the specialization.
@@ -670,7 +684,7 @@ function specOptionsFor(bucket, categories, who){
 
 const EDU_PROGRAMS = ["Workshops","Seminars","Chamber music-dance concerts"];
 const SUBJECTS_TAUGHT = ["Carnatic Vocal","Hindustani Vocal","Devotional & Bhajan","Bharatanatyam",
-  "Mohiniyattam","Kuchipudi","North Indian Classical Dances","Veena","Violin","Mrudangam","Tabla","Harmonium"];
+  "Mohiniyattam","Kuchupudi","North Indian Classical Dances","Veena","Violin","Mrudangam","Tabla","Harmonium"];
 const ORG_PROGRAM_TYPES = ["Classical Music","Classical Dance","Kathakali","Koodiyattam"];
 const ORG_FREQUENCY = ["Monthly","Bi-monthly","Quarterly","Annual festival"];
 const ORG_FESTIVALS = ["Navarathri Music-Dance festival","Thyagaraja Aradhana","Swati Tirunal Festival"];
@@ -1028,9 +1042,13 @@ function renderCategory(){
 // ============ STEP: SPECIALIZATION ============
 function renderSpecialization(){
   const showOther = categoryNeedsOtherSpec(state.bucket, state.categories);
+  const usesCustomSubtext = ["Kerala Traditional Classical Art Forms","Kerala Percussion Arts"].includes(state.bucket);
+  const subText = (usesCustomSubtext && lang==='ml')
+    ? "താഴെ കൊടുത്തിട്ടുള്ളവയിൽ ഏതിലെല്ലാമാണ് താങ്കളുടെ വൈദഗ്ദ്ധ്യം എന്നത് തിരഞ്ഞെടുക്കുക:"
+    : t('specSub');
   cardArea.innerHTML = `
     <h2>${esc(t('specTitle'))}${ml('specTitle')}</h2>
-    <p class="sub">${esc(t('specSub'))}</p>
+    <p class="sub">${esc(subText)}</p>
     <div class="chip-wrap" id="specWrap"></div>
     ${showOther ? `<input type="text" id="fSpecOther" value="${esc(state.specializationOther)}" placeholder="${esc(t('fOtherPh'))}" style="margin-top:11px;">` : ''}
     <div class="error-text" id="specError">${esc(t('specErr'))}</div>
@@ -1680,15 +1698,89 @@ function renderSuccess(refId){
          style="display:flex;align-items:center;justify-content:center;text-decoration:none;background:var(--green);color:#0B0A09;">${esc(t('btnShare'))}</a>
     </div>
     <div class="nav-buttons">
+      <button class="btn-secondary" id="shareProfileBtn" style="width:100%;">${esc(t('btnShareProfile'))}</button>
+    </div>
+    <p style="font-size:13px;color:var(--muted);text-align:center;margin:6px 0 0;">${esc(t('shareProfileNote'))}</p>
+    <div class="nav-buttons">
       <button class="btn-secondary" id="anotherBtn" style="width:100%;">${esc(t('btnAnother'))}</button>
     </div>
   `;
+  document.getElementById('shareProfileBtn').onclick = ()=> shareProfilePDF(refId);
   document.getElementById('anotherBtn').onclick = ()=>{
     const keepLang = state.language;
     state = blankState(); state.language = keepLang;
     stepIndex = 1; // skip language step, keep chosen language
     render(); window.scrollTo({top:0,behavior:'smooth'});
   };
+}
+
+// ---- Share profile as PDF ----
+const PROFILE_SHARE_WHATSAPP = "9946441958";
+let jsPDFLoadPromise = null;
+function loadJsPDF(){
+  if(window.jspdf) return Promise.resolve();
+  if(jsPDFLoadPromise) return jsPDFLoadPromise;
+  jsPDFLoadPromise = new Promise((resolve, reject)=>{
+    const s = document.createElement('script');
+    s.src = 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
+    s.onload = resolve;
+    s.onerror = ()=>{ jsPDFLoadPromise = null; reject(new Error('Could not load PDF library')); };
+    document.head.appendChild(s);
+  });
+  return jsPDFLoadPromise;
+}
+
+async function shareProfilePDF(refId){
+  const btn = document.getElementById('shareProfileBtn');
+  const originalText = btn.textContent;
+  btn.disabled = true; btn.textContent = t('btnShareProfilePreparing');
+  try{
+    await loadJsPDF();
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    let y = 18;
+    doc.setFont('helvetica','bold'); doc.setFontSize(14);
+    doc.text('Kerala Classical & Traditional Performing Arts Directory', 14, y, {maxWidth:182}); y += 8;
+    doc.setFontSize(11); doc.setFont('helvetica','normal');
+    doc.text(`Enrollment Profile — Reference ID: ${refId}`, 14, y); y += 8;
+    doc.setDrawColor(180); doc.line(14, y, 196, y); y += 6;
+    doc.setFontSize(10);
+    summaryRows().forEach(([k,v])=>{
+      const label = `${k}:`;
+      const value = String(v || '');
+      if(y > 280){ doc.addPage(); y = 18; }
+      doc.setFont('helvetica','bold');
+      doc.text(label, 14, y);
+      doc.setFont('helvetica','normal');
+      const lines = doc.splitTextToSize(value, 130);
+      doc.text(lines, 65, y);
+      y += Math.max(6, lines.length * 5) + 2;
+    });
+    const fileName = `${refId}-${(state.name||'profile').replace(/[^\w]+/g,'_')}.pdf`;
+    const pdfBlob = doc.output('blob');
+
+    let shared = false;
+    if(navigator.canShare && window.File){
+      try{
+        const file = new File([pdfBlob], fileName, {type:'application/pdf'});
+        if(navigator.canShare({files:[file]})){
+          await navigator.share({ files:[file], title: fileName });
+          shared = true;
+        }
+      }catch(shareErr){
+        // user cancelled the native share sheet, or it failed — fall through to download+link
+      }
+    }
+    if(!shared){
+      doc.save(fileName);
+      const msg = `Hi, sharing my enrollment profile for the Kerala Classical & Traditional Performing Arts Directory (Ref: ${refId}). I've just downloaded the PDF — attaching it here now.`;
+      window.open(`https://wa.me/91${PROFILE_SHARE_WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+  }catch(err){
+    console.error(err);
+  }finally{
+    btn.disabled = false; btn.textContent = originalText;
+  }
 }
 
 // ============ ADMIN ============
@@ -1795,7 +1887,7 @@ function renderAdminPanel(entries, filterText){
 function backToEnrollment(){ adminRoot.innerHTML = ''; wrapEl.classList.remove('hidden'); }
 
 const EXPORT_COLS = [
-  ['refId','Reference ID'],['submittedAt','Submitted At'],['language','Language'],['who','Enrolling As'],
+  ['refId','Reference ID'],['submittedAt','Submitted At'],['who','Enrolling As'],
   ['name','Name'],['mobile','Mobile'],['whatsapp','WhatsApp'],['address','Address'],
   ['pincode','Pincode'],['email','Email'],['socialMedia','Social Media'],
   ['bucket','Art Form Bucket'],['categories','Category'],['specializations','Specialization'],
