@@ -105,6 +105,11 @@
   .btn-primary:active{background:#B8455A;}
   .btn-secondary{background:transparent;color:var(--gold);border:2px solid var(--line);}
   .btn-primary:disabled{background:#4A403A;color:#8A8078;cursor:not-allowed;}
+  .share-btn{display:flex;align-items:center;justify-content:center;gap:9px;
+    text-decoration:none;background:var(--green);color:#0B0A09;
+    font-family:'Hind','Noto Sans Malayalam',sans-serif;font-size:17px;font-weight:600;
+    line-height:1.3;text-align:center;}
+  .share-btn:active{filter:brightness(0.92);}
 
   .error-text{color:var(--danger);font-size:15px;margin-top:8px;display:none;}
   .error-text.show{display:block;}
@@ -206,9 +211,6 @@ const STR = {
   btnAnother:{en:"Enroll Another Person", ml:"മറ്റൊരാളെ രജിസ്റ്റർ ചെയ്യുക"},
   btnShare:{en:"Share this Enrollment link via WhatsApp to your Artists friends & to institutes and organizers",
             ml:"മറ്റു സഹ കലാകാരന്മാർക്കും സംഘടനകൾക്കും ഈ ഡയറക്ടറിയിലേക്ക് ചേരാനായി വാട്സാപ്പിൽ പങ്കുവെക്കുക"},
-  shareOwnProfileNote:{en:"Have a detailed profile document ready on your phone or computer? You're welcome to share it with us on WhatsApp — this is separate from the link-sharing button above, so feel free to use both.",
-                        ml:"താങ്കളുടെ ഫോണിലോ കമ്പ്യൂട്ടറിലോ വിശദമായ പ്രൊഫൈൽ രേഖ തയ്യാറായിട്ടുണ്ടോ? അത് വാട്സാപ്പിൽ ഞങ്ങളുമായി പങ്കുവെക്കാം — മുകളിലുള്ള ലിങ്ക് പങ്കുവെക്കുന്നതിൽ നിന്ന് ഇത് വ്യത്യസ്തമാണ്, രണ്ടും ഉപയോഗിക്കാം."},
-  btnAttachProfile:{en:"Attach & Share Your Profile Document", ml:"താങ്കളുടെ പ്രൊഫൈൽ രേഖ വാട്സാപ്പിൽ പങ്കുവെക്കുക"},
   optional:{en:"(optional)", ml:"(ഐച്ഛികം)"},
   selectPrompt:{en:"-- Select --", ml:"-- തിരഞ്ഞെടുക്കുക --"},
   chooseAll:{en:"Choose all that apply.", ml:"ബാധകമായവയെല്ലാം തിരഞ്ഞെടുക്കുക."},
@@ -1983,6 +1985,7 @@ async function submitForm(){
 function renderSuccess(refId){
   const shareText = `The Kerala Classical & Traditional Performing Arts Directory, an initiative of Agni Cultural Academy, is the first project of its kind in the country to systematically document our classical and traditional performing arts community — artists, teachers, institutions, organizations and artisans alike.\n\nI have enrolled, and I would encourage you to do the same. It takes only a few minutes:\n${ENROLLMENT_LINK}`;
   const waLink = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
+  const whatsappIconSvg = `<svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="flex-shrink:0;"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.8 14.11c-.24.68-1.19 1.24-1.95 1.4-.52.11-1.2.2-3.48-.75-2.92-1.21-4.8-4.17-4.95-4.36-.14-.2-1.18-1.57-1.18-3 0-1.42.74-2.12 1-2.41.24-.26.53-.32.71-.32.18 0 .35 0 .5.01.16.01.38-.06.6.45.24.56.8 1.94.87 2.08.07.14.11.3.02.49-.09.19-.13.3-.26.46-.13.16-.28.35-.4.47-.13.13-.27.27-.12.53.16.27.7 1.15 1.5 1.86 1.03.92 1.9 1.21 2.16 1.35.27.13.42.11.58-.07.16-.18.68-.79.86-1.06.18-.27.36-.22.6-.13.24.09 1.53.72 1.79.85.27.13.44.2.51.31.06.11.06.65-.18 1.33z"/></svg>`;
   progressBar.innerHTML = ''; stepLabel.textContent = '';
   cardArea.innerHTML = `
     <div class="success-icon">✓</div>
@@ -1994,50 +1997,20 @@ function renderSuccess(refId){
     </div>
     <p style="font-size:16px;color:var(--muted);text-align:center;">${esc(t('refNote'))}</p>
     <div class="nav-buttons">
-      <a href="${waLink}" target="_blank" rel="noopener" class="btn-primary"
-         style="display:flex;align-items:center;justify-content:center;text-decoration:none;background:var(--green);color:#0B0A09;">${esc(t('btnShare'))}</a>
-    </div>
-    <p style="font-size:13px;color:var(--muted);text-align:center;margin:22px 0 6px;">${esc(t('shareOwnProfileNote'))}</p>
-    <div class="nav-buttons">
-      <button class="btn-secondary" id="attachProfileBtn" style="width:100%;">${esc(t('btnAttachProfile'))}</button>
-      <input type="file" id="profileFileInput" style="display:none;" accept=".pdf,.doc,.docx,image/*">
+      <a href="${waLink}" target="_blank" rel="noopener" class="btn-primary share-btn">
+        ${whatsappIconSvg}<span>${esc(t('btnShare'))}</span>
+      </a>
     </div>
     <div class="nav-buttons">
       <button class="btn-secondary" id="anotherBtn" style="width:100%;">${esc(t('btnAnother'))}</button>
     </div>
   `;
-  document.getElementById('attachProfileBtn').onclick = ()=> document.getElementById('profileFileInput').click();
-  document.getElementById('profileFileInput').onchange = e=> shareOwnProfileFile(e.target.files[0], refId);
   document.getElementById('anotherBtn').onclick = ()=>{
     const keepLang = state.language;
     state = blankState(); state.language = keepLang;
     stepIndex = 1; // skip language step, keep chosen language
     render(); window.scrollTo({top:0,behavior:'smooth'});
   };
-}
-
-// ---- Share the enroller's own profile document (not app-generated) ----
-const PROFILE_SHARE_WHATSAPP = "9946441958";
-
-function shareOwnProfileFile(file, refId){
-  if(!file) return;
-  const msg = `Hi, I'd like to share my profile document (${file.name}) for the Kerala Classical & Traditional Performing Arts Directory (Ref: ${refId}).`;
-  // Decide synchronously (no "await" beforehand) which path to use, so we
-  // never lose the browser's "this came from a real tap" permission before
-  // opening WhatsApp — that permission expires quickly, and Safari in
-  // particular silently blocks a popup opened even slightly late.
-  let canUseNativeShare = false;
-  if(navigator.canShare){
-    try{ canUseNativeShare = navigator.canShare({files:[file]}); }catch(e){ canUseNativeShare = false; }
-  }
-  if(canUseNativeShare){
-    navigator.share({ files:[file], title: file.name, text: msg }).catch(()=>{
-      // user cancelled the native share sheet — that's a deliberate choice,
-      // not a failure, so we don't try to force a fallback afterwards.
-    });
-  } else {
-    window.open(`https://wa.me/91${PROFILE_SHARE_WHATSAPP}?text=${encodeURIComponent(msg + ' Attaching it here now.')}`, '_blank');
-  }
 }
 
 // ============ ADMIN ============
