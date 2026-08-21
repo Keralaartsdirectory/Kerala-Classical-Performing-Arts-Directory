@@ -232,7 +232,7 @@ const STR = {
   addrHouseQ:{en:"House Name/No. & Street", ml:"വീട്ടുപേര്/നമ്പർ & തെരുവ്"},
   addrHousePh:{en:"e.g. Anugraha House, MG Road", ml:"ഉദാ: അനുഗ്രഹ ഭവനം, എം.ജി. റോഡ്"},
   addrLineQ:{en:"Address Line (House/Building & Street)", ml:"വിലാസ വരി (വീട്/കെട്ടിടം & തെരുവ്)"},
-  addrLinePh:{en:"e.g. 12 Maple Street, Apt 4B", ml:"ഉദാ: 12 Maple Street, Apt 4B"},
+  addrLinePh:{en:"e.g. 12 Baker Street", ml:"ഉദാ: 12 Baker Street"},
   addrPOQ:{en:"Post Office", ml:"പോസ്റ്റ് ഓഫീസ്"},
   addrPOPh:{en:"e.g. Kodungallur", ml:"ഉദാ: കൊടുങ്ങല്ലൂർ"},
   addrPanchayatQ:{en:"Panchayat / Municipality / Corporation", ml:"പഞ്ചായത്ത് / മുനിസിപ്പാലിറ്റി / കോർപ്പറേഷൻ"},
@@ -243,12 +243,17 @@ const STR = {
   addrDistrictPh:{en:"e.g. Thrissur", ml:"ഉദാ: തൃശൂർ"},
   addrCityQ:{en:"City", ml:"നഗരം"},
   addrCityPh:{en:"e.g. Bengaluru", ml:"ഉദാ: ബെംഗളൂരു"},
+  addrCityAbroadPh:{en:"e.g. London", ml:"ഉദാ: London"},
   addrStateQ:{en:"State", ml:"സംസ്ഥാനം"},
   addrStatePh:{en:"e.g. Karnataka", ml:"ഉദാ: കർണാടക"},
+  addrStateAbroadPh:{en:"e.g. Greater London", ml:"ഉദാ: Greater London"},
   addrCountryQ:{en:"Country", ml:"രാജ്യം"},
-  addrCountryPh:{en:"e.g. UAE", ml:"ഉദാ: UAE"},
+  addrCountryPh:{en:"e.g. United Kingdom", ml:"ഉദാ: United Kingdom"},
   fPostalCode:{en:"Postal / ZIP Code", ml:"പോസ്റ്റൽ / ZIP കോഡ്"},
-  fPostalCodePh:{en:"Postal or ZIP code", ml:"പോസ്റ്റൽ അല്ലെങ്കിൽ ZIP കോഡ്"},
+  fPostalCodePh:{en:"e.g. NW1 6XE", ml:"ഉദാ: NW1 6XE"},
+  addrHouseIndiaPh:{en:"e.g. 221B Brigade Road", ml:"ഉദാ: 221B Brigade Road"},
+  addrPOIndiaPh:{en:"e.g. Shivajinagar", ml:"ഉദാ: Shivajinagar"},
+  addrDistrictIndiaPh:{en:"e.g. Bengaluru Urban", ml:"ഉദാ: Bengaluru Urban"},
   resideQ:{en:"Where do you currently reside?", ml:"താങ്കൾ ഇപ്പോൾ എവിടെയാണ് താമസിക്കുന്നത്?"},
   instLocationQ:{en:"Where is your Institution located?", ml:"താങ്കളുടെ സ്ഥാപനം എവിടെയാണ് സ്ഥിതി ചെയ്യുന്നത്?"},
   orgLocationQ:{en:"Where is your Organization located?", ml:"താങ്കളുടെ സംഘടന എവിടെയാണ് സ്ഥിതി ചെയ്യുന്നത്?"},
@@ -974,9 +979,9 @@ function addressFieldsHtml(cfg){
       <label class="field-label">${esc(t('addrLineQ'))} <span class="req">*</span>${ml('addrLineQ')}</label>
       <input type="text" id="${cfg.idPrefix}House" value="${esc(state[cfg.houseKey])}" placeholder="${esc(t('addrLinePh'))}">
       <label class="field-label">${esc(t('addrCityQ'))} <span class="req">*</span>${ml('addrCityQ')}</label>
-      <input type="text" id="${cfg.idPrefix}City" value="${esc(state[cfg.cityKey])}" placeholder="${esc(t('addrCityPh'))}">
+      <input type="text" id="${cfg.idPrefix}City" value="${esc(state[cfg.cityKey])}" placeholder="${esc(t('addrCityAbroadPh'))}">
       <label class="field-label">${esc(t('addrStateQ'))} <span class="req">*</span>${ml('addrStateQ')}</label>
-      <input type="text" id="${cfg.idPrefix}State" value="${esc(state[cfg.stateKey])}" placeholder="${esc(t('addrStatePh'))}">
+      <input type="text" id="${cfg.idPrefix}State" value="${esc(state[cfg.stateKey])}" placeholder="${esc(t('addrStateAbroadPh'))}">
       <label class="field-label">${esc(t('addrCountryQ'))} <span class="req">*</span>${ml('addrCountryQ')}</label>
       <input type="text" id="${cfg.idPrefix}Country" value="${esc(state[cfg.countryKey])}" placeholder="${esc(t('addrCountryPh'))}">
       <label class="field-label">${esc(t('fPostalCode'))} <span class="req">*</span>${ml('fPostalCode')}</label>
@@ -984,13 +989,13 @@ function addressFieldsHtml(cfg){
   } else if(locType==='India'){
     fields = `
       <label class="field-label">${esc(t('addrHouseQ'))} <span class="req">*</span>${ml('addrHouseQ')}</label>
-      <input type="text" id="${cfg.idPrefix}House" value="${esc(state[cfg.houseKey])}" placeholder="${esc(t('addrHousePh'))}">
+      <input type="text" id="${cfg.idPrefix}House" value="${esc(state[cfg.houseKey])}" placeholder="${esc(t('addrHouseIndiaPh'))}">
       <label class="field-label">${esc(t('addrPOQ'))} <span class="req">*</span>${ml('addrPOQ')}</label>
-      <input type="text" id="${cfg.idPrefix}PO" value="${esc(state[cfg.poKey])}" placeholder="${esc(t('addrPOPh'))}">
+      <input type="text" id="${cfg.idPrefix}PO" value="${esc(state[cfg.poKey])}" placeholder="${esc(t('addrPOIndiaPh'))}">
       <label class="field-label">${esc(t('addrCityQ'))} <span class="req">*</span>${ml('addrCityQ')}</label>
       <input type="text" id="${cfg.idPrefix}City" value="${esc(state[cfg.cityKey])}" placeholder="${esc(t('addrCityPh'))}">
       <label class="field-label">${esc(t('addrDistrictQ'))} <span class="req">*</span>${ml('addrDistrictQ')}</label>
-      <input type="text" id="${cfg.idPrefix}District" value="${esc(state[cfg.districtKey])}" placeholder="${esc(t('addrDistrictPh'))}">
+      <input type="text" id="${cfg.idPrefix}District" value="${esc(state[cfg.districtKey])}" placeholder="${esc(t('addrDistrictIndiaPh'))}">
       <label class="field-label">${esc(t('addrStateQ'))} <span class="req">*</span>${ml('addrStateQ')}</label>
       <input type="text" id="${cfg.idPrefix}State" value="${esc(state[cfg.stateKey])}" placeholder="${esc(t('addrStatePh'))}">
       <label class="field-label">${esc(t('fPincode'))} <span class="req">*</span>${ml('fPincode')}</label>
