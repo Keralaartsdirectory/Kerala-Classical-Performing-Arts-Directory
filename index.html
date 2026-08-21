@@ -82,6 +82,17 @@
   .option-card.selected .tag{color:#D8B478;}
 
   .chip-wrap{display:flex;flex-wrap:wrap;gap:9px;margin-top:8px;}
+  .lsg-autocomplete-wrap{position:relative;}
+  .lsg-suggestions{position:absolute;left:0;right:0;top:100%;margin-top:2px;
+    background:var(--card-2);border:2px solid var(--gold);border-radius:10px;
+    max-height:220px;overflow-y:auto;z-index:20;display:none;}
+  .lsg-suggestions.show{display:block;}
+  .lsg-suggestion-item{padding:12px 14px;cursor:pointer;font-size:16px;
+    border-bottom:1px solid var(--line);}
+  .lsg-suggestion-item:last-child{border-bottom:none;}
+  .lsg-suggestion-item:active{background:var(--maroon);color:#fff;}
+  .lsg-suggestion-item .lsg-type{font-size:12px;color:var(--gold);margin-left:6px;}
+  .lsg-suggestion-empty{padding:12px 14px;color:var(--muted);font-size:14px;}
   .chip{border:2px solid var(--line);background:var(--card-2);border-radius:999px;
     padding:10px 17px;font-size:16px;font-weight:500;cursor:pointer;user-select:none;color:var(--ink);}
   .chip.selected{border-color:var(--green);background:var(--green);color:#0B0A09;font-weight:600;}
@@ -216,16 +227,32 @@ const STR = {
   fMobilePh:{en:"10-digit mobile number", ml:"10 അക്ക മൊബൈൽ നമ്പർ"},
   fSameWa:{en:"WhatsApp number is same as mobile", ml:"വാട്സാപ്പ് നമ്പർ മൊബൈൽ നമ്പർ തന്നെയാണ്"},
   fWhatsapp:{en:"WhatsApp Number", ml:"വാട്സാപ്പ് നമ്പർ"},
-  addrStepTitle:{en:"Your Address", ml:"താങ്കളുടെ വിലാസം"},
-  addrStepSub:{en:"Let's get your exact postal address, one step at a time.",
-               ml:"താങ്കളുടെ കൃത്യമായ തപാൽ വിലാസം, ഘട്ടം ഘട്ടമായി നൽകാം."},
   addrHouseQ:{en:"House Name/No. & Street", ml:"വീട്ടുപേര്/നമ്പർ & തെരുവ്"},
   addrHousePh:{en:"e.g. Anugraha House, MG Road", ml:"ഉദാ: അനുഗ്രഹ ഭവനം, എം.ജി. റോഡ്"},
+  addrLineQ:{en:"Address Line (House/Building & Street)", ml:"വിലാസ വരി (വീട്/കെട്ടിടം & തെരുവ്)"},
+  addrLinePh:{en:"e.g. 12 Maple Street, Apt 4B", ml:"ഉദാ: 12 Maple Street, Apt 4B"},
   addrPOQ:{en:"Post Office", ml:"പോസ്റ്റ് ഓഫീസ്"},
   addrPOPh:{en:"e.g. Kodungallur", ml:"ഉദാ: കൊടുങ്ങല്ലൂർ"},
   addrPanchayatQ:{en:"Panchayat / Municipality / Corporation", ml:"പഞ്ചായത്ത് / മുനിസിപ്പാലിറ്റി / കോർപ്പറേഷൻ"},
   addrPanchayatPh:{en:"e.g. Kodungallur Municipality", ml:"ഉദാ: കൊടുങ്ങല്ലൂർ മുനിസിപ്പാലിറ്റി"},
-  addrFieldErr:{en:"Please fill this in before continuing.", ml:"തുടരുന്നതിന് മുമ്പ് ഇത് പൂരിപ്പിക്കുക."},
+  addrPanchayatTypePh:{en:"Start typing (min. 4 letters) to search...", ml:"തിരയാൻ ടൈപ്പ് ചെയ്യുക (കുറഞ്ഞത് 4 അക്ഷരം)..."},
+  lsgNoMatch:{en:"No matches — check the spelling", ml:"ഒന്നും കണ്ടെത്തിയില്ല — സ്പെല്ലിംഗ് പരിശോധിക്കുക"},
+  addrDistrictQ:{en:"District", ml:"ജില്ല"},
+  addrDistrictPh:{en:"e.g. Thrissur", ml:"ഉദാ: തൃശൂർ"},
+  addrCityQ:{en:"City", ml:"നഗരം"},
+  addrCityPh:{en:"e.g. Bengaluru", ml:"ഉദാ: ബെംഗളൂരു"},
+  addrStateQ:{en:"State", ml:"സംസ്ഥാനം"},
+  addrStatePh:{en:"e.g. Karnataka", ml:"ഉദാ: കർണാടക"},
+  addrCountryQ:{en:"Country", ml:"രാജ്യം"},
+  addrCountryPh:{en:"e.g. UAE", ml:"ഉദാ: UAE"},
+  fPostalCode:{en:"Postal / ZIP Code", ml:"പോസ്റ്റൽ / ZIP കോഡ്"},
+  fPostalCodePh:{en:"Postal or ZIP code", ml:"പോസ്റ്റൽ അല്ലെങ്കിൽ ZIP കോഡ്"},
+  resideQ:{en:"Where do you currently reside?", ml:"താങ്കൾ ഇപ്പോൾ എവിടെയാണ് താമസിക്കുന്നത്?"},
+  instLocationQ:{en:"Where is your Institution located?", ml:"താങ്കളുടെ സ്ഥാപനം എവിടെയാണ് സ്ഥിതി ചെയ്യുന്നത്?"},
+  orgLocationQ:{en:"Where is your Organization located?", ml:"താങ്കളുടെ സംഘടന എവിടെയാണ് സ്ഥിതി ചെയ്യുന്നത്?"},
+  locKerala:{en:"Kerala", ml:"കേരളം"},
+  locIndia:{en:"Elsewhere in India", ml:"ഇന്ത്യയിലെ മറ്റ് സ്ഥലങ്ങൾ"},
+  locAbroad:{en:"Outside India", ml:"ഇന്ത്യക്ക് പുറത്ത്"},
   contactPersonTitle:{en:"Contact Person", ml:"ബന്ധപ്പെടേണ്ട വ്യക്തി"},
   contactPersonSub:{en:"Who should we contact about this listing? We'll only need their name and mobile number.",
                      ml:"ഈ എൻട്രിയെക്കുറിച്ച് ആരെ ബന്ധപ്പെടണം? പേരും മൊബൈൽ നമ്പറും മാത്രം മതി."},
@@ -236,8 +263,8 @@ const STR = {
   fEmail:{en:"Email", ml:"ഇമെയിൽ"},
   fSocial:{en:"Social Media Handles", ml:"സാമൂഹ്യമാധ്യമ വിലാസങ്ങൾ"},
   fSocialPh:{en:"Instagram / Facebook / YouTube", ml:"ഇൻസ്റ്റഗ്രാം / ഫേസ്ബുക്ക് / യൂട്യൂബ്"},
-  contactErr:{en:"Please fill all mandatory fields correctly. Mobile and WhatsApp must be valid 10-digit Indian numbers.",
-              ml:"നിർബന്ധിത വിവരങ്ങളെല്ലാം കൃത്യമായി പൂരിപ്പിക്കുക. മൊബൈൽ, വാട്സാപ്പ് നമ്പറുകൾ ശരിയായ 10 അക്ക നമ്പറുകളായിരിക്കണം."},
+  contactErr:{en:"Please fill all mandatory fields correctly — name, mobile/WhatsApp (valid 10-digit), full address (all 4 parts), 6-digit pincode, and a valid email.",
+              ml:"നിർബന്ധിത വിവരങ്ങളെല്ലാം കൃത്യമായി പൂരിപ്പിക്കുക — പേര്, മൊബൈൽ/വാട്സാപ്പ് (10 അക്കം), പൂർണ്ണ വിലാസം (4 ഭാഗങ്ങളും), 6 അക്ക പിൻകോഡ്, ശരിയായ ഇമെയിൽ."},
 
   artformTitle:{en:"Your art form", ml:"താങ്കളുടെ കലാരൂപം"},
   artformTitleT:{en:"Art form you teach", ml:"താങ്കൾ പഠിപ്പിക്കുന്ന കലാരൂപം"},
@@ -397,6 +424,7 @@ const STR = {
   rAddrHouse:{en:"House Name/No. & Street", ml:"വീട്ടുപേര്/നമ്പർ & തെരുവ്"},
   rAddrPO:{en:"Post Office", ml:"പോസ്റ്റ് ഓഫീസ്"},
   rAddrPanchayat:{en:"Panchayat/Municipality/Corporation", ml:"പഞ്ചായത്ത്/മുനിസിപ്പാലിറ്റി/കോർപ്പറേഷൻ"},
+  rAddrDistrict:{en:"District", ml:"ജില്ല"},
   rPincode:{en:"Pincode", ml:"പിൻകോഡ്"},
   rEmail:{en:"Email", ml:"ഇമെയിൽ"},
   rSocial:{en:"Social Media", ml:"സാമൂഹ്യമാധ്യമം"},
@@ -515,7 +543,8 @@ const OPT_ML = {
   "Head of the Department":"വകുപ്പ് മേധാവി","Principal":"പ്രിൻസിപ്പൽ",
   "Founder":"സ്ഥാപകൻ","Office Bearer":"ഭാരവാഹി","Member":"അംഗം","Other":"മറ്റുള്ളവ",
   "Trust":"ട്രസ്റ്റ്","Society":"സൊസൈറ്റി",
-  "President":"പ്രസിഡന്റ്","Secretary":"സെക്രട്ടറി","Treasurer":"ട്രഷറർ"
+  "President":"പ്രസിഡന്റ്","Secretary":"സെക്രട്ടറി","Treasurer":"ട്രഷറർ",
+  "Panchayat":"പഞ്ചായത്ത്","Municipality":"മുനിസിപ്പാലിറ്റി","Corporation":"കോർപ്പറേഷൻ"
 };
 
 function t(key, ...args){
@@ -718,11 +747,11 @@ const MAKER_SPECIALIZATIONS = {
 };
 
 const FLOWS = {
-  "Artist":                    ["lang","who","contact","addressHouse","addressPO","addressPanchayat","addressPincode","artform","category","specialization","artistExtras","review"],
-  "Teacher":                   ["lang","who","contact","addressHouse","addressPO","addressPanchayat","addressPincode","artform","category","specialization","teacher","review"],
+  "Artist":                    ["lang","who","contact","artform","category","specialization","artistExtras","review"],
+  "Teacher":                   ["lang","who","contact","artform","category","specialization","teacher","review"],
   "Institution":               ["lang","who","contactPerson","institution","review"],
   "Organization":              ["lang","who","contactPerson","organization","review"],
-  "Instrument Maker / Costume Maker": ["lang","who","contact","addressHouse","addressPO","addressPanchayat","addressPincode","makerCategory","makerSpecialization","review"]
+  "Instrument Maker / Costume Maker": ["lang","who","contact","makerCategory","makerSpecialization","review"]
 };
 
 // ============ STATE ============
@@ -730,7 +759,8 @@ function blankState(){
   return {
     language:"", who:"",
     name:"", mobile:"", whatsapp:"", sameAsMobile:false,
-    addressHouse:"", addressPO:"", addressPanchayat:"", pincode:"", email:"", socialMedia:"",
+    locationType:"", addressHouse:"", addressPO:"", addressPanchayat:"", addressDistrict:"",
+    addressCity:"", addressState:"", addressCountry:"", pincode:"", email:"", socialMedia:"",
     bucket:"", categories:[], specializations:[], specializationOther:"",
     yearsExperience:"", air:"", awards:"", books:"",
     isPhdHolder:false, phdThesisTitle:"", phdUniversity:"", phdYear:"",
@@ -741,6 +771,10 @@ function blankState(){
     designation:"", designationOther:"",
     teacherInstType:"", teachesPrivateClasses:false, teachesPrivateClassesModes:[],
     instName:"", instAddress:"", instEmail:"", instPhone:"", instMobile:"", instWebsite:"",
+    instLocationType:"", instLocHouse:"", instLocPO:"", instLocPanchayat:"", instLocDistrict:"",
+    instLocCity:"", instLocState:"", instLocCountry:"", instLocPincode:"",
+    orgLocationType:"", orgLocHouse:"", orgLocPO:"", orgLocPanchayat:"", orgLocDistrict:"",
+    orgLocCity:"", orgLocState:"", orgLocCountry:"", orgLocPincode:"",
     yearEstablished:"", subjectsTaught:[], subjectsTaughtOther:"",
     hasBranches:false, branchCount:"", branchAddresses:"",
     eduPrograms:[],
@@ -795,8 +829,6 @@ function go(delta){ stepIndex += delta; render(); window.scrollTo({top:0,behavio
 
 const RENDERERS = {
   lang: renderLang, who: renderWho, contact: renderContact, contactPerson: renderContactPerson,
-  addressHouse: renderAddressHouse, addressPO: renderAddressPO,
-  addressPanchayat: renderAddressPanchayat, addressPincode: renderAddressPincode,
   artform: renderArtform,
   category: renderCategory, specialization: renderSpecialization,
   artistExtras: renderArtistExtras, teacher: renderTeacher,
@@ -895,6 +927,171 @@ function selectOptions(list, selected){
     list.map(d=>`<option value="${esc(d)}" ${selected===d?'selected':''}>${esc(opt(d))}</option>`).join('');
 }
 
+// ---- Reusable "where are you located?" block ----
+// Used for the personal address (Artist/Teacher/Maker), and separately for
+// an Institution's or Organization's own location — each with its own set
+// of state keys (cfg) and question wording, but sharing the same logic:
+// pick Kerala / Elsewhere in India / Outside India, then show only the
+// fields that make sense for that choice.
+// Kerala's 14 districts (fixed list).
+const KERALA_DISTRICTS = [
+  {en:"Thiruvananthapuram", ml:"തിരുവനന്തപുരം"},
+  {en:"Kollam", ml:"കൊല്ലം"},
+  {en:"Pathanamthitta", ml:"പത്തനംതിട്ട"},
+  {en:"Alappuzha", ml:"ആലപ്പുഴ"},
+  {en:"Kottayam", ml:"കോട്ടയം"},
+  {en:"Idukki", ml:"ഇടുക്കി"},
+  {en:"Ernakulam", ml:"എറണാകുളം"},
+  {en:"Thrissur", ml:"തൃശ്ശൂർ"},
+  {en:"Palakkad", ml:"പാലക്കാട്"},
+  {en:"Malappuram", ml:"മലപ്പുറം"},
+  {en:"Kozhikode", ml:"കോഴിക്കോട്"},
+  {en:"Wayanad", ml:"വയനാട്"},
+  {en:"Kannur", ml:"കണ്ണൂർ"},
+  {en:"Kasaragod", ml:"കാസർഗോഡ്"}
+];
+// All 1,025 Kerala Local Self-Government bodies (Grama Panchayats,
+// Municipalities, Corporations) — sourced from opendatakerala/lsg-kerala-data
+// (OpenStreetMap-derived, ODbL license). n=English name, m=Malayalam name,
+// t=type. Used to power the Panchayat/Municipality/Corporation autocomplete
+// for Kerala residents.
+const LSG_DATA = [{"n":"Abdurahiman Nagar","m":"അബ്ദുറഹിമാൻ നഗർ","t":"Panchayat"},{"n":"Adat","m":"അടാട്ട്","t":"Panchayat"},{"n":"Adichanalloor","m":"ആദിച്ചനല്ലൂർ","t":"Panchayat"},{"n":"Adimali","m":"അടിമാലി","t":"Panchayat"},{"n":"Adoor","m":"അടൂർ","t":"Municipality"},{"n":"Agali","m":"അഗളി","t":"Panchayat"},{"n":"Aikkaranadu","m":"ഐക്കരനാട്","t":"Panchayat"},{"n":"Ajanur","m":"അജാനൂര്‍","t":"Panchayat"},{"n":"Akalakkunnam","m":"അകലക്കുന്നം","t":"Panchayat"},{"n":"Akathethara","m":"അകത്തേത്തറ","t":"Panchayat"},{"n":"Ala","m":"ആല","t":"Panchayat"},{"n":"Alagappanagar","m":"അളഗപ്പനഗര്‍","t":"Panchayat"},{"n":"Alakode","m":"ആലക്കോടു്","t":"Panchayat"},{"n":"Alamkode","m":"ആലംകോട്","t":"Panchayat"},{"n":"Alanallur","m":"അലനല്ലൂർ","t":"Panchayat"},{"n":"Alangad","m":"ആലങ്ങാട്","t":"Panchayat"},{"n":"Alappad","m":"ആലപ്പാട് ഗ്രാമ പഞ്ചായത്ത്","t":"Panchayat"},{"n":"Alappuzha","m":"ആലപ്പുഴ","t":"Municipality"},{"n":"Alathur","m":"ആലത്തൂർ","t":"Panchayat"},{"n":"Alayaman","m":"അലയമൺ","t":"Panchayat"},{"n":"Aliparamba","m":"ആലിപ്പറമ്പ്","t":"Panchayat"},{"n":"Aloor","m":"ആളൂര്‍","t":"Panchayat"},{"n":"Aluva","m":"ആലുവ","t":"Municipality"},{"n":"Amarambalam","m":"അമരമ്പലം","t":"Panchayat"},{"n":"Ambalapara","m":"അമ്പലപ്പാറ","t":"Panchayat"},{"n":"Ambalapuzha North","m":"അമ്പലപ്പുഴ വടക്ക് ഗ്രാമ പഞ്ചായത്ത്","t":"Panchayat"},{"n":"Ambalapuzha South","m":"അമ്പലപ്പുഴ തെക്ക് ഗ്രാമ പഞ്ചായത്ത്","t":"Panchayat"},{"n":"Ambalavayal","m":"അമ്പലവയല്","t":"Panchayat"},{"n":"Amballur","m":"ആമ്പല്ലൂർ","t":"Panchayat"},{"n":"Amboori","m":"അമ്പൂരി","t":"Panchayat"},{"n":"Anad","m":"ആനാട്","t":"Panchayat"},{"n":"Anakayam","m":"ആനക്കയം","t":"Panchayat"},{"n":"Anakkara","m":"ആനക്കര","t":"Panchayat"},{"n":"Ananganadi","m":"അനങ്ങനടി","t":"Panchayat"},{"n":"Anchal","m":"അഞ്ചൽ","t":"Panchayat"},{"n":"Andoorkonam","m":"അണ്ടൂർക്കോണം","t":"Panchayat"},{"n":"Angadippuram","m":"അങ്ങാടിപ്പുറം","t":"Panchayat"},{"n":"Angamaly","m":"അങ്കമാലി","t":"Municipality"},{"n":"Anikkadu","m":"ആനിക്കാട്","t":"Panchayat"},{"n":"Anjarakandy","m":"അഞ്ചരക്കണ്ടി","t":"Panchayat"},{"n":"Anjuthengu","m":"അഞ്ചുതെങ്ങ്","t":"Panchayat"},{"n":"Annamanada","m":"അന്നമനട","t":"Panchayat"},{"n":"Anthikkad","m":"അന്തിക്കാട്","t":"Panchayat"},{"n":"Anthoor","m":"","t":"Municipality"},{"n":"Arakkuzha","m":"ആരക്കുഴ","t":"Panchayat"},{"n":"Arakulam","m":"അറക്കുളം","t":"Panchayat"},{"n":"Aralam","m":"ആറളം","t":"Panchayat"},{"n":"Aranmula","m":"ആറന്മുള","t":"Panchayat"},{"n":"Arattupuzha","m":"ആറാട്ടുപുഴ","t":"Panchayat"},{"n":"Areacode","m":"അരീക്കോട്","t":"Panchayat"},{"n":"Arikkulam","m":"അരിക്കുളം","t":"Panchayat"},{"n":"Arimbur","m":"അരി‍മ്പൂര്‍","t":"Panchayat"},{"n":"Aroor","m":"അരൂർ","t":"Panchayat"},{"n":"Arpookkara","m":"ആർപ്പൂക്കര","t":"Panchayat"},{"n":"Arukutty","m":"അരൂകുറ്റി","t":"Panchayat"},{"n":"Aruvappulam","m":"അരുവാപ്പുലം","t":"Panchayat"},{"n":"Aruvikkara","m":"Aruvikkara Gramapanchayath","t":"Panchayat"},{"n":"Aryad","m":"ആര്യാട്","t":"Panchayat"},{"n":"Aryanad","m":"ആര്യനാട്","t":"Panchayat"},{"n":"Aryancode","m":"ആര്യങ്കോട്","t":"Panchayat"},{"n":"Aryankavu","m":"ആര്യങ്കാവ്","t":"Panchayat"},{"n":"Asamannur","m":"അശമന്നൂർ","t":"Panchayat"},{"n":"Athavanad","m":"ആതവനാട്","t":"Panchayat"},{"n":"Athirampuzha","m":"അതിരമ്പുഴ","t":"Panchayat"},{"n":"Athirappilly","m":"അതിരപ്പിള്ളി","t":"Panchayat"},{"n":"Athiyannur, Thiruvananthapuram","m":"അതിയന്നൂർ","t":"Panchayat"},{"n":"Atholi","m":"അത്തോളി","t":"Panchayat"},{"n":"Attingal","m":"ആറ്റിങ്ങൽ","t":"Municipality"},{"n":"Avanur","m":"അവണൂര്‍","t":"Panchayat"},{"n":"Avinissery","m":"അവിണിശ്ശേരി","t":"Panchayat"},{"n":"Avoly","m":"ആവോലി","t":"Panchayat"},{"n":"Ayancheri","m":"ആയഞ്ചരി","t":"Panchayat"},{"n":"Ayarkunnam","m":"അയർക്കുന്നം","t":"Panchayat"},{"n":"Ayavana","m":"ആയവന","t":"Panchayat"},{"n":"Ayiloor","m":"അയിലൂർ","t":"Panchayat"},{"n":"Ayiroor","m":"അയിരൂർ","t":"Panchayat"},{"n":"Aymanam","m":"അയ്മനം","t":"Panchayat"},{"n":"Ayyampuzha","m":"അയ്യമ്പുഴ","t":"Panchayat"},{"n":"Ayyankunnu","m":"അയ്യന്‍കുന്നു്","t":"Panchayat"},{"n":"Ayyappankovil","m":"അയ്യപ്പൻ കോവിൽ","t":"Panchayat"},{"n":"Azhikode","m":"അഴിക്കോടു്","t":"Panchayat"},{"n":"Azhiyur","m":"അഴിയൂർ","t":"Panchayat"},{"n":"Azhoor","m":"അഴൂർ","t":"Panchayat"},{"n":"Badiadka","m":"","t":"Panchayat"},{"n":"Baisonvalley","m":"ബൈസൺ വാലി","t":"Panchayat"},{"n":"Balal","m":"ബളാല്‍","t":"Panchayat"},{"n":"Balaramapuram","m":"ബാലരാമപുരം","t":"Panchayat"},{"n":"Balussery","m":"ബാലുശ്ശേരി","t":"Panchayat"},{"n":"Bedadka","m":"ബേടഡുക്ക","t":"Panchayat"},{"n":"Beloor","m":"ബേലൂര്‍","t":"Panchayat"},{"n":"Bharananganam","m":"ഭരണങ്ങാനം","t":"Panchayat"},{"n":"Bharanikkavu","m":"ഭരണിക്കാവ്","t":"Panchayat"},{"n":"Budhanoor","m":"ബുധനൂർ","t":"Panchayat"},{"n":"Chadayamangalam","m":"ചടയമംഗലം","t":"Panchayat"},{"n":"Chakkittapara","m":"ചക്കിട്ടപ്പാറ","t":"Panchayat"},{"n":"Chakkupallam","m":"ചക്കുപള്ളം","t":"Panchayat"},{"n":"Chalakudy","m":"ചാലക്കുടി","t":"Municipality"},{"n":"Chalavara","m":"ചളവറ","t":"Panchayat"},{"n":"Chalissery","m":"ചാലിശ്ശേരി","t":"Panchayat"},{"n":"Chaliyar","m":"ചാലിയാർ","t":"Panchayat"},{"n":"Champakulam","m":"ചമ്പക്കുളം","t":"Panchayat"},{"n":"Changanassery","m":"ചങ്ങനാശ്ശേരി","t":"Municipality"},{"n":"Changaroth","m":"ചങ്ങരോത്ത്","t":"Panchayat"},{"n":"Chapparapadavu","m":"ചപ്പാരപ്പടവു്","t":"Panchayat"},{"n":"Chathamangalam","m":"ചാത്തമംഗലം","t":"Panchayat"},{"n":"Chathanoor","m":"ചാത്തന്നൂർ","t":"Panchayat"},{"n":"Chavakkad","m":"ചാവക്കാട്","t":"Municipality"},{"n":"Chavara","m":"ചവറ","t":"Panchayat"},{"n":"Chazhur","m":"ചാഴൂര്‍","t":"Panchayat"},{"n":"Cheekkode","m":"ചീക്കോട്","t":"Panchayat"},{"n":"Chekkiad","m":"ചെക്യാട്","t":"Panchayat"},{"n":"Chelakkara","m":"ചേലക്കര","t":"Panchayat"},{"n":"Chelannur","m":"ചേളന്നൂർ","t":"Panchayat"},{"n":"Chelembra","m":"ചേലേമ്പ്ര","t":"Panchayat"},{"n":"Chellanam","m":"ചെല്ലാനം","t":"Panchayat"},{"n":"Chemanchery","m":"ചേമഞ്ചരി","t":"Panchayat"},{"n":"Chembilode","m":"ചെമ്പിലോട്ടു്","t":"Panchayat"},{"n":"Chemmaruthy","m":"ചെമ്മരുതി","t":"Panchayat"},{"n":"Chemnad","m":"ചെമ്മനാടു്","t":"Panchayat"},{"n":"Chempu","m":"ചെമ്പ്","t":"Panchayat"},{"n":"Chendamangalam","m":"ചേന്ദമംഗലം","t":"Panchayat"},{"n":"Chengala","m":"ചെങ്കള","t":"Panchayat"},{"n":"Chengalayi","m":"ചെങ്ങളായി","t":"Panchayat"},{"n":"Chengamanadu","m":"ചെങ്ങമനാട്","t":"Panchayat"},{"n":"Chengannur","m":"ചെങ്ങന്നൂർ","t":"Municipality"},{"n":"Chengottukavu","m":"ചേങ്ങോട്ടുകാവ്","t":"Panchayat"},{"n":"Chenkal","m":"ചെങ്കൽ","t":"Panchayat"},{"n":"Chennam Pallipuram","m":"ചേന്നംപള്ളിപ്പുറം","t":"Panchayat"},{"n":"Chenneerkara","m":"ചെന്നീർക്കര","t":"Panchayat"},{"n":"Chennithala Thripperumthura","m":"ചെന്നിത്തല-തൃപ്പെരുന്തുറ","t":"Panchayat"},{"n":"Cheppad","m":"ചേപ്പാട്","t":"Panchayat"},{"n":"Cherannalloor","m":"ചേരാനല്ലൂർ","t":"Panchayat"},{"n":"Cheriyamundam","m":"ചെറിയമുണ്ടം","t":"Panchayat"},{"n":"Cheriyanadu","m":"ചെറിയനാട്","t":"Panchayat"},{"n":"Cherpu","m":"ചേര്‍പ്പ്","t":"Panchayat"},{"n":"Cherpulassery","m":"ചെർപ്പുളശ്ശേരി","t":"Municipality"},{"n":"Cherthala","m":"ചേർത്തല","t":"Municipality"},{"n":"Cherthala south","m":"ചേർത്തല തെക്ക്","t":"Panchayat"},{"n":"Cherukavu","m":"ചെറുകാവ്","t":"Panchayat"},{"n":"Cherukole","m":"ചെറുകോൽ","t":"Panchayat"},{"n":"Cherukunnu","m":"","t":"Panchayat"},{"n":"Cherunniyoor","m":"ചെറുന്നിയൂർ","t":"Panchayat"},{"n":"Cherupuzha","m":"ಚೆರುಪುಝ","t":"Panchayat"},{"n":"Cheruthana","m":"ചെറുതന","t":"Panchayat"},{"n":"Cheruthazham","m":"ചെറുതാഴം","t":"Panchayat"},{"n":"Cheruvannur","m":"ചെറുവണ്ണൂർ","t":"Panchayat"},{"n":"Cheruvathur","m":"ചെറുവത്തൂര്‍","t":"Panchayat"},{"n":"Chettikulangara","m":"ചെട്ടികുളങ്ങര","t":"Panchayat"},{"n":"Chingoli","m":"ചിങ്ങോലി","t":"Panchayat"},{"n":"Chinnakkanal","m":"ചിന്നക്കനാൽ","t":"Panchayat"},{"n":"Chirakkadavu","m":"ചിറക്കടവ് ഗ്രാമപഞ്ചായത്ത് ടൗൺ ഹാൾ","t":"Panchayat"},{"n":"Chirakkal","m":"ചിറക്കല്‍","t":"Panchayat"},{"n":"Chirakkara","m":"ചിറക്കര","t":"Panchayat"},{"n":"Chirayinkeezhu","m":"ചിറയിൻകീഴ്","t":"Panchayat"},{"n":"Chithara","m":"ചിതറ","t":"Panchayat"},{"n":"Chittar","m":"ചിറ്റാര്‍ ഗ്രാമ പഞ്ചായത്ത്","t":"Panchayat"},{"n":"Chittariparamba","m":"ചിറ്റാരിപറമ്പു്","t":"Panchayat"},{"n":"Chittattukara","m":"ചിറ്റാട്ടുകര","t":"Panchayat"},{"n":"ChitturThathamangalam","m":"ചിറ്റൂർ-തത്തമംഗലം","t":"Municipality"},{"n":"Chokkad","m":"ചോക്കാട്","t":"Panchayat"},{"n":"Chokli","m":"ചൊക്ലി","t":"Panchayat"},{"n":"Choondal","m":"ചൂണ്ടല്‍","t":"Panchayat"},{"n":"Choornikkara","m":"ചൂർണ്ണിക്കര","t":"Panchayat"},{"n":"Chorode","m":"ചോറോട്","t":"Panchayat"},{"n":"Chottanikara","m":"ചോറ്റാനിക്കര","t":"Panchayat"},{"n":"Chowannur","m":"ചൊവ്വന്നൂര്‍","t":"Panchayat"},{"n":"Chunakkara","m":"ചുനക്കര","t":"Panchayat"},{"n":"Chungathara","m":"ചുങ്കത്തറ","t":"Panchayat"},{"n":"Clappana","m":"ക്ലാപ്പന","t":"Panchayat"},{"n":"Delampadi","m":"ദേലമ്പാടി","t":"Panchayat"},{"n":"Desamangalam","m":"ദേശമംഗലം","t":"Panchayat"},{"n":"Devikulam","m":"ദേവികുളം","t":"Panchayat"},{"n":"Devikulangara","m":"ദേവികുളങ്ങര","t":"Panchayat"},{"n":"Dharmadam","m":"ധര്‍മ്മടം","t":"Panchayat"},{"n":"Earathu","m":"ഏറത്ത്","t":"Panchayat"},{"n":"East Eleri","m":"ഈസ്റ്റ് എളേരി","t":"Panchayat"},{"n":"East Kallada","m":"കിഴക്കേ കല്ലട","t":"Panchayat"},{"n":"Edacheri","m":"എടച്ചേരി","t":"Panchayat"},{"n":"Edakkara","m":"എടക്കര","t":"Panchayat"},{"n":"Edakkattuvayal","m":"എടക്കാട്ടുവയൽ","t":"Panchayat"},{"n":"Edamalakkudi","m":"","t":"Panchayat"},{"n":"Edamulakkal","m":"ഇടമുളയ്ക്കൽ","t":"Panchayat"},{"n":"Edapatta","m":"എടപ്പറ്റ","t":"Panchayat"},{"n":"Edappal","m":"എടപ്പാൾ","t":"Panchayat"},{"n":"Edarikkode","m":"എടരിക്കോട്","t":"Panchayat"},{"n":"Edathala","m":"എടത്തല","t":"Panchayat"},{"n":"Edathiruthy","m":"എടത്തിരുത്തി","t":"Panchayat"},{"n":"Edathwa","m":"എടത്വ","t":"Panchayat"},{"n":"Edava","m":"ഇടവ","t":"Panchayat"},{"n":"Edavaka","m":"എടവക","t":"Panchayat"},{"n":"Edavanakad","m":"എടവനക്കാട്","t":"Panchayat"},{"n":"Edavanna","m":"എടവണ്ണ","t":"Panchayat"},{"n":"Edavetty","m":"ഇടവെട്ടി","t":"Panchayat"},{"n":"Edavilangu","m":"എടവിലങ്ങ്","t":"Panchayat"},{"n":"Edayur","m":"എടയൂർ","t":"Panchayat"},{"n":"Elakamon","m":"ഇലകമൺ","t":"Panchayat"},{"n":"Elamadu","m":"എലമാട്","t":"Panchayat"},{"n":"Elamkulam","m":"ഏലംകുളം","t":"Panchayat"},{"n":"Elamkunnapuzha","m":"എളങ്കുന്നപ്പുഴ","t":"Panchayat"},{"n":"Elampalloor","m":"ഇളംപള്ളൂര്‍ ഗ്രാമ പഞ്ചായത്ത്","t":"Panchayat"},{"n":"Elanji","m":"ഇലഞ്ഞി","t":"Panchayat"},{"n":"Elanthoor","m":"ഇലന്തൂർ","t":"Panchayat"},{"n":"Elappara","m":"ഏലപ്പാറ","t":"Panchayat"},{"n":"Elappully","m":"എലപ്പുള്ളി","t":"Panchayat"},{"n":"Elavally","m":"എളവള്ളി","t":"Panchayat"},{"n":"Elavanchery","m":"എലവഞ്ചേരി","t":"Panchayat"},{"n":"Elikkulam","m":"എലിക്കുളം","t":"Panchayat"},{"n":"Eloor","m":"ഏലൂർ","t":"Municipality"},{"n":"Enadimangalam","m":"ഏനാദിമംഗലം","t":"Panchayat"},{"n":"Engandiyoor","m":"ഏങ്ങണ്ടിയൂര്‍","t":"Panchayat"},{"n":"Enmakaje","m":"എന്‍മകജെ","t":"Panchayat"},{"n":"Eramala","m":"ഏറാമല","t":"Panchayat"},{"n":"Eramam Kuttur","m":"എരമം കുറ്റൂര്‍","t":"Panchayat"},{"n":"Eranholi","m":"എരിഞ്ഞോളി","t":"Panchayat"},{"n":"Erattayar","m":"ഇരട്ടയാർ","t":"Panchayat"},{"n":"Erattupetta","m":"ഈരാറ്റുപേട്ട","t":"Municipality"},{"n":"Eraviperoor","m":"ഇരവിപേരൂർ","t":"Panchayat"},{"n":"Erimayur","m":"എരിമയൂർ","t":"Panchayat"},{"n":"Eriyad","m":"എറിയാട്","t":"Panchayat"},{"n":"Erumapetty","m":"എരുമപ്പെട്ടി","t":"Panchayat"},{"n":"Erumely","m":"എരുമേലി","t":"Panchayat"},{"n":"Eruthampathy","m":"എരുത്തേമ്പതി","t":"Panchayat"},{"n":"Eruvessy","m":"എരുവട്ടി","t":"Panchayat"},{"n":"Ettumanoor","m":"ഏറ്റുമാനൂർ","t":"Municipality"},{"n":"Ezhamkulam","m":"ഏഴംകുളം","t":"Panchayat"},{"n":"Ezhikkara","m":"ഏഴിക്കര","t":"Panchayat"},{"n":"Ezhome","m":"ഏഴോം","t":"Panchayat"},{"n":"Ezhukone","m":"എഴുകോൺ","t":"Panchayat"},{"n":"Ezhumattoor","m":"എഴുമറ്റൂർ","t":"Panchayat"},{"n":"Ezhupunna","m":"എഴുപുന്ന","t":"Panchayat"},{"n":"Feroke","m":"ഫറോക്ക്","t":"Municipality"},{"n":"Guruvayoor","m":"ഗുരുവായൂർ","t":"Municipality"},{"n":"Haripad","m":"ഹരിപ്പാട്","t":"Municipality"},{"n":"Irikkur","m":"ഇരിക്കൂര്‍","t":"Panchayat"},{"n":"Irinjalakuda","m":"ഇരിങ്ങാലക്കുട","t":"Municipality"},{"n":"Iritty","m":"ഇരിട്ടി","t":"Municipality"},{"n":"Irumbiliyum","m":"ഇരിമ്പിളിയം","t":"Panchayat"},{"n":"Ittiva","m":"ഇട്ടിവ","t":"Panchayat"},{"n":"Kadakarappally","m":"കടക്കരപ്പള്ളി","t":"Panchayat"},{"n":"Kadakkal","m":"കടയ്ക്കൽ","t":"Panchayat"},{"n":"Kadakkavoor","m":"കടയ്ക്കാവൂർ","t":"Panchayat"},{"n":"Kadalundi","m":"കടലുണ്ടി","t":"Panchayat"},{"n":"Kadamakkudy","m":"കടമക്കുടി","t":"Panchayat"},{"n":"Kadambanad","m":"കടമ്പനാട്","t":"Panchayat"},{"n":"Kadambur","m":"കടമ്പൂര്‍","t":"Panchayat"},{"n":"Kadampazhipuram","m":"കടമ്പഴിപ്പുറം","t":"Panchayat"},{"n":"Kadanadu","m":"കടനാട്","t":"Panchayat"},{"n":"Kadangode","m":"കടങ്ങോട്","t":"Panchayat"},{"n":"Kadannappally Panapuzha","m":"കടന്നപ്പള്ളി പാണപ്പുഴ","t":"Panchayat"},{"n":"Kadaplamattom","m":"കടപ്ലാമറ്റം","t":"Panchayat"},{"n":"Kadappuram","m":"കടപ്പുറം","t":"Panchayat"},{"n":"Kadapra","m":"കടപ്ര","t":"Panchayat"},{"n":"Kadavalloor","m":"കടവല്ലൂര്‍","t":"Panchayat"},{"n":"Kadinamkulam","m":"കഠിനംകുളം","t":"Panchayat"},{"n":"Kadirur","m":"കതിരൂര്‍","t":"Panchayat"},{"n":"Kadukutty","m":"കാടുകുറ്റി","t":"Panchayat"},{"n":"Kadungalloor","m":"കടുങ്ങല്ലൂർ","t":"Panchayat"},{"n":"Kaduthuruthy","m":"കടുത്തുരുത്തി","t":"Panchayat"},{"n":"Kainakari","m":"കൈനകരി","t":"Panchayat"},{"n":"Kaipamangalam","m":"കയ്പമംഗലം","t":"Panchayat"},{"n":"Kaiparambu","m":"കയ്പറമ്പ്","t":"Panchayat"},{"n":"Kakkodi","m":"കക്കോടി","t":"Panchayat"},{"n":"Kakkur","m":"കാക്കൂർ","t":"Panchayat"},{"n":"Kaladi","m":"കാലടി ഗ്രാമപഞ്ചായത്ത്, മലപ്പുറം ജില്ല","t":"Panchayat"},{"n":"Kalady","m":"കാലടി","t":"Panchayat"},{"n":"Kalamassery","m":"കളമശ്ശേരി","t":"Municipality"},{"n":"Kalanjoor","m":"കലഞ്ഞൂർ","t":"Panchayat"},{"n":"Kalikavu","m":"കാളികാവ്","t":"Panchayat"},{"n":"Kallar","m":"കള്ളാര്‍","t":"Panchayat"},{"n":"Kallara","m":"കല്ലറ ഗ്രാമപഞ്ചായത്ത് (കോട്ടയം)","t":"Panchayat"},{"n":"Kalliasseri","m":"കല്യാശ്ശേരി","t":"Panchayat"},{"n":"Kallikkadu","m":"കള്ളിക്കാട്","t":"Panchayat"},{"n":"Kalliyoor","m":"കല്ലിയൂർ","t":"Panchayat"},{"n":"Kallooppara","m":"കല്ലൂപ്പാറ","t":"Panchayat"},{"n":"Kalloorkaad","m":"കല്ലൂർക്കാട്","t":"Panchayat"},{"n":"Kalluvaathukkal","m":"കല്ലുവാതുക്കൽ","t":"Panchayat"},{"n":"Kalpakancheri","m":"കൽപ്പകഞ്ചേരി","t":"Panchayat"},{"n":"Kalpetta","m":"കല്‍പ്പറ്റ","t":"Municipality"},{"n":"Kamakshy","m":"കാമാക്ഷി","t":"Panchayat"},{"n":"Kanakkary","m":"കാണക്കാരി","t":"Panchayat"},{"n":"Kanchiyar","m":"കാഞ്ചിയാർ","t":"Panchayat"},{"n":"Kandalloor","m":"കണ്ടല്ലൂർ","t":"Panchayat"},{"n":"Kandanassery","m":"കണ്ടാണശ്ശേരി","t":"Panchayat"},{"n":"Kangazha","m":"കങ്ങഴ","t":"Panchayat"},{"n":"Kanhangad","m":"കാഞ്ഞങ്ങാടു് നഗരസഭ","t":"Municipality"},{"n":"Kanhirapuzha","m":"കാഞ്ഞിരപുഴ ഗ്രാമ പഞ്ചായത്ത്","t":"Panchayat"},{"n":"Kanichar","m":"കണിച്ചാര്‍","t":"Panchayat"},{"n":"Kaniyambetta","m":"കണിയാമ്പറ്റ","t":"Panchayat"},{"n":"Kanjikkuzhy","m":"കഞ്ഞിക്കുഴി ഗ്രാമപഞ്ചായത്ത്, ഇടുക്കി ജില്ല","t":"Panchayat"},{"n":"Kanjikuzhi","m":"കഞ്ഞിക്കുഴി ഗ്രാമപഞ്ചായത്ത്, ആലപ്പുഴ ജില്ല","t":"Panchayat"},{"n":"Kanjiramkulam","m":"കാഞ്ഞിരംകുളം","t":"Panchayat"},{"n":"Kanjirappally","m":"കാഞ്ഞിരപ്പള്ളി","t":"Panchayat"},{"n":"Kanjoor","m":"കാഞ്ഞൂർ","t":"Panchayat"},{"n":"Kankol-Alappadamba","m":"","t":"Panchayat"},{"n":"Kannadi","m":"കണ്ണാടി","t":"Panchayat"},{"n":"Kannamangalam","m":"കണ്ണമംഗലം","t":"Panchayat"},{"n":"Kannambra","m":"കണ്ണമ്പ്ര","t":"Panchayat"},{"n":"Kannapuram","m":"കണ്ണപുരം","t":"Panchayat"},{"n":"Kannur","m":"കണ്ണൂര്‍","t":"Corporation"},{"n":"Kanthalloor","m":"കാന്തല്ലൂർ","t":"Panchayat"},{"n":"Kappoor","m":"കപ്പൂർ","t":"Panchayat"},{"n":"Karaduka","m":"കാറഡുക്ക","t":"Panchayat"},{"n":"Karakulam","m":"കരകുളം","t":"Panchayat"},{"n":"Karakurussi","m":"കാരാകുറുശ്ശി","t":"Panchayat"},{"n":"Karalam","m":"കാറളം","t":"Panchayat"},{"n":"Karassery","m":"കാരശ്ശേരി","t":"Panchayat"},{"n":"Karavaloor","m":"കരവാളൂർ","t":"Panchayat"},{"n":"Karavaram","m":"കരവാരം","t":"Panchayat"},{"n":"Kareepra","m":"കരീപ്ര","t":"Panchayat"},{"n":"Karimannoor","m":"കരിമണ്ണൂർ","t":"Panchayat"},{"n":"Karimba","m":"കരിമ്പ","t":"Panchayat"},{"n":"Karimkunnam","m":"കരിങ്കുന്നം","t":"Panchayat"},{"n":"Karimpuzha","m":"കരിമ്പുഴ","t":"Panchayat"},{"n":"Karode","m":"കാരോട്","t":"Panchayat"},{"n":"Karoor","m":"കരൂർ","t":"Panchayat"},{"n":"Karthikapally","m":"കാർത്തികപ്പള്ളി","t":"Panchayat"},{"n":"Karukachal","m":"കറുകച്ചാൽ","t":"Panchayat"},{"n":"Karukutty","m":"കറുകുറ്റി","t":"Panchayat"},{"n":"Karulai","m":"കരുളായി","t":"Panchayat"},{"n":"Karumalloor","m":"കരുമാല്ലൂർ","t":"Panchayat"},{"n":"Karumkulam","m":"കരുംകുളം","t":"Panchayat"},{"n":"Karunagappally","m":"","t":"Municipality"},{"n":"Karunapuram","m":"കരുണാപുരം","t":"Panchayat"},{"n":"Karuvarakundu","m":"കരുവാരക്കുണ്ട്","t":"Panchayat"},{"n":"Karuvatta","m":"കരുവാറ്റ","t":"Panchayat"},{"n":"Karvellur-Peralam","m":"കരിവെള്ളൂര്‍ പെരളം","t":"Panchayat"},{"n":"Kasaragod","m":"കാസർഗോഡ്","t":"Municipality"},{"n":"Kattakada","m":"കാട്ടാക്കട","t":"Panchayat"},{"n":"Kattakampal","m":"കാട്ടകാമ്പാല്‍","t":"Panchayat"},{"n":"Kattappana","m":"കട്ടപ്പന നഗരസഭ","t":"Municipality"},{"n":"Kattippara","m":"കട്ടിപ്പാറ","t":"Panchayat"},{"n":"Kattoor","m":"കാട്ടൂര്‍","t":"Panchayat"},{"n":"Kavalam","m":"കാവാലം","t":"Panchayat"},{"n":"Kavalangad","m":"കവളങ്ങാട്","t":"Panchayat"},{"n":"Kavanur","m":"കാവനൂർ","t":"Panchayat"},{"n":"Kavassery","m":"കാവശ്ശേരി","t":"Panchayat"},{"n":"Kavilumpara","m":"കാവിലുമ്പാറ","t":"Panchayat"},{"n":"Kaviyoor","m":"കവിയൂർ","t":"Panchayat"},{"n":"Kayakkody","m":"കായക്കൊടി","t":"Panchayat"},{"n":"Kayamkulam","m":"കായംകുളം","t":"Municipality"},{"n":"Kayanna","m":"കായണ്ണ","t":"Panchayat"},{"n":"Kayyur-Chimeni","m":"കയ്യൂര്‍ ചീമേനി","t":"Panchayat"},{"n":"Keerampaara","m":"കീരംപാറ","t":"Panchayat"},{"n":"Keezhallur","m":"കീഴാല്ലൂര്‍","t":"Panchayat"},{"n":"Keezhariyur","m":"കീഴരിയൂർ","t":"Panchayat"},{"n":"Keezhattur","m":"കീഴാറ്റൂർ","t":"Panchayat"},{"n":"Keezhmadu","m":"കീഴ്മാട്","t":"Panchayat"},{"n":"Keezhuparamba","m":"കീഴുപറമ്പ്","t":"Panchayat"},{"n":"Kelakam","m":"കേളകം","t":"Panchayat"},{"n":"Keralasseri","m":"കേരളശ്ശേരി","t":"Panchayat"},{"n":"Kidangoor","m":"കിടങ്ങൂർ","t":"Panchayat"},{"n":"Kilimanoor","m":"കിളിമാനൂർ","t":"Panchayat"},{"n":"Kinanur-Karindalam","m":"കിനാനീര്‍ കരിന്തളം","t":"Panchayat"},{"n":"Kizhakkambalam","m":"കിഴക്കമ്പലം","t":"Panchayat"},{"n":"Kizhakkanchery","m":"കിഴക്കഞ്ചേരി","t":"Panchayat"},{"n":"Kizhakkoth","m":"കിഴക്കോത്ത്","t":"Panchayat"},{"n":"Kizhuvilam","m":"കീഴുവിലം","t":"Panchayat"},{"n":"Kochi","m":"കൊച്ചി","t":"Corporation"},{"n":"Kodakara","m":"കൊടകര","t":"Panchayat"},{"n":"Kodamthuruthu","m":"കോടംതുരുത്ത്","t":"Panchayat"},{"n":"Kodanchery","m":"കോടഞ്ചേരി","t":"Panchayat"},{"n":"Kodassery","m":"കോടശ്ശേരി","t":"Panchayat"},{"n":"Kodikulam","m":"കോടിക്കുളം","t":"Panchayat"},{"n":"Kodiyathur","m":"കൊടിയത്തൂർ","t":"Panchayat"},{"n":"Kodom-Belur","m":"കോടോം ബേളൂര്‍","t":"Panchayat"},{"n":"Kodumbu","m":"കൊടുമ്പ്","t":"Panchayat"},{"n":"Kodumon","m":"കൊടുമൺ","t":"Panchayat"},{"n":"Kodungallur","m":"കൊടുങ്ങല്ലൂർ","t":"Municipality"},{"n":"Kodur","m":"കോഡൂർ","t":"Panchayat"},{"n":"Koduvally","m":"കൊടുവള്ളി","t":"Municipality"},{"n":"Koduvayur","m":"കൊടുവായൂർ","t":"Panchayat"},{"n":"Koipram","m":"കോയിപ്രം","t":"Panchayat"},{"n":"Kokkayar","m":"കൊക്കയാർ","t":"Panchayat"},{"n":"Kolacherry","m":"കൊളച്ചേരി","t":"Panchayat"},{"n":"Kolayad","m":"കോളയാടു്","t":"Panchayat"},{"n":"Kolazhy","m":"കോലഴി","t":"Panchayat"},{"n":"Kollam","m":"കൊല്ലം","t":"Corporation"},{"n":"Kollayil","m":"കൊല്ലയിൽ","t":"Panchayat"},{"n":"Kollengode","m":"കൊല്ലങ്കോട്","t":"Panchayat"},{"n":"Kondazhy","m":"കൊണ്ടാഴി","t":"Panchayat"},{"n":"Kondotty","m":"കൊണ്ടോട്ടി","t":"Municipality"},{"n":"Kongad","m":"കോങ്ങാട്","t":"Panchayat"},{"n":"Konnathady","m":"കൊന്നത്തടി","t":"Panchayat"},{"n":"Konni","m":"കോന്നി","t":"Panchayat"},{"n":"Koodali","m":"കൂടാളി","t":"Panchayat"},{"n":"Koodaranhi","m":"കൂടരഞ്ഞി","t":"Panchayat"},{"n":"Koorachundu","m":"കൂരാച്ചുണ്ട്","t":"Panchayat"},{"n":"Kooroppada","m":"കൂരോപ്പട","t":"Panchayat"},{"n":"Koothali","m":"കൂത്താളി","t":"Panchayat"},{"n":"Koothattukulam","m":"കൂത്താട്ടുകുളം","t":"Municipality"},{"n":"Koothuparamba","m":"കൂത്തുപറമ്പ","t":"Municipality"},{"n":"Koottickal","m":"കൂട്ടിക്കൽ","t":"Panchayat"},{"n":"Koottilangadi","m":"കൂട്ടിലങ്ങാടി","t":"Panchayat"},{"n":"Koovappady","m":"കൂവപ്പടി","t":"Panchayat"},{"n":"Koppam","m":"കൊപ്പം","t":"Panchayat"},{"n":"Koratty","m":"കൊരട്ടി","t":"Panchayat"},{"n":"Koruthode","m":"കോരുത്തോട്","t":"Panchayat"},{"n":"Kothamangalam","m":"കോതമംഗലം","t":"Municipality"},{"n":"Kottakkal","m":"കോട്ടക്കൽ","t":"Municipality"},{"n":"Kottamkara","m":"കൊറ്റങ്കര ഗ്രാമ പഞ്ചായത്ത്","t":"Panchayat"},{"n":"Kottanad","m":"കൊറ്റനാട്","t":"Panchayat"},{"n":"Kottangal","m":"കോട്ടാങ്ങൽ","t":"Panchayat"},{"n":"Kottappadam","m":"കോട്ടോപ്പാടം","t":"Panchayat"},{"n":"Kottappady","m":"കോട്ടപ്പടി","t":"Panchayat"},{"n":"Kottarakara","m":"","t":"Municipality"},{"n":"Kottathara","m":"കോട്ടത്തറ","t":"Panchayat"},{"n":"Kottayam","m":"കോട്ടയം","t":"Panchayat"},{"n":"Kottayam","m":"കോട്ടയം","t":"Municipality"},{"n":"Kottayi","m":"കോട്ടായി","t":"Panchayat"},{"n":"Kottiyoor","m":"കൊട്ടിയൂര്‍","t":"Panchayat"},{"n":"Kottukal","m":"കോട്ടുക്കൽ","t":"Panchayat"},{"n":"Kottur","m":"കോട്ടൂർ","t":"Panchayat"},{"n":"Kottuvally","m":"കോട്ടുവള്ളി","t":"Panchayat"},{"n":"Koyilandy","m":"കൊയിലാണ്ടി","t":"Municipality"},{"n":"Kozhanchery","m":"കോഴഞ്ചേരി","t":"Panchayat"},{"n":"Kozhikode","m":"കോഴിക്കോട്","t":"Corporation"},{"n":"Kozhinjampara","m":"കൊഴിഞ്ഞാമ്പാറ","t":"Panchayat"},{"n":"Kozhuvanal","m":"കൊഴുവനാൽ","t":"Panchayat"},{"n":"Krishnapuram","m":"കൃഷ്ണപുരം","t":"Panchayat"},{"n":"Kudayathoor","m":"കുടയത്തൂർ","t":"Panchayat"},{"n":"Kulakkada","m":"കുളക്കട","t":"Panchayat"},{"n":"Kulanada","m":"കുളനട","t":"Panchayat"},{"n":"Kulasekharapuram","m":"കുലശേഖരപുരം ഗ്രാമ പഞ്ചായത്ത്","t":"Panchayat"},{"n":"Kulathoor","m":"കുളത്തൂർ","t":"Panchayat"},{"n":"Kulathupuzha","m":"കുളത്തുപ്പുഴ","t":"Panchayat"},{"n":"Kulukkallur","m":"കുലുക്കല്ലൂർ","t":"Panchayat"},{"n":"Kumarakom","m":"കുമരകം","t":"Panchayat"},{"n":"Kumaramangalam","m":"കുമാരമംഗലം","t":"Panchayat"},{"n":"Kumaramputhur","m":"കുമരംപുത്തൂർ","t":"Panchayat"},{"n":"Kumarapuram","m":"കുമാരപുരം","t":"Panchayat"},{"n":"Kumbadaje","m":"കുംബടജെ","t":"Panchayat"},{"n":"Kumbala","m":"കുമ്പള","t":"Panchayat"},{"n":"Kumbalam","m":"കുമ്പളം","t":"Panchayat"},{"n":"Kumbalanghy","m":"കുമ്പളങ്ങി","t":"Panchayat"},{"n":"Kumily","m":"കുമിളി","t":"Panchayat"},{"n":"Kummil","m":"കുമ്മിൾ","t":"Panchayat"},{"n":"Kundara","m":"കുണ്ടറ","t":"Panchayat"},{"n":"Kunhimangalam","m":"കുഞ്ഞിമംഗലം","t":"Panchayat"},{"n":"Kunnamangalam","m":"കുന്ദമംഗലം","t":"Panchayat"},{"n":"Kunnamkulam","m":"കുന്നംകുളം","t":"Municipality"},{"n":"Kunnanthanam","m":"കുന്നന്താനം","t":"Panchayat"},{"n":"Kunnathoor","m":"കുന്നത്തൂർ","t":"Panchayat"},{"n":"Kunnathukal","m":"കുന്നത്തുകാൽ","t":"Panchayat"},{"n":"Kunnathunad","m":"കുന്നത്തുനാട്","t":"Panchayat"},{"n":"Kunnothuparamba","m":"കുന്നോത്തുപറമ്പു്","t":"Panchayat"},{"n":"Kunnukara","m":"കുന്നുകര","t":"Panchayat"},{"n":"Kunnummal","m":"കുന്നുമ്മൽ","t":"Panchayat"},{"n":"Kuravilangadu","m":"കുറവിലങ്ങാട്","t":"Panchayat"},{"n":"Kurichy","m":"കുറിച്ചി","t":"Panchayat"},{"n":"Kurumathur","m":"കുറുമാത്തൂര്","t":"Panchayat"},{"n":"Kuruva","m":"കുറുവ","t":"Panchayat"},{"n":"Kuruvattoor","m":"കുരുവട്ടൂർ","t":"Panchayat"},{"n":"Kuthanur","m":"കുത്തന്നൂർ","t":"Panchayat"},{"n":"Kuthiyathodu","m":"കുത്തിയോടോട്","t":"Panchayat"},{"n":"Kuttampuzha","m":"കുട്ടമ്പുഴ","t":"Panchayat"},{"n":"Kuttiadi","m":"കുറ്റ്യാടി","t":"Panchayat"},{"n":"Kuttiatoor","m":"കുറ്റ്യാട്ടൂര്‍","t":"Panchayat"},{"n":"Kuttichal","m":"കുറ്റിച്ചല്‍","t":"Panchayat"},{"n":"Kuttikol","m":"കുറ്റിക്കോല്‍","t":"Panchayat"},{"n":"Kuttippuram","m":"കുറ്റിപ്പുറം","t":"Panchayat"},{"n":"Kuttoor","m":"കുറ്റൂർ","t":"Panchayat"},{"n":"Kuzhalmannam","m":"കുഴൽമന്ദം","t":"Panchayat"},{"n":"Kuzhimanna","m":"കുഴിമണ്ണ","t":"Panchayat"},{"n":"Kuzhuppilly","m":"കുഴുപ്പിള്ളി","t":"Panchayat"},{"n":"Kuzhur","m":"കുഴൂര്‍","t":"Panchayat"},{"n":"Lakkidi Peroor","m":"ലക്കിടിപേരൂർ","t":"Panchayat"},{"n":"Madakkathara","m":"മാടക്കത്തറ","t":"Panchayat"},{"n":"Madappally","m":"മാടപ്പള്ളി","t":"Panchayat"},{"n":"Madavoor","m":"മടവൂർ","t":"Panchayat"},{"n":"Madayi","m":"മാടായി","t":"Panchayat"},{"n":"Madhur","m":"മധൂര്‍","t":"Panchayat"},{"n":"Madikai","m":"മടിക്കൈ","t":"Panchayat"},{"n":"Makkaraparamba","m":"മക്കരപ്പറമ്പ്","t":"Panchayat"},{"n":"Mala","m":"മാള","t":"Panchayat"},{"n":"Malampuzha","m":"മലമ്പുഴ","t":"Panchayat"},{"n":"Malappattam","m":"മലപ്പട്ടം","t":"Panchayat"},{"n":"Malappuram","m":"മലപ്പുറം","t":"Municipality"},{"n":"Malayalapuzha","m":"മലയാലപ്പുഴ","t":"Panchayat"},{"n":"Malayattoor-Neeleswaram","m":"മലയാറ്റൂർ-നീലീശ്വരം","t":"Panchayat"},{"n":"Malayinkeezhu","m":"മലയിൻകീഴ്","t":"Panchayat"},{"n":"Mallappally","m":"മല്ലപ്പള്ളി","t":"Panchayat"},{"n":"Mallappuzhassery","m":"മല്ലപ്പുഴശ്ശേരി","t":"Panchayat"},{"n":"Malur","m":"മാലൂര്‍","t":"Panchayat"},{"n":"Mampad","m":"മമ്പാട്","t":"Panchayat"},{"n":"Manakkad","m":"മണക്കാട്","t":"Panchayat"},{"n":"Manalur","m":"മണലൂര്‍","t":"Panchayat"},{"n":"Manampoor","m":"മണമ്പൂർ","t":"Panchayat"},{"n":"Mananthavady","m":"മാനന്തവാടി","t":"Municipality"},{"n":"Manarcadu","m":"മണര്‍കാട് ഗ്രാമ പഞ്ചായത്ത്","t":"Panchayat"},{"n":"Maneedu","m":"മണീട്","t":"Panchayat"},{"n":"Mangalam","m":"മംഗലം","t":"Panchayat"},{"n":"Mangalapuram","m":"മംഗലപുരം","t":"Panchayat"},{"n":"Mangalpaddy","m":"മംഗൽപ്പാടി","t":"Panchayat"},{"n":"Mangattidam","m":"മാങ്ങാട്ടിടം","t":"Panchayat"},{"n":"Manickal","m":"മാണിക്കൽ","t":"Panchayat"},{"n":"Manimala","m":"മണിമല","t":"Panchayat"},{"n":"Maniyur","m":"മണിയൂർ","t":"Panchayat"},{"n":"Manjalloor","m":"മഞ്ഞള്ളൂർ","t":"Panchayat"},{"n":"Manjapra","m":"മഞ്ഞപ്ര","t":"Panchayat"},{"n":"Manjeri","m":"മഞ്ചേരി","t":"Municipality"},{"n":"Manjeswaram","m":"മഞ്ചേശ്വരം","t":"Panchayat"},{"n":"Manjoor","m":"മാഞ്ഞൂർ","t":"Panchayat"},{"n":"Mankada","m":"മങ്കട","t":"Panchayat"},{"n":"Mankara","m":"മങ്കര","t":"Panchayat"},{"n":"Mankulam","m":"മാങ്കുളം","t":"Panchayat"},{"n":"Mannancherry","m":"മണ്ണഞ്ചരി ഗ്രാമ പഞ്ചായത്ത്","t":"Panchayat"},{"n":"Mannar","m":"മാന്നാർ","t":"Panchayat"},{"n":"Mannarkad","m":"മണ്ണാർക്കാട്","t":"Municipality"},{"n":"Mannoor","m":"മണ്ണൂർ","t":"Panchayat"},{"n":"Maradu","m":"മരട്","t":"Municipality"},{"n":"Marady","m":"മാറാടി","t":"Panchayat"},{"n":"Marakkara","m":"മാറാക്കര","t":"Panchayat"},{"n":"Maranalloor","m":"മാറനെല്ലൂർ","t":"Panchayat"},{"n":"Maranchery","m":"മാറഞ്ചേരി","t":"Panchayat"},{"n":"Marangattupally","m":"മരങ്ങാട്ടുപിള്ളി","t":"Panchayat"},{"n":"Mararikulam North","m":"മാരാരിക്കുളം വടക്ക്","t":"Panchayat"},{"n":"Mararikulam South","m":"മാരാരിക്കുളം തെക്ക് ഗ്രാമ പഞ്ചായത്ത്","t":"Panchayat"},{"n":"Maravanthuruthu","m":"മറവൻതുരുത്ത്","t":"Panchayat"},{"n":"Marayoor","m":"മറയൂർ","t":"Panchayat"},{"n":"Mariyapuram","m":"മരിയാപുരം","t":"Panchayat"},{"n":"Marutharode","m":"മരുതറോഡ്","t":"Panchayat"},{"n":"Maruthonkara","m":"മരുതോങ്കര","t":"Panchayat"},{"n":"Mathilakam","m":"മതിലകം","t":"Panchayat"},{"n":"Mathoor","m":"മാത്തൂർ","t":"Panchayat"},{"n":"Mattannur","m":"മട്ടന്നൂര്‍","t":"Municipality"},{"n":"Mattathur","m":"മറ്റത്തൂര്‍","t":"Panchayat"},{"n":"Mattool","m":"","t":"Panchayat"},{"n":"Mavelikkara","m":"മാവേലിക്കര","t":"Municipality"},{"n":"Mavelikkara Thekkakkara","m":"മാവേലിക്കര തെക്കേക്കര","t":"Panchayat"},{"n":"Mavoor","m":"മാവൂർ","t":"Panchayat"},{"n":"Mayyanad","m":"മയ്യനാട് ഗ്രാമ പഞ്ചായത്ത്","t":"Panchayat"},{"n":"Mayyil","m":"മയ്യില്‍","t":"Panchayat"},{"n":"Mazhuvanoor","m":"മഴുവന്നൂർ","t":"Panchayat"},{"n":"Meenachil","m":"മീനച്ചിൽ","t":"Panchayat"},{"n":"Meenadom","m":"മീനടം","t":"Panchayat"},{"n":"Meenangadi","m":"മീനങ്ങാടി","t":"Panchayat"},{"n":"Meenja","m":"മീഞ്ച","t":"Panchayat"},{"n":"Melarcode","m":"മേലാർകോട്","t":"Panchayat"},{"n":"Melattur","m":"മേലാറ്റൂർ","t":"Panchayat"},{"n":"Melila","m":"മേലില","t":"Panchayat"},{"n":"Meloor","m":"മേലൂര്‍","t":"Panchayat"},{"n":"Melukavu","m":"മേലുകാവ്","t":"Panchayat"},{"n":"Meppadi","m":"മേപ്പാടി","t":"Panchayat"},{"n":"Meppayur","m":"മേപ്പയൂർ","t":"Panchayat"},{"n":"Mezhuvely","m":"മെഴുവേലി","t":"Panchayat"},{"n":"Mogral-Puthur","m":"മൊഗ്രാല്‍ പുത്തൂര്‍","t":"Panchayat"},{"n":"Mokeri","m":"മൊകേരി","t":"Panchayat"},{"n":"Moodadi","m":"മൂടാടി","t":"Panchayat"},{"n":"Mookkannoor","m":"മൂക്കന്നൂർ","t":"Panchayat"},{"n":"Moonnilavu","m":"മൂന്നിലവ്","t":"Panchayat"},{"n":"Moonniyur","m":"മൂന്നിയൂർ","t":"Panchayat"},{"n":"Moorkanade","m":"മൂർക്കനാട്","t":"Panchayat"},{"n":"Moothedam","m":"മൂത്തേടം","t":"Panchayat"},{"n":"Morayur","m":"മൊറയൂർ","t":"Panchayat"},{"n":"Mudakkal","m":"മുദാക്കൽ","t":"Panchayat"},{"n":"Mudakkuzha","m":"മുടക്കുഴ","t":"Panchayat"},{"n":"Muhamma","m":"മുഹമ്മ","t":"Panchayat"},{"n":"Mukkam","m":"മുക്കം","t":"Municipality"},{"n":"Mulakkulam","m":"മുളക്കുളം","t":"Panchayat"},{"n":"Mulakkuzha","m":"മുളക്കുഴ","t":"Panchayat"},{"n":"Mulamkunnathukavu","m":"മുളങ്കുന്നത്തുകാവ്","t":"Panchayat"},{"n":"Mulamthuruthy","m":"മുളന്തുരുത്തി","t":"Panchayat"},{"n":"Mulavukadu","m":"മുളവുകാട്","t":"Panchayat"},{"n":"Muliyar","m":"മൂളിയാര്‍","t":"Panchayat"},{"n":"Mullankolly","m":"മുള്ളന്‍കൊല്ലി","t":"Panchayat"},{"n":"Mullassery","m":"മുല്ലശ്ശേരി","t":"Panchayat"},{"n":"Mullurkkara","m":"മുള്ളൂര്‍ക്കര","t":"Panchayat"},{"n":"Mundakayam","m":"മുണ്ടക്കയം","t":"Panchayat"},{"n":"Munderi","m":"മുണ്ടേരി","t":"Panchayat"},{"n":"Mundur","m":"മുണ്ടൂർ","t":"Panchayat"},{"n":"Munnar","m":"മൂന്നാർ","t":"Panchayat"},{"n":"Munroethuruth","m":"മണ്‍റോതുരുത്ത് ഗ്രാമ പഞ്ചായത്ത്","t":"Panchayat"},{"n":"Mupainad","m":"മൂപ്പനാടു്","t":"Panchayat"},{"n":"Muriyad","m":"മുരിയാട്","t":"Panchayat"},{"n":"Muthalamada","m":"മുതലമട","t":"Panchayat"},{"n":"Mutholy","m":"മുത്തോലി","t":"Panchayat"},{"n":"Muthukulam","m":"മുതുകുളം","t":"Panchayat"},{"n":"Muthuthala","m":"മുതുതല","t":"Panchayat"},{"n":"Muthuvallur","m":"മുതുവല്ലൂർ","t":"Panchayat"},{"n":"Muttar","m":"മുട്ടാർ","t":"Panchayat"},{"n":"Muttil","m":"മുട്ടില്","t":"Panchayat"},{"n":"Muttom","m":"മുട്ടം","t":"Panchayat"},{"n":"Muvattupuzha","m":"മൂവാറ്റുപുഴ","t":"Municipality"},{"n":"Muzhakkunnu","m":"മുഴക്കുന്നു്","t":"Panchayat"},{"n":"Muzhappilangad","m":"മുഴപ്പിലങ്ങാടു്","t":"Panchayat"},{"n":"Mylapra","m":"മൈലപ്ര","t":"Panchayat"},{"n":"Mylom","m":"മൈലം","t":"Panchayat"},{"n":"Mynagappally","m":"മൈനാഗപ്പള്ളി ഗ്രാമ പഞ്ചായത്ത്","t":"Panchayat"},{"n":"Nadapuram","m":"നാദാപുരം","t":"Panchayat"},{"n":"Nadathara","m":"നടത്തറ","t":"Panchayat"},{"n":"Naduvannur","m":"നടുവണ്ണൂർ","t":"Panchayat"},{"n":"Naduvil","m":"നടുവില്‍","t":"Panchayat"},{"n":"Nagalassery","m":"നാഗലശ്ശേരി","t":"Panchayat"},{"n":"Nagaroor","m":"നഗരൂർ","t":"Panchayat"},{"n":"Nalleppilly","m":"നല്ലേപ്പിള്ളി","t":"Panchayat"},{"n":"Nanminda","m":"നന്മണ്ട","t":"Panchayat"},{"n":"Nannambra","m":"നന്നമ്പ്ര","t":"Panchayat"},{"n":"Nannamukku","m":"നന്നംമുക്ക്","t":"Panchayat"},{"n":"Nanniyode","m":"നന്ദിയോട്","t":"Panchayat"},{"n":"Naranammuzhi","m":"നാറാണംമൂഴി","t":"Panchayat"},{"n":"Naranganam","m":"നാരങ്ങാനം","t":"Panchayat"},{"n":"Narath","m":"നാറാത്തു്","t":"Panchayat"},{"n":"Narikunni","m":"നരിക്കുനി","t":"Panchayat"},{"n":"Narippatta","m":"നരിപ്പറ്റ","t":"Panchayat"},{"n":"Nattika","m":"നാട്ടിക","t":"Panchayat"},{"n":"Navaikulam","m":"നാവായിക്കുളം","t":"Panchayat"},{"n":"Nayarambalam","m":"നായരമ്പലം","t":"Panchayat"},{"n":"Nedumangad","m":"നെടുമങ്ങാട്","t":"Municipality"},{"n":"Nedumbana","m":"നെടുമ്പന","t":"Panchayat"},{"n":"Nedumbassery","m":"നെടുമ്പാശ്ശേരി","t":"Panchayat"},{"n":"Nedumkandom","m":"നെടുങ്കണ്ടം","t":"Panchayat"},{"n":"Nedumkunnam","m":"നെടുംകുന്നം","t":"Panchayat"},{"n":"Nedumpram","m":"നെടുമ്പ്രം","t":"Panchayat"},{"n":"Nedumudi village","m":"നെടുമുടി","t":"Panchayat"},{"n":"Neduvathoor","m":"നെടുവത്തൂര്‍ ഗ്രാമ പഞ്ചായത്ത്","t":"Panchayat"},{"n":"Neelamperoor","m":"നീലംപേരൂർ","t":"Panchayat"},{"n":"Neendakara","m":"നീണ്ടകര","t":"Panchayat"},{"n":"Neendoor","m":"നീണ്ടൂർ","t":"Panchayat"},{"n":"Nellanad","m":"നെല്ലനാട്","t":"Panchayat"},{"n":"Nellaya","m":"നെല്ലായ","t":"Panchayat"},{"n":"Nellikuzhy","m":"നെല്ലിക്കുഴി","t":"Panchayat"},{"n":"Nelliyampathy","m":"നെല്ലിയാമ്പതി","t":"Panchayat"},{"n":"Nemmara","m":"നെന്മാറ","t":"Panchayat"},{"n":"Nenmanikkara","m":"നെന്മണിക്കര","t":"Panchayat"},{"n":"Nenmeni","m":"നെന്മേനി","t":"Panchayat"},{"n":"New Mahe","m":"ന്യൂമാഹി","t":"Panchayat"},{"n":"Neyyattinkara","m":"നെയ്യാറ്റിൻകര","t":"Municipality"},{"n":"Nilambur","m":"നിലമ്പൂർ","t":"Municipality"},{"n":"Nilamel","m":"നിലമേൽ","t":"Panchayat"},{"n":"Nileswaram","m":"നീലേശ്വരം","t":"Municipality"},{"n":"Niramarutur","m":"നിറമരുതൂർ","t":"Panchayat"},{"n":"Niranam","m":"നിരണം","t":"Panchayat"},{"n":"Njarackal","m":"ഞാറക്കല്","t":"Panchayat"},{"n":"Njeezhoor","m":"ഞീഴൂർ","t":"Panchayat"},{"n":"Nochad","m":"നൊച്ചാട്","t":"Panchayat"},{"n":"Noolpuzha","m":"നൂല്‍പ്പുഴ","t":"Panchayat"},{"n":"Nooranadu","m":"നൂറനാട്","t":"Panchayat"},{"n":"Oachira","m":"ഓച്ചിറ","t":"Panchayat"},{"n":"Okkal","m":"ഒക്കൽ","t":"Panchayat"},{"n":"Olavanna","m":"ഒളവണ്ണ","t":"Panchayat"},{"n":"Omalloor","m":"ഓമല്ലൂർ","t":"Panchayat"},{"n":"Omassery","m":"ഓമശ്ശേരി","t":"Panchayat"},{"n":"Onchiyam","m":"ഒഞ്ചിയം","t":"Panchayat"},{"n":"Ongallur","m":"ഓങ്ങല്ലൂർ","t":"Panchayat"},{"n":"Oorakam","m":"ഊരകം","t":"Panchayat"},{"n":"Orumanayoor","m":"ഒരുമനയൂര്‍","t":"Panchayat"},{"n":"Othukkungal","m":"ഒതുക്കുങ്ങൽ","t":"Panchayat"},{"n":"Ottappalam","m":"ഒറ്റപ്പാലം","t":"Municipality"},{"n":"Ottasekaramangalam","m":"ഒറ്റശേഖരമംഗലം","t":"Panchayat"},{"n":"Ottoor Grampachayat","m":"ഒറ്റൂർ","t":"Panchayat"},{"n":"Ozhoor","m":"ഒഴൂർ","t":"Panchayat"},{"n":"Padanna","m":"പടന്ന","t":"Panchayat"},{"n":"Padinharathara","m":"പടിഞ്ഞാറത്തറ","t":"Panchayat"},{"n":"Padiyoor","m":"പടിയൂർ-കല്യാട്","t":"Panchayat"},{"n":"Paingottoor","m":"പൈങ്ങോട്ടൂർ","t":"Panchayat"},{"n":"Paippadu","m":"പായിപ്പാട്","t":"Panchayat"},{"n":"Paipra","m":"പായിപ്ര","t":"Panchayat"},{"n":"Paivalike","m":"പൈവെളിഗെ","t":"Panchayat"},{"n":"Pala","m":"പാല","t":"Municipality"},{"n":"Palakkad","m":"പാലക്കാട്","t":"Municipality"},{"n":"Palakuzha","m":"പാലക്കുഴ","t":"Panchayat"},{"n":"Palamel","m":"പാലമേൽ","t":"Panchayat"},{"n":"Pallarimangalam","m":"പല്ലാരിമംഗലം","t":"Panchayat"},{"n":"Pallassena","m":"പല്ലശ്ശന","t":"Panchayat"},{"n":"Pallichal","m":"പള്ളിച്ചൽ","t":"Panchayat"},{"n":"Pallickathodu","m":"പള്ളിക്കത്തോട്","t":"Panchayat"},{"n":"Pallikkal","m":"പള്ളിക്കൽ","t":"Panchayat"},{"n":"Pallikkara","m":"പള്ളിക്കര","t":"Panchayat"},{"n":"Pallippadu","m":"പള്ളിപ്പാട്","t":"Panchayat"},{"n":"Pallippuram","m":"പള്ളിപ്പുറം","t":"Panchayat"},{"n":"Pallivasal","m":"പള്ളിവാസൽ","t":"Panchayat"},{"n":"Pampadumpara","m":"പാമ്പാടുംപാറ","t":"Panchayat"},{"n":"Pampady","m":"പാമ്പാടി","t":"Panchayat"},{"n":"Pampakuda","m":"പാമ്പാക്കുട","t":"Panchayat"},{"n":"Panachikadu","m":"പനച്ചിക്കാട്","t":"Panchayat"},{"n":"Panamaram","m":"പനമരം","t":"Panchayat"},{"n":"Pananchery","m":"പാണഞ്ചേരി","t":"Panchayat"},{"n":"Panangad","m":"പനങ്ങാട്","t":"Panchayat"},{"n":"Pananthadi","m":"പനത്തടി","t":"Panchayat"},{"n":"Panavalli","m":"പാണാവള്ളി","t":"Panchayat"},{"n":"Panavoor","m":"പനവൂർ","t":"Panchayat"},{"n":"Panayam","m":"പനയം","t":"Panchayat"},{"n":"Pandalam","m":"പന്തളം","t":"Municipality"},{"n":"Pandanad","m":"പാണ്ടനാട്","t":"Panchayat"},{"n":"Pandikkad","m":"പാണ്ടിക്കാട്","t":"Panchayat"},{"n":"Pangode","m":"പാങ്ങോട്","t":"Panchayat"},{"n":"Panjal","m":"പാഞ്ഞാള്‍","t":"Panchayat"},{"n":"Panmana","m":"പന്‍മന ഗ്രാമ പഞ്ചായത്ത്","t":"Panchayat"},{"n":"Panniyannur","m":"പന്യന്നൂര്‍","t":"Panchayat"},{"n":"Panoor","m":"പാനൂർ","t":"Municipality"},{"n":"Panthalam Thekkekkara","m":"പന്തളം തെക്കേക്കര","t":"Panchayat"},{"n":"Pappinisseri","m":"പാപ്പിനിശ്ശേരി","t":"Panchayat"},{"n":"Parakkadavu","m":"പാറക്കടവ്","t":"Panchayat"},{"n":"Paralam","m":"പാറളം","t":"Panchayat"},{"n":"Parappanangadi","m":"പരപ്പനങ്ങാടി","t":"Municipality"},{"n":"Parappookkara","m":"പറപ്പൂക്കര","t":"Panchayat"},{"n":"Parappoor","m":"പറപ്പൂർ","t":"Panchayat"},{"n":"Parassala","m":"പാറശാല","t":"Panchayat"},{"n":"Parathodu","m":"പാറത്തോട്","t":"Panchayat"},{"n":"Parathur","m":"പരുതൂർ","t":"Panchayat"},{"n":"Paravoor","m":"പരവൂർ","t":"Municipality"},{"n":"Paravur","m":"വടക്കൻ പറവൂർ","t":"Municipality"},{"n":"Pariyaram","m":"പരിയാരം","t":"Panchayat"},{"n":"Parli","m":"പറളി","t":"Panchayat"},{"n":"Pathanamthitta","m":"പത്തനംതിട്ട","t":"Municipality"},{"n":"Pathanapuram","m":"പത്തനാപുരം","t":"Panchayat"},{"n":"Pathiyoor","m":"പത്തിയൂർ","t":"Panchayat"},{"n":"Pattambi","m":"പട്ടാമ്പി","t":"Municipality"},{"n":"Pattanakkad","m":"പട്ടണക്കാട്","t":"Panchayat"},{"n":"Pattanchery","m":"പട്ടഞ്ചേരി","t":"Panchayat"},{"n":"Pattazhi","m":"പട്ടാഴി","t":"Panchayat"},{"n":"Pattazhi Vadakkekara","m":"പട്ടാഴി വടക്കേക്കര","t":"Panchayat"},{"n":"Pattiam","m":"പാട്യം","t":"Panchayat"},{"n":"Pattithara","m":"പട്ടിത്തറ","t":"Panchayat"},{"n":"Pattuvam","m":"പട്ടുവം","t":"Panchayat"},{"n":"Pavaratty","m":"പാവറട്ടി","t":"Panchayat"},{"n":"Pavithreswaram","m":"പവിത്രേശ്വരം","t":"Panchayat"},{"n":"Payam","m":"പായം","t":"Panchayat"},{"n":"Payyannur","m":"പയ്യന്നൂര്‍","t":"Municipality"},{"n":"Payyavoor","m":"പയ്യാവൂര്‍","t":"Panchayat"},{"n":"Payyoli","m":"പയ്യോളി","t":"Municipality"},{"n":"Pazhayakunnummel","m":"പഴയകുന്നുമ്മേൽ","t":"Panchayat"},{"n":"Pazhayannur","m":"പഴയന്നൂര്‍","t":"Panchayat"},{"n":"Peermade","m":"പീരുമേട്","t":"Panchayat"},{"n":"Peralassery","m":"പെരളശ്ശേരി","t":"Panchayat"},{"n":"Perambra","m":"പേരാമ്പ്ര","t":"Panchayat"},{"n":"Peravoor","m":"പേരാവൂര്‍","t":"Panchayat"},{"n":"Perayam","m":"പേരയം","t":"Panchayat"},{"n":"Perinad","m":"പെരിനാട്","t":"Panchayat"},{"n":"Peringamala","m":"പെരിങ്ങമ്മല","t":"Panchayat"},{"n":"Peringara","m":"പെരിങ്ങര","t":"Panchayat"},{"n":"Peringottukurissi","m":"പെരിങ്ങോട്ടുകുറിശ്ശി","t":"Panchayat"},{"n":"Perinjanam","m":"പെരിഞ്ഞനം","t":"Panchayat"},{"n":"Perinthalmanna","m":"പെരിന്തല്‍മണ്ണ","t":"Municipality"},{"n":"Perongome Vayakkara","m":"പെരിങ്ങോം വയക്കര","t":"Panchayat"},{"n":"Perumanna","m":"പെരുമണ്ണ","t":"Panchayat"},{"n":"Perumanna Klari","m":"പെരുമണ്ണ ക്ലാരി","t":"Panchayat"},{"n":"Perumatty","m":"പെരുമാട്ടി","t":"Panchayat"},{"n":"Perumbadappu","m":"പെരുമ്പടപ്പ്","t":"Panchayat"},{"n":"Perumbalam","m":"പെരുമ്പളം","t":"Panchayat"},{"n":"Perumbavoor","m":"പെരുമ്പാവൂർ","t":"Municipality"},{"n":"Perumkadavila","m":"പെരുങ്കടവിള","t":"Panchayat"},{"n":"Peruvalloor","m":"പെരുവള്ളൂർ","t":"Panchayat"},{"n":"Peruvanthanam","m":"പെരുവന്താനം","t":"Panchayat"},{"n":"Peruvayal","m":"പെരുവയൽ","t":"Panchayat"},{"n":"Peruvemba","m":"പെരുവെമ്പ്","t":"Panchayat"},{"n":"Pilicode","m":"","t":"Panchayat"},{"n":"Pinarayi","m":"പിണറായി","t":"Panchayat"},{"n":"Pindimana","m":"പിണ്ടിമന","t":"Panchayat"},{"n":"Piravanthur","m":"പിറവന്തൂർ","t":"Panchayat"},{"n":"Piravom","m":"പിറവം","t":"Municipality"},{"n":"Pirayiri","m":"പിരായിരി","t":"Panchayat"},{"n":"Polppulli","m":"പൊൽപ്പുള്ളി","t":"Panchayat"},{"n":"Ponmala","m":"പൊന്മള","t":"Panchayat"},{"n":"Ponmundam","m":"പൊന്മുണ്ടം","t":"Panchayat"},{"n":"Ponnani","m":"പൊന്നാനി","t":"Municipality"},{"n":"Pookkottur","m":"പൂക്കോട്ടൂർ","t":"Panchayat"},{"n":"Pookottukavu","m":"പൂക്കോട്ടുകാവ്","t":"Panchayat"},{"n":"Poomangalam","m":"പൂമംഗലം","t":"Panchayat"},{"n":"Poonjar","m":"പൂഞ്ഞാർ","t":"Panchayat"},{"n":"Poonjar Thekkekara","m":"പൂഞ്ഞാർ തെക്കേക്കര","t":"Panchayat"},{"n":"Poothadi","m":"പൂതാടി","t":"Panchayat"},{"n":"Poothakkulam","m":"പൂതക്കുളം","t":"Panchayat"},{"n":"Poothrika","m":"പൂതൃക്ക","t":"Panchayat"},{"n":"Poovachal","m":"പൂവച്ചൽ","t":"Panchayat"},{"n":"Poovar","m":"പൂവാർ","t":"Panchayat"},{"n":"Pooyappally","m":"പൂയപ്പള്ളി ഗ്രാമ പഞ്ചായത്ത്","t":"Panchayat"},{"n":"Porkulam","m":"പോര്‍ക്കുളം","t":"Panchayat"},{"n":"Porur","m":"പോരൂർ","t":"Panchayat"},{"n":"Poruvazhi","m":"പോരുവഴി","t":"Panchayat"},{"n":"Pothanikkad","m":"പോത്താനിക്കാട്","t":"Panchayat"},{"n":"Pothencode","m":"പോത്തൻകോട്","t":"Panchayat"},{"n":"Pothukal","m":"പോത്തുകല്ല്","t":"Panchayat"},{"n":"Poyya","m":"പൊയ്യ","t":"Panchayat"},{"n":"Pozhuthana","m":"പൊഴുതന","t":"Panchayat"},{"n":"Pramadam","m":"പ്രമാടം","t":"Panchayat"},{"n":"Pudukkad","m":"പൂതുക്കാട്","t":"Panchayat"},{"n":"Pudunagaram","m":"പുതുനഗരം","t":"Panchayat"},{"n":"Puduppariyaram","m":"പുതുപ്പരിയാരം","t":"Panchayat"},{"n":"Pudusserri","m":"പുതുശ്ശേരി","t":"Panchayat"},{"n":"Pulamanthole","m":"പുലാമന്തോൾ","t":"Panchayat"},{"n":"Pulikkal","m":"പുളിക്കൽ","t":"Panchayat"},{"n":"Pulimath","m":"പുളിമാത്ത്","t":"Panchayat"},{"n":"Pulinkunnu","m":"പുളിങ്കുന്ന്","t":"Panchayat"},{"n":"Puliyoor","m":"പുലിയൂർ","t":"Panchayat"},{"n":"Pullampara","m":"പുല്ലമ്പാറ","t":"Panchayat"},{"n":"Pullur-Periya","m":"പുല്ലൂര്‍ പെരിയ","t":"Panchayat"},{"n":"Pulpally","m":"പുല്പള്ളി","t":"Panchayat"},{"n":"Pulpatta","m":"പുൽപ്പറ്റ","t":"Panchayat"},{"n":"Punalur","m":"പുനലൂർ","t":"Municipality"},{"n":"Punnapra North","m":"പുന്നപ്ര വടക്ക് ഗ്രാമ പഞ്ചായത്ത്","t":"Panchayat"},{"n":"Punnapra South","m":"പുന്നപ്ര തെക്ക് ഗ്രാമ പഞ്ചായത്ത്","t":"Panchayat"},{"n":"Punnayoor","m":"പുന്നയൂര്‍","t":"Panchayat"},{"n":"Punnayoorkulam","m":"പൂന്നയൂര്‍ക്കുളം","t":"Panchayat"},{"n":"Purakkad","m":"പുറക്കാട് ഗ്രാമ പഞ്ചായത്ത്","t":"Panchayat"},{"n":"Puramattam","m":"പുറമറ്റം","t":"Panchayat"},{"n":"Purameri","m":"പുറമേരി","t":"Panchayat"},{"n":"Purapuzha","m":"പുറപ്പുഴ","t":"Panchayat"},{"n":"Purathoor","m":"പുറത്തൂർ","t":"Panchayat"},{"n":"Puthenchira","m":"പുത്തന്‍ചിറ","t":"Panchayat"},{"n":"Puthenvelikkara","m":"പുത്തൻവേലിക്കര","t":"Panchayat"},{"n":"Puthige","m":"പുത്തിഗെ","t":"Panchayat"},{"n":"Puthukode","m":"പുതുക്കോട്","t":"Panchayat"},{"n":"Puthuppadi","m":"പുതുപ്പാടി","t":"Panchayat"},{"n":"Puthuppally","m":"പുതുപ്പള്ളി","t":"Panchayat"},{"n":"Puthur","m":"പൂത്തൂര്‍","t":"Panchayat"},{"n":"Puzhakkatiri","m":"പുഴക്കാട്ടിരി","t":"Panchayat"},{"n":"Rajakkad","m":"രാജാക്കാട്","t":"Panchayat"},{"n":"Rajakumary","m":"രാജകുമാരി","t":"Panchayat"},{"n":"Ramamangalam","m":"രാമമംഗലം","t":"Panchayat"},{"n":"Ramanattukara","m":"രാമനാട്ടുകര","t":"Municipality"},{"n":"Ramankari","m":"രാമങ്കരി","t":"Panchayat"},{"n":"Ramanthali","m":"","t":"Panchayat"},{"n":"Ramapuram","m":"രാമപുരം","t":"Panchayat"},{"n":"Ranni","m":"റാന്നി","t":"Panchayat"},{"n":"Ranni Angadi","m":"റാന്നി അങ്ങാടി ഗ്രാമ പഞ്ചായത്ത്","t":"Panchayat"},{"n":"Ranni Pazhavangadi","m":"റാന്നി പഴവങ്ങാടി ഗ്രാമ പഞ്ചായത്ത്","t":"Panchayat"},{"n":"Ranni Perunadu","m":"റാന്നി പെരുനാട് ഗ്രാമ പഞ്ചായത്ത്","t":"Panchayat"},{"n":"Rayamangalam","m":"രായമംഗലം","t":"Panchayat"},{"n":"Santhanpara","m":"ശാന്തൻപാറ","t":"Panchayat"},{"n":"Sasthamcotta","m":"ശാസ്താംകോട്ട","t":"Panchayat"},{"n":"Seethathodu","m":"സീതത്തോട്","t":"Panchayat"},{"n":"Senapathy","m":"സേനാപതി","t":"Panchayat"},{"n":"Sholayar","m":"ഷോളയൂർ","t":"Panchayat"},{"n":"Shoranur","m":"ഷൊർണ്ണൂർ","t":"Municipality"},{"n":"Sooranad North","m":"ശൂരനാട് നോര്‍ത്ത് ഗ്രാമ പഞ്ചായത്ത്","t":"Panchayat"},{"n":"Sooranad South","m":"ശൂരനാട് സൌത്ത് ഗ്രാമ പഞ്ചായത്ത്","t":"Panchayat"},{"n":"Sree Narayanapuram","m":"ശ്രീനാരായണപുരം","t":"Panchayat"},{"n":"Sreekandapuram","m":"ശ്രീകണ്ഠാപുരം","t":"Municipality"},{"n":"Sreekrishnapuram","m":"ശ്രീകൃഷ്ണപുരം","t":"Panchayat"},{"n":"Sreemoolanagaram","m":"ശ്രീമൂലനഗരം","t":"Panchayat"},{"n":"Sulthan Bathery","m":"സുൽത്താൻ ബത്തേരി","t":"Municipality"},{"n":"TV Puram","m":"ടി.വി. പുരം","t":"Panchayat"},{"n":"Talavoor","m":"തലവൂർ","t":"Panchayat"},{"n":"Tanur","m":"താനൂർ","t":"Municipality"},{"n":"Tarur","m":"തരൂർ","t":"Panchayat"},{"n":"Tavanur","m":"തവനൂർ","t":"Panchayat"},{"n":"Tazhekkod","m":"താഴേക്കോട്","t":"Panchayat"},{"n":"Teekoy","m":"തീക്കോയി","t":"Panchayat"},{"n":"Thachampara","m":"തച്ചമ്പാറ","t":"Panchayat"},{"n":"Thachanattukara","m":"തച്ചനാട്ടുകര","t":"Panchayat"},{"n":"Thaikkattussery","m":"തൈക്കാട്ടുശ്ശേരി","t":"Panchayat"},{"n":"Thakazhy","m":"തകഴി ഗ്രാമ പഞ്ചായത്ത്","t":"Panchayat"},{"n":"Thalakkad","m":"തലക്കാട്","t":"Panchayat"},{"n":"Thalakulathur","m":"തലക്കുളത്തൂർ","t":"Panchayat"},{"n":"Thalanadu","m":"തലനാട്","t":"Panchayat"},{"n":"Thalappalam","m":"തലപ്പലം","t":"Panchayat"},{"n":"Thalassery","m":"തലശ്ശേരി","t":"Municipality"},{"n":"Thalavady","m":"തലവടി","t":"Panchayat"},{"n":"Thalayazham","m":"തലയാഴം","t":"Panchayat"},{"n":"Thalayolaparambu","m":"തലയോലപ്പറമ്പ്","t":"Panchayat"},{"n":"Thalikulam","m":"തളിക്കുളം","t":"Panchayat"},{"n":"Thaliparambu","m":"തളിപ്പറമ്പു്","t":"Municipality"},{"n":"Thamarakkulam","m":"താമരക്കുളം","t":"Panchayat"},{"n":"Thamarassery","m":"താമരശ്ശേരി","t":"Panchayat"},{"n":"Thanalur","m":"താനാളൂർ","t":"Panchayat"},{"n":"Thanneermukkam","m":"തണ്ണീർമുക്കം","t":"Panchayat"},{"n":"Thanniam","m":"താന്ന്യം","t":"Panchayat"},{"n":"Thannithodu","m":"തണ്ണിത്തോട്","t":"Panchayat"},{"n":"Thariode","m":"തരിയോട","t":"Panchayat"},{"n":"Thavinhal","m":"തവിഞ്ഞാല്‍","t":"Panchayat"},{"n":"Thazhakkara","m":"തഴക്കര","t":"Panchayat"},{"n":"Thazhava","m":"തഴവ ഗ്രാമ പഞ്ചായത്ത്","t":"Panchayat"},{"n":"Thekkumbhagam","m":"തെക്കുംഭാഗം","t":"Panchayat"},{"n":"Thekkumkara","m":"തെക്കുംകര","t":"Panchayat"},{"n":"Thenhippalam","m":"തേഞ്ഞിപ്പാലം","t":"Panchayat"},{"n":"Thenkara","m":"തെങ്കര","t":"Panchayat"},{"n":"Thenkurissi","m":"തേങ്കുറിശ്ശി","t":"Panchayat"},{"n":"Thenmala","m":"തെന്മല","t":"Panchayat"},{"n":"Thennela","m":"തെന്നല","t":"Panchayat"},{"n":"Thevalakkara","m":"തേവലക്കര","t":"Panchayat"},{"n":"Thidanadu","m":"തിടനാട്","t":"Panchayat"},{"n":"Thikkodi","m":"തിക്കോടി","t":"Panchayat"},{"n":"Thillankery","m":"തില്ലങ്കേരി","t":"Panchayat"},{"n":"Thirumaradi","m":"തിരുമാറാടി","t":"Panchayat"},{"n":"Thirumittacode","m":"തിരുമിറ്റക്കോട്","t":"Panchayat"},{"n":"Thirunavaya","m":"തിരുനാവായ","t":"Panchayat"},{"n":"Thirunelly","m":"തിരുനെല്ലി","t":"Panchayat"},{"n":"Thirupuram","m":"തിരുപുറം","t":"Panchayat"},{"n":"Thiruvali","m":"തിരുവാലി","t":"Panchayat"},{"n":"Thiruvalla","m":"തിരുവല്ല","t":"Municipality"},{"n":"Thiruvallur","m":"തിരുവള്ളൂർ","t":"Panchayat"},{"n":"Thiruvambadi","m":"തിരുവമ്പാടി","t":"Panchayat"},{"n":"Thiruvananthapuram","m":"തിരുവനന്തപുരം","t":"Corporation"},{"n":"Thiruvaniyoor","m":"തിരുവാണിയൂർ","t":"Panchayat"},{"n":"Thiruvarppu","m":"തിരുവാർപ്പ്","t":"Panchayat"},{"n":"Thiruvegappura","m":"തിരുവേഗപ്പുറ","t":"Panchayat"},{"n":"Thiruvilwamala","m":"തിരുവില്ല്വാമല","t":"Panchayat"},{"n":"Thiruvnavandoor","m":"തിരുവൻവണ്ടൂർ","t":"Panchayat"},{"n":"Thodiyoor","m":"തൊടിയൂർ","t":"Panchayat"},{"n":"Thodupuzha","m":"തൊടുപുഴ നഗരസഭ","t":"Municipality"},{"n":"Tholicode","m":"തൊളിക്കോട്","t":"Panchayat"},{"n":"Tholur","m":"തോളൂർ","t":"Panchayat"},{"n":"Thondernad","m":"തൊണ്ടര്‍നാടു്","t":"Panchayat"},{"n":"Thottappuzhassery","m":"തോട്ടപ്പുഴശ്ശേരി","t":"Panchayat"},{"n":"Thrikkadeeri","m":"തൃക്കടീരി","t":"Panchayat"},{"n":"Thrikkakara","m":"തൃക്കാക്കര","t":"Municipality"},{"n":"Thrikkalangode","m":"തൃക്കലങ്ങോട്","t":"Panchayat"},{"n":"Thrikkarippur","m":"തൃക്കരിപ്പൂര്‍","t":"Panchayat"},{"n":"Thrikkaruva","m":"തൃക്കരുവ","t":"Panchayat"},{"n":"Thrikkodithanam","m":"തൃക്കൊടിത്താനം","t":"Panchayat"},{"n":"Thrikkovilvattom","m":"തൃക്കോവിൽവട്ടം","t":"Panchayat"},{"n":"Thrikkur","m":"ത്യക്കൂര്‍","t":"Panchayat"},{"n":"Thrippengode","m":"തൃപ്രങ്ങോട്","t":"Panchayat"},{"n":"Thrippunithura","m":"തൃപ്പൂണിത്തുറ","t":"Municipality"},{"n":"Thrissur","m":"തൃശ്ശൂർ","t":"Corporation"},{"n":"Thrithala","m":"തൃത്താല","t":"Panchayat"},{"n":"Thumpamon","m":"തുമ്പമൺ","t":"Panchayat"},{"n":"Thuravoor","m":"തുറവൂർ","t":"Panchayat"},{"n":"Thurayur","m":"തുറയൂർ","t":"Panchayat"},{"n":"Thuvoor","m":"തുവ്വൂർ","t":"Panchayat"},{"n":"Tirur","m":"തിരൂർ","t":"Municipality"},{"n":"Tirurangadi","m":"തിരൂരങ്ങാടി","t":"Municipality"},{"n":"Trikkunnappuzha","m":"തൃക്കുന്നപ്പുഴ","t":"Panchayat"},{"n":"Triprangottoor","m":"തൃപ്പങ്ങോട്ടൂര്‍","t":"Panchayat"},{"n":"Tuneri","m":"തൂണേരി","t":"Panchayat"},{"n":"Udayagiri","m":"ഉദയഗിരി","t":"Panchayat"},{"n":"Udayamperoor","m":"ഉദയംപേരൂർ","t":"Panchayat"},{"n":"Udayanapuram","m":"ഉദയനാപുരം","t":"Panchayat"},{"n":"Uduma","m":"ഉദുമ","t":"Panchayat"},{"n":"Udumbanchola","m":"ഉടുമ്പൻചോല","t":"Panchayat"},{"n":"Udumbannoor","m":"ഉടുമ്പന്നൂർ","t":"Panchayat"},{"n":"Ulikkal","m":"ഉള്ളിക്കല്‍","t":"Panchayat"},{"n":"Ulliyeri","m":"ഉള്ളിയേരി","t":"Panchayat"},{"n":"Ummannoor","m":"ഉമ്മന്നൂർ","t":"Panchayat"},{"n":"Unnikulam","m":"ഉണിക്കുളം","t":"Panchayat"},{"n":"Upputhara","m":"ഉപ്പുതറ","t":"Panchayat"},{"n":"Urangattiri","m":"ഊർങ്ങാട്ടിരി","t":"Panchayat"},{"n":"Uzhamalakkal","m":"ഉഴമലയ്ക്കൽ","t":"Panchayat"},{"n":"Uzhavoor","m":"ഉഴവൂർ","t":"Panchayat"},{"n":"Vadakarapathy","m":"വടകരപ്പതി","t":"Panchayat"},{"n":"Vadakkekkad","m":"വടക്കേക്കാട്","t":"Panchayat"},{"n":"Vadakkekkara","m":"വടക്കേക്കര","t":"Panchayat"},{"n":"Vadakkenchery","m":"വടക്കഞ്ചേരി","t":"Panchayat"},{"n":"Vadanappilly","m":"വാടാനപ്പിള്ളി","t":"Panchayat"},{"n":"Vadasserikkara","m":"വടശ്ശേരിക്കര","t":"Panchayat"},{"n":"Vadavannur","m":"വടവന്നൂർ","t":"Panchayat"},{"n":"Vadavukode-Puthencruz Gramapanachayath","m":"വടവുകോട്-പുത്തൻകുരിശ്","t":"Panchayat"},{"n":"Vaikom","m":"വൈക്കം","t":"Municipality"},{"n":"Vakathanam","m":"വാകത്താനം","t":"Panchayat"},{"n":"Vakkom","m":"വക്കം ഗ്രാമ പഞ്ചായത്ത്","t":"Panchayat"},{"n":"Valakom","m":"വാളകം","t":"Panchayat"},{"n":"Valanchery","m":"വളാഞ്ചേരി","t":"Municipality"},{"n":"Valapattanam","m":"വളപട്ടണം","t":"Panchayat"},{"n":"Valappad","m":"വലപ്പാട്","t":"Panchayat"},{"n":"Valavannur","m":"വളവന്നൂർ","t":"Panchayat"},{"n":"Valayam","m":"വളയം","t":"Panchayat"},{"n":"Valiyaparampa","m":"വലിയപറമ്പ","t":"Panchayat"},{"n":"Vallachira","m":"വല്ലച്ചിറ","t":"Panchayat"},{"n":"Vallapuzha","m":"വല്ലപ്പുഴ","t":"Panchayat"},{"n":"Vallathole Nagar","m":"വള്ളത്തോള്‍നഗര്‍","t":"Panchayat"},{"n":"Vallikkodu","m":"വള്ളിക്കോട്","t":"Panchayat"},{"n":"Vallikkunnam","m":"വള്ളിക്കുന്നം","t":"Panchayat"},{"n":"Vallikkunnu","m":"വള്ളിക്കുന്ന്","t":"Panchayat"},{"n":"Vamanapuram","m":"വാമനപുരം","t":"Panchayat"},{"n":"Vandanmedu","m":"വണ്ടൻമേട്","t":"Panchayat"},{"n":"Vandazhy","m":"വണ്ടാഴി","t":"Panchayat"},{"n":"Vandiperiyar","m":"വണ്ടിപ്പെരിയാർ","t":"Panchayat"},{"n":"Vanimal","m":"വാണിമൽ","t":"Panchayat"},{"n":"Vaniyamkulam","m":"വാണിയംകുളം","t":"Panchayat"},{"n":"Vannappuram","m":"വണ്ണപ്പുറം","t":"Panchayat"},{"n":"Varantharappilly","m":"വരന്തരപ്പിള്ളി","t":"Panchayat"},{"n":"Varapetty","m":"വാരപ്പെട്ടി","t":"Panchayat"},{"n":"Varapuzha","m":"വരാപ്പുഴ","t":"Panchayat"},{"n":"Varavoor","m":"വരവൂര്‍","t":"Panchayat"},{"n":"Varkala","m":"വർക്കല","t":"Municipality"},{"n":"Vatakara","m":"വടകര","t":"Municipality"},{"n":"Vathikudy","m":"വാത്തിക്കുടി","t":"Panchayat"},{"n":"Vattamkulam","m":"വട്ടംകുളം","t":"Panchayat"},{"n":"Vattavada","m":"വട്ടവട","t":"Panchayat"},{"n":"Vayalar","m":"വയലാർ","t":"Panchayat"},{"n":"Vazhakkad","m":"വാഴക്കാട്","t":"Panchayat"},{"n":"Vazhakkulam","m":"വാഴക്കുളം","t":"Panchayat"},{"n":"Vazhapally","m":"വാഴപ്പള്ളി","t":"Panchayat"},{"n":"Vazhathope","m":"വാഴത്തോപ്പ്","t":"Panchayat"},{"n":"Vazhayoor","m":"വാഴയൂർ","t":"Panchayat"},{"n":"Vazhikkadavu","m":"വഴിക്കടവ്","t":"Panchayat"},{"n":"Vazhoor","m":"വാഴൂർ","t":"Panchayat"},{"n":"Vechoochira","m":"വെച്ചൂച്ചിറ ഗ്രാമപഞ്ചായത്ത് ഓഫീസ്","t":"Panchayat"},{"n":"Vechoor","m":"വെച്ചൂർ","t":"Panchayat"},{"n":"Veeyapuram","m":"വീയപുരം","t":"Panchayat"},{"n":"Velinalloor","m":"വെളിനല്ലൂര്‍ ഗ്രാമ പഞ്ചായത്ത്","t":"Panchayat"},{"n":"Veliyam","m":"വെളിയം","t":"Panchayat"},{"n":"Veliyanadu","m":"വെളിയനാട്","t":"Panchayat"},{"n":"Veliyancode","m":"വെളിയംകോട്","t":"Panchayat"},{"n":"Veliyannoor","m":"വെളിയന്നൂർ","t":"Panchayat"},{"n":"Vellamunda","m":"വെള്ളമുണ്ട","t":"Panchayat"},{"n":"Vellanad","m":"വെള്ളനാട്","t":"Panchayat"},{"n":"Vellangalur","m":"വെള്ളാങ്കല്ലൂര്‍","t":"Panchayat"},{"n":"Vellarada","m":"വെള്ളറട","t":"Panchayat"},{"n":"Vellathooval","m":"വെള്ളത്തൂവൽ","t":"Panchayat"},{"n":"Vellavoor","m":"വെള്ളാവൂര്‍ ഗ്രാമ പഞ്ചായത്ത്","t":"Panchayat"},{"n":"Vellinezhi","m":"വെള്ളിനേഴി","t":"Panchayat"},{"n":"Velliyamattom","m":"വെളളിയാമറ്റം","t":"Panchayat"},{"n":"Velloor","m":"വെള്ളൂര്‍ ഗ്രാമ പഞ്ചായത്ത്","t":"Panchayat"},{"n":"Velom","m":"വേളം","t":"Panchayat"},{"n":"Velookkara","m":"വേളൂക്കര","t":"Panchayat"},{"n":"Velur","m":"വേലൂര്‍","t":"Panchayat"},{"n":"Vembayam","m":"വെമ്പായം","t":"Panchayat"},{"n":"Vengad","m":"വേങ്ങാടു്","t":"Panchayat"},{"n":"Venganoor","m":"വെങ്ങാനൂർ","t":"Panchayat"},{"n":"Vengappally","m":"വേങ്ങപ്പള്ളി","t":"Panchayat"},{"n":"Vengara","m":"വേങ്ങര","t":"Panchayat"},{"n":"Vengola","m":"വെങ്ങോല","t":"Panchayat"},{"n":"Vengoor","m":"വേങ്ങൂർ","t":"Panchayat"},{"n":"Venkitangu","m":"വെങ്കിടങ്ങ്","t":"Panchayat"},{"n":"Venmony","m":"വെണ്മണി","t":"Panchayat"},{"n":"Vettattur","m":"വെട്ടത്തൂർ","t":"Panchayat"},{"n":"Vettikavala","m":"വെട്ടിക്കവല","t":"Panchayat"},{"n":"Vettom","m":"വെട്ടം","t":"Panchayat"},{"n":"Vettoor","m":"വെട്ടൂർ","t":"Panchayat"},{"n":"Vijayapuram","m":"വിജയപുരം","t":"Panchayat"},{"n":"Vilakkudy","m":"വിളക്കുടി ഗ്രാമ പഞ്ചായത്ത്","t":"Panchayat"},{"n":"Vilappil","m":"വിളപ്പിൽ","t":"Panchayat"},{"n":"Vilavoorkkal","m":"വിളവൂർക്കൽ","t":"Panchayat"},{"n":"Vilayur","m":"വിളയൂർ","t":"Panchayat"},{"n":"Villiappally","m":"വില്യാപ്പള്ളി","t":"Panchayat"},{"n":"Vithura","m":"വിതുര","t":"Panchayat"},{"n":"Vorkady","m":"വോര്‍ക്കാടി","t":"Panchayat"},{"n":"Vythiri","m":"വൈത്തിരി","t":"Panchayat"},{"n":"Wadakanchery","m":"വടക്കാഞ്ചേരി","t":"Municipality"},{"n":"Wandoor","m":"വണ്ടൂർ","t":"Panchayat"},{"n":"West Eleri","m":"വെസ്റ്റ് എളേരി","t":"Panchayat"},{"n":"West Kallada","m":"പടിഞ്ഞാറെ കല്ലട","t":"Panchayat"},{"n":"Yeroor","m":"ഏരൂർ","t":"Panchayat"}];
+
+const LOCATION_TYPES = ["Kerala","India","Abroad"];
+function locationTypeLabel(v){
+  if(v==='Kerala') return t('locKerala');
+  if(v==='India') return t('locIndia');
+  if(v==='Abroad') return t('locAbroad');
+  return v;
+}
+function addressFieldsHtml(cfg){
+  const locType = state[cfg.locTypeKey] || 'Kerala';
+  let fields = '';
+  if(locType==='Abroad'){
+    fields = `
+      <label class="field-label">${esc(t('addrLineQ'))} <span class="req">*</span>${ml('addrLineQ')}</label>
+      <input type="text" id="${cfg.idPrefix}House" value="${esc(state[cfg.houseKey])}" placeholder="${esc(t('addrLinePh'))}">
+      <label class="field-label">${esc(t('addrCityQ'))} <span class="req">*</span>${ml('addrCityQ')}</label>
+      <input type="text" id="${cfg.idPrefix}City" value="${esc(state[cfg.cityKey])}" placeholder="${esc(t('addrCityPh'))}">
+      <label class="field-label">${esc(t('addrStateQ'))} <span class="req">*</span>${ml('addrStateQ')}</label>
+      <input type="text" id="${cfg.idPrefix}State" value="${esc(state[cfg.stateKey])}" placeholder="${esc(t('addrStatePh'))}">
+      <label class="field-label">${esc(t('addrCountryQ'))} <span class="req">*</span>${ml('addrCountryQ')}</label>
+      <input type="text" id="${cfg.idPrefix}Country" value="${esc(state[cfg.countryKey])}" placeholder="${esc(t('addrCountryPh'))}">
+      <label class="field-label">${esc(t('fPostalCode'))} <span class="req">*</span>${ml('fPostalCode')}</label>
+      <input type="text" id="${cfg.idPrefix}Pincode" value="${esc(state[cfg.pincodeKey])}" placeholder="${esc(t('fPostalCodePh'))}">`;
+  } else if(locType==='India'){
+    fields = `
+      <label class="field-label">${esc(t('addrHouseQ'))} <span class="req">*</span>${ml('addrHouseQ')}</label>
+      <input type="text" id="${cfg.idPrefix}House" value="${esc(state[cfg.houseKey])}" placeholder="${esc(t('addrHousePh'))}">
+      <label class="field-label">${esc(t('addrPOQ'))} <span class="req">*</span>${ml('addrPOQ')}</label>
+      <input type="text" id="${cfg.idPrefix}PO" value="${esc(state[cfg.poKey])}" placeholder="${esc(t('addrPOPh'))}">
+      <label class="field-label">${esc(t('addrCityQ'))} <span class="req">*</span>${ml('addrCityQ')}</label>
+      <input type="text" id="${cfg.idPrefix}City" value="${esc(state[cfg.cityKey])}" placeholder="${esc(t('addrCityPh'))}">
+      <label class="field-label">${esc(t('addrDistrictQ'))} <span class="req">*</span>${ml('addrDistrictQ')}</label>
+      <input type="text" id="${cfg.idPrefix}District" value="${esc(state[cfg.districtKey])}" placeholder="${esc(t('addrDistrictPh'))}">
+      <label class="field-label">${esc(t('addrStateQ'))} <span class="req">*</span>${ml('addrStateQ')}</label>
+      <input type="text" id="${cfg.idPrefix}State" value="${esc(state[cfg.stateKey])}" placeholder="${esc(t('addrStatePh'))}">
+      <label class="field-label">${esc(t('fPincode'))} <span class="req">*</span>${ml('fPincode')}</label>
+      <input type="tel" id="${cfg.idPrefix}Pincode" value="${esc(state[cfg.pincodeKey])}" placeholder="${esc(t('fPincodePh'))}">`;
+  } else { // Kerala (default)
+    fields = `
+      <label class="field-label">${esc(t('addrHouseQ'))} <span class="req">*</span>${ml('addrHouseQ')}</label>
+      <input type="text" id="${cfg.idPrefix}House" value="${esc(state[cfg.houseKey])}" placeholder="${esc(t('addrHousePh'))}">
+      <label class="field-label">${esc(t('addrPOQ'))} <span class="req">*</span>${ml('addrPOQ')}</label>
+      <input type="text" id="${cfg.idPrefix}PO" value="${esc(state[cfg.poKey])}" placeholder="${esc(t('addrPOPh'))}">
+      <label class="field-label">${esc(t('addrPanchayatQ'))} <span class="req">*</span>${ml('addrPanchayatQ')}</label>
+      <div class="lsg-autocomplete-wrap">
+        <input type="text" id="${cfg.idPrefix}Panchayat" value="${esc(state[cfg.panchayatKey])}" placeholder="${esc(t('addrPanchayatTypePh'))}" autocomplete="off">
+        <div class="lsg-suggestions" id="${cfg.idPrefix}PanchayatSuggestions"></div>
+      </div>
+      <label class="field-label">${esc(t('addrDistrictQ'))} <span class="req">*</span>${ml('addrDistrictQ')}</label>
+      <select id="${cfg.idPrefix}District">
+        <option value="">${esc(t('selectPrompt'))}</option>
+        ${KERALA_DISTRICTS.map(dObj=>`<option value="${esc(dObj.en)}" ${state[cfg.districtKey]===dObj.en?'selected':''}>${esc(lang==='ml'?dObj.ml:dObj.en)}</option>`).join('')}
+      </select>
+      <label class="field-label">${esc(t('fPincode'))} <span class="req">*</span>${ml('fPincode')}</label>
+      <input type="tel" id="${cfg.idPrefix}Pincode" value="${esc(state[cfg.pincodeKey])}" placeholder="${esc(t('fPincodePh'))}">`;
+  }
+  return `
+    <label class="field-label">${esc(t(cfg.questionKey))} <span class="req">*</span>${ml(cfg.questionKey)}</label>
+    <select id="${cfg.idPrefix}LocationType">
+      ${LOCATION_TYPES.map(v=>`<option value="${v}" ${locType===v?'selected':''}>${esc(locationTypeLabel(v))}</option>`).join('')}
+    </select>
+    ${fields}
+  `;
+}
+function wireAddressFields(cfg, rerenderFn, fullSaveFn){
+  document.getElementById(cfg.idPrefix+'LocationType').onchange = e=>{
+    if(fullSaveFn) fullSaveFn(); // persist the rest of the step's fields first, or they'd be lost on re-render
+    state[cfg.locTypeKey] = e.target.value;
+    rerenderFn();
+  };
+  // Only the Kerala branch has the LSG (Panchayat/Municipality/Corporation)
+  // autocomplete field — wire it up if it's actually on screen right now.
+  const locType = state[cfg.locTypeKey] || 'Kerala';
+  if(locType === 'Kerala') wireLSGAutocomplete(cfg.idPrefix+'Panchayat');
+}
+
+// Live-filters LSG_DATA as the person types (minimum 4 characters), showing
+// matching Panchayat/Municipality/Corporation names to pick from. Matches
+// against whichever language is active.
+function wireLSGAutocomplete(inputId){
+  const input = document.getElementById(inputId);
+  const box = document.getElementById(inputId+'Suggestions');
+  if(!input || !box) return;
+  function hide(){ box.classList.remove('show'); box.innerHTML=''; }
+  function renderMatches(query){
+    const q = query.trim().toLowerCase();
+    if(q.length < 4){ hide(); return; }
+    const matches = LSG_DATA.filter(e=>
+      e.n.toLowerCase().includes(q) || (e.m && e.m.includes(query.trim()))
+    ).slice(0, 25);
+    if(matches.length===0){
+      box.innerHTML = `<div class="lsg-suggestion-empty">${esc(t('lsgNoMatch'))}</div>`;
+      box.classList.add('show');
+      return;
+    }
+    box.innerHTML = matches.map(e=>{
+      const display = lang==='ml' && e.m ? e.m : e.n;
+      return `<div class="lsg-suggestion-item" data-name="${esc(display)}">${esc(display)}<span class="lsg-type">${esc(opt(e.t))}</span></div>`;
+    }).join('');
+    box.classList.add('show');
+  }
+  input.addEventListener('input', ()=> renderMatches(input.value));
+  input.addEventListener('focus', ()=> renderMatches(input.value));
+  box.addEventListener('mousedown', e=>{
+    const item = e.target.closest('.lsg-suggestion-item');
+    if(!item) return;
+    input.value = item.dataset.name;
+    hide();
+  });
+  input.addEventListener('blur', ()=> setTimeout(hide, 150));
+}
+function saveAddressFields(cfg){
+  state[cfg.locTypeKey] = val(cfg.idPrefix+'LocationType') || state[cfg.locTypeKey] || 'Kerala';
+  state[cfg.houseKey] = val(cfg.idPrefix+'House');
+  state[cfg.pincodeKey] = val(cfg.idPrefix+'Pincode');
+  const el = id=>document.getElementById(id);
+  if(el(cfg.idPrefix+'PO')) state[cfg.poKey] = val(cfg.idPrefix+'PO');
+  if(el(cfg.idPrefix+'Panchayat')) state[cfg.panchayatKey] = val(cfg.idPrefix+'Panchayat');
+  if(el(cfg.idPrefix+'District')) state[cfg.districtKey] = val(cfg.idPrefix+'District');
+  if(el(cfg.idPrefix+'City')) state[cfg.cityKey] = val(cfg.idPrefix+'City');
+  if(el(cfg.idPrefix+'State')) state[cfg.stateKey] = val(cfg.idPrefix+'State');
+  if(el(cfg.idPrefix+'Country')) state[cfg.countryKey] = val(cfg.idPrefix+'Country');
+}
+function validateAddressFields(cfg){
+  const locType = state[cfg.locTypeKey] || 'Kerala';
+  if(!state[cfg.houseKey] || !state[cfg.pincodeKey]) return false;
+  if(locType==='Kerala'){
+    return !!(state[cfg.poKey] && state[cfg.panchayatKey] && state[cfg.districtKey]) && /^[0-9]{6}$/.test(state[cfg.pincodeKey]);
+  }
+  if(locType==='India'){
+    return !!(state[cfg.poKey] && state[cfg.cityKey] && state[cfg.districtKey] && state[cfg.stateKey]) && /^[0-9]{6}$/.test(state[cfg.pincodeKey]);
+  }
+  // Abroad
+  return !!(state[cfg.cityKey] && state[cfg.stateKey] && state[cfg.countryKey]);
+}
+
 // ============ STEP: LANGUAGE ============
 function renderLang(){
   cardArea.innerHTML = `
@@ -936,7 +1133,8 @@ function renderWho(){
       if(state.who && state.who !== o.v){
         const keep = {language:state.language, name:state.name, mobile:state.mobile,
           whatsapp:state.whatsapp, sameAsMobile:state.sameAsMobile,
-          addressHouse:state.addressHouse, addressPO:state.addressPO, addressPanchayat:state.addressPanchayat,
+          addressHouse:state.addressHouse, addressPO:state.addressPO,
+          addressPanchayat:state.addressPanchayat, addressDistrict:state.addressDistrict,
           pincode:state.pincode, email:state.email, socialMedia:state.socialMedia};
         state = Object.assign(blankState(), keep);
       }
@@ -952,6 +1150,13 @@ function renderWho(){
 }
 
 // ============ STEP: CONTACT ============
+const PERSONAL_ADDR_CFG = {
+  idPrefix:'fAddr', questionKey:'resideQ',
+  locTypeKey:'locationType', houseKey:'addressHouse', poKey:'addressPO',
+  panchayatKey:'addressPanchayat', districtKey:'addressDistrict',
+  cityKey:'addressCity', stateKey:'addressState', countryKey:'addressCountry', pincodeKey:'pincode'
+};
+
 function renderContact(){
   cardArea.innerHTML = `
     <h2>${esc(t('contactTitle'))}${ml('contactTitle')}</h2>
@@ -972,6 +1177,8 @@ function renderContact(){
       <input type="tel" id="fWhatsapp" value="${esc(state.whatsapp)}">
     </div>
 
+    ${addressFieldsHtml(PERSONAL_ADDR_CFG)}
+
     <label class="field-label">${esc(t('fEmail'))} <span class="req">*</span>${ml('fEmail')}</label>
     <input type="email" id="fEmail" value="${esc(state.email)}">
 
@@ -981,18 +1188,23 @@ function renderContact(){
     <div class="error-text" id="contactError"></div>
     ${navHtml()}
   `;
-  document.getElementById('fSame').onchange = e=>
-    document.getElementById('waWrap').classList.toggle('hidden', e.target.checked);
-  const save = ()=>{
+  function save(){
     state.name = val('fName'); state.mobile = val('fMobile');
     state.sameAsMobile = checked('fSame');
     state.whatsapp = state.sameAsMobile ? state.mobile : val('fWhatsapp');
+    saveAddressFields(PERSONAL_ADDR_CFG);
     state.email = val('fEmail'); state.socialMedia = val('fSocial');
+  }
+  document.getElementById('fSame').onchange = e=>{
+    state.sameAsMobile = e.target.checked;
+    document.getElementById('waWrap').classList.toggle('hidden', e.target.checked);
   };
+  wireAddressFields(PERSONAL_ADDR_CFG, renderContact, save);
   wireNav(()=>{
     save();
     const phoneOk = v => isValidIndianMobile(v);
     if(!state.name || !phoneOk(state.mobile) || !phoneOk(state.whatsapp) ||
+       !validateAddressFields(PERSONAL_ADDR_CFG) ||
        !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(state.email)){
       showErr('contactError', t('contactErr')); return;
     }
@@ -1039,38 +1251,6 @@ function renderContactPerson(){
     }
     go(1);
   }, save);
-}
-
-// ============ STEPS: ADDRESS (House/Street, Post Office, Panchayat, Pincode — one per screen) ============
-function renderAddressStep(stateKey, inputId, questionKey, placeholderKey, inputType, validateFn){
-  cardArea.innerHTML = `
-    <h2>${esc(t('addrStepTitle'))}${ml('addrStepTitle')}</h2>
-    <p class="sub">${esc(t('addrStepSub'))}</p>
-
-    <label class="field-label">${esc(t(questionKey))} <span class="req">*</span>${ml(questionKey)}</label>
-    <input type="${inputType}" id="${inputId}" value="${esc(state[stateKey])}" placeholder="${esc(t(placeholderKey))}">
-
-    <div class="error-text" id="addrError">${esc(t('addrFieldErr'))}</div>
-    ${navHtml()}
-  `;
-  const save = ()=>{ state[stateKey] = val(inputId); };
-  wireNav(()=>{
-    save();
-    if(!validateFn(state[stateKey])){ showErr('addrError'); return; }
-    go(1);
-  }, save);
-}
-function renderAddressHouse(){
-  renderAddressStep('addressHouse','fAddrHouse','addrHouseQ','addrHousePh','text', v=>!!v);
-}
-function renderAddressPO(){
-  renderAddressStep('addressPO','fAddrPO','addrPOQ','addrPOPh','text', v=>!!v);
-}
-function renderAddressPanchayat(){
-  renderAddressStep('addressPanchayat','fAddrPanchayat','addrPanchayatQ','addrPanchayatPh','text', v=>!!v);
-}
-function renderAddressPincode(){
-  renderAddressStep('pincode','fAddrPincode','fPincode','fPincodePh','tel', v=>/^[0-9]{6}$/.test(v));
 }
 
 // ============ STEP: ART FORM ============
@@ -1320,6 +1500,13 @@ function renderTeacher(){
 }
 
 // ============ STEP: INSTITUTION ============
+const INST_ADDR_CFG = {
+  idPrefix:'fInstLoc', questionKey:'instLocationQ',
+  locTypeKey:'instLocationType', houseKey:'instLocHouse', poKey:'instLocPO',
+  panchayatKey:'instLocPanchayat', districtKey:'instLocDistrict',
+  cityKey:'instLocCity', stateKey:'instLocState', countryKey:'instLocCountry', pincodeKey:'instLocPincode'
+};
+
 function renderInstitution(){
   cardArea.innerHTML = `
     <h2>${esc(t('instTitle'))}${ml('instTitle')}</h2>
@@ -1334,8 +1521,7 @@ function renderInstitution(){
     <label class="field-label">${esc(t('fInstName'))} <span class="req">*</span>${ml('fInstName')}</label>
     <input type="text" id="fInstName" value="${esc(state.instName)}">
 
-    <label class="field-label">${esc(t('fInstAddress'))} <span class="req">*</span>${ml('fInstAddress')}</label>
-    <textarea id="fInstAddress">${esc(state.instAddress)}</textarea>
+    ${addressFieldsHtml(INST_ADDR_CFG)}
 
     <label class="field-label">${esc(t('fInstEmail'))} <span class="req">*</span>${ml('fInstEmail')}</label>
     <input type="email" id="fInstEmail" value="${esc(state.instEmail)}">
@@ -1384,24 +1570,25 @@ function renderInstitution(){
   };
   wireConditional('fHasBranches','branchesBox');
   wireConditional('fHasEventHall','eventHallBox');
-  const redraw = ()=>{
-    chipGroup('subjWrap', SUBJECTS_TAUGHT, state.subjectsTaught, redraw);
-    chipGroup('eduWrap', EDU_PROGRAMS, state.eduPrograms, redraw);
-  };
-  redraw();
-  const save = ()=>{
+  function save(){
     state.designation = val('fDesignation'); state.designationOther = val('fDesignationOther');
-    state.instName = val('fInstName'); state.instAddress = val('fInstAddress');
+    state.instName = val('fInstName'); saveAddressFields(INST_ADDR_CFG);
     state.instEmail = val('fInstEmail'); state.instPhone = val('fInstPhone');
     state.instWebsite = val('fInstWebsite'); state.yearEstablished = val('fYear');
     state.subjectsTaughtOther = val('fSubjOther');
     state.hasBranches = checked('fHasBranches');
     state.branchCount = val('fBranchCount'); state.branchAddresses = val('fBranchAddresses');
     state.hasEventHall = checked('fHasEventHall'); state.eventHallDetails = val('fEventHallDetails');
+  }
+  wireAddressFields(INST_ADDR_CFG, renderInstitution, save);
+  const redraw = ()=>{
+    chipGroup('subjWrap', SUBJECTS_TAUGHT, state.subjectsTaught, redraw);
+    chipGroup('eduWrap', EDU_PROGRAMS, state.eduPrograms, redraw);
   };
+  redraw();
   wireNav(()=>{
     save();
-    if(!state.designation || !state.instName || !state.instAddress ||
+    if(!state.designation || !state.instName || !validateAddressFields(INST_ADDR_CFG) ||
        !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(state.instEmail) || !/^[0-9]{4}$/.test(state.yearEstablished) ||
        (state.subjectsTaught.length===0 && !state.subjectsTaughtOther)){
       showErr('instError', t('instErr')); return;
@@ -1411,6 +1598,13 @@ function renderInstitution(){
 }
 
 // ============ STEP: ORGANIZATION ============
+const ORG_ADDR_CFG = {
+  idPrefix:'fOrgLoc', questionKey:'orgLocationQ',
+  locTypeKey:'orgLocationType', houseKey:'orgLocHouse', poKey:'orgLocPO',
+  panchayatKey:'orgLocPanchayat', districtKey:'orgLocDistrict',
+  cityKey:'orgLocCity', stateKey:'orgLocState', countryKey:'orgLocCountry', pincodeKey:'orgLocPincode'
+};
+
 function renderOrganization(){
   cardArea.innerHTML = `
     <h2>${esc(t('orgTitle'))}${ml('orgTitle')}</h2>
@@ -1432,8 +1626,7 @@ function renderOrganization(){
     <label class="field-label">${esc(t('fOrgName'))} <span class="req">*</span>${ml('fOrgName')}</label>
     <input type="text" id="fInstName" value="${esc(state.instName)}">
 
-    <label class="field-label">${esc(t('fOrgAddress'))} <span class="req">*</span>${ml('fOrgAddress')}</label>
-    <textarea id="fInstAddress">${esc(state.instAddress)}</textarea>
+    ${addressFieldsHtml(ORG_ADDR_CFG)}
 
     <div class="check-row">
       <input type="checkbox" id="fIsRegistered" ${state.isRegistered?'checked':''}>
@@ -1505,16 +1698,10 @@ function renderOrganization(){
     state.registrationType = e.target.value;
     document.getElementById('regTypeOtherBox').classList.toggle('show', e.target.value==='Other');
   };
-  const redraw = ()=>{
-    chipGroup('progWrap', ORG_PROGRAM_TYPES, state.programTypes, redraw);
-    chipGroup('festWrap', ORG_FESTIVALS, state.festivals, redraw);
-    chipGroup('eduWrap', EDU_PROGRAMS, state.eduPrograms, redraw);
-  };
-  redraw();
-  const save = ()=>{
+  function save(){
     state.designation = val('fDesignation'); state.designationOther = val('fDesignationOther');
     state.officeBearerRole = val('fOfficeBearerRole'); state.officeBearerRoleOther = val('fOfficeBearerRoleOther');
-    state.instName = val('fInstName'); state.instAddress = val('fInstAddress');
+    state.instName = val('fInstName'); saveAddressFields(ORG_ADDR_CFG);
     state.instEmail = val('fInstEmail'); state.instMobile = val('fInstMobile');
     state.instWebsite = val('fInstWebsite'); state.yearEstablished = val('fYear');
     state.programTypesOther = val('fProgOther'); state.programFrequency = val('fFrequency');
@@ -1523,10 +1710,17 @@ function renderOrganization(){
     state.registrationType = val('fRegType'); state.registrationTypeOther = val('fRegTypeOther');
     state.registeredAddress = val('fRegAddress');
     state.hasEventHall = checked('fHasEventHall'); state.eventHallDetails = val('fEventHallDetails');
+  }
+  wireAddressFields(ORG_ADDR_CFG, renderOrganization, save);
+  const redraw = ()=>{
+    chipGroup('progWrap', ORG_PROGRAM_TYPES, state.programTypes, redraw);
+    chipGroup('festWrap', ORG_FESTIVALS, state.festivals, redraw);
+    chipGroup('eduWrap', EDU_PROGRAMS, state.eduPrograms, redraw);
   };
+  redraw();
   wireNav(()=>{
     save();
-    if(!state.designation || !state.instName || !state.instAddress ||
+    if(!state.designation || !state.instName || !validateAddressFields(ORG_ADDR_CFG) ||
        !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(state.instEmail) || !/^[0-9]{4}$/.test(state.yearEstablished) ||
        (state.programTypes.length===0 && !state.programTypesOther)){
       showErr('orgError', t('orgErr')); return;
@@ -1631,16 +1825,29 @@ function renderMakerSpecialization(){
 // ============ REVIEW ============
 function joinOpts(arr){ return arr.map(o=>opt(o)).join(", "); }
 
+// Builds one readable address line from a location cfg's fields — used on
+// the review page. Mirrors the Apps Script's combineAddress() logic.
+function formatAddress(cfg){
+  const locType = state[cfg.locTypeKey] || 'Kerala';
+  const parts = [state[cfg.houseKey]];
+  if(locType==='Kerala'){
+    parts.push(state[cfg.poKey] ? state[cfg.poKey]+' P.O.' : '', state[cfg.panchayatKey], state[cfg.districtKey]);
+  } else if(locType==='India'){
+    parts.push(state[cfg.poKey] ? state[cfg.poKey]+' P.O.' : '', state[cfg.cityKey], state[cfg.districtKey], state[cfg.stateKey]);
+  } else {
+    parts.push(state[cfg.cityKey], state[cfg.stateKey], state[cfg.countryKey]);
+  }
+  if(state[cfg.pincodeKey]) parts.push('- '+state[cfg.pincodeKey]);
+  return parts.filter(Boolean).join(', ');
+}
+
 function summaryRows(){
   const R = [];
   R.push([t('rWho'), opt(state.who)]);
   R.push([t('rName'), state.name]);
   R.push([t('rMobile'), state.mobile]);
   R.push([t('rWhatsapp'), state.whatsapp]);
-  if(state.addressHouse) R.push([t('rAddrHouse'), state.addressHouse]);
-  if(state.addressPO) R.push([t('rAddrPO'), state.addressPO]);
-  if(state.addressPanchayat) R.push([t('rAddrPanchayat'), state.addressPanchayat]);
-  if(state.pincode) R.push([t('rPincode'), state.pincode]);
+  if(state.addressHouse) R.push([t('rAddress'), formatAddress(PERSONAL_ADDR_CFG)]);
   if(state.email) R.push([t('rEmail'), state.email]);
   if(state.socialMedia) R.push([t('rSocial'), state.socialMedia]);
   if(state.bucket) R.push([t('rArtForm'), opt(state.bucket)]);
@@ -1653,7 +1860,9 @@ function summaryRows(){
     R.push([t('rOfficeBearerRole'), state.officeBearerRole==='Other' ? state.officeBearerRoleOther : opt(state.officeBearerRole)]);
   if(state.teacherInstType) R.push([t('rTeacherInstType'), state.teacherInstType==='Govt./Govt.-aided' ? t('teacherInstTypeGovt') : t('teacherInstTypePrivate')]);
   if(state.instName) R.push([state.who==='Organization'?t('rOrganization'):t('rInstitution'), state.instName]);
-  if(state.instAddress) R.push([t('rTheirAddress'), state.instAddress]);
+  if(state.who==='Institution' && state.instLocHouse) R.push([t('rTheirAddress'), formatAddress(INST_ADDR_CFG)]);
+  else if(state.who==='Organization' && state.orgLocHouse) R.push([t('rTheirAddress'), formatAddress(ORG_ADDR_CFG)]);
+  else if(state.instAddress) R.push([t('rTheirAddress'), state.instAddress]);
   if(state.instEmail) R.push([t('rTheirEmail'), state.instEmail]);
   if(state.instPhone) R.push([t('rTheirPhone'), state.instPhone]);
   if(state.instMobile) R.push([t('rTheirMobile'), state.instMobile]);
@@ -1930,7 +2139,7 @@ function backToEnrollment(){ adminRoot.innerHTML = ''; wrapEl.classList.remove('
 const EXPORT_COLS = [
   ['refId','Reference ID'],['submittedAt','Submitted At'],['who','Enrolling As'],
   ['name','Name'],['mobile','Mobile'],['whatsapp','WhatsApp'],
-  ['addressHouse','House Name/No. & Street'],['addressPO','Post Office'],['addressPanchayat','Panchayat/Municipality/Corporation'],
+  ['address','Address'],
   ['pincode','Pincode'],['email','Email'],['socialMedia','Social Media'],
   ['bucket','Art Form Bucket'],['categories','Category'],['specializations','Specialization'],
   ['specializationOther','Specialization (Other)'],
