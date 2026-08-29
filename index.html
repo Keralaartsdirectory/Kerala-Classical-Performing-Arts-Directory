@@ -185,7 +185,7 @@
 <script>
 // ============ CONFIG ============
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxVMozdwlk0ZrC2PZBWpg7FjttyxPvRqliVtupPiltp1LaASd3Y3_gmywbMlYMLn73gag/exec";
-const ADMIN_TOKEN = "agni2026";
+
 const ENROLLMENT_LINK = "https://keralaartsdirectory.github.io/Kerala-Classical-Performing-Arts-Directory/";
 
 // ============ LANGUAGE ============
@@ -2033,28 +2033,36 @@ function openAdminLogin(){
     </div>`;
   document.body.appendChild(overlay);
   document.getElementById('pwCancel').onclick = ()=> overlay.remove();
-  document.getElementById('pwSubmit').onclick = ()=>{
-    if(document.getElementById('adminPwInput').value === ADMIN_TOKEN){ overlay.remove(); showAdminPanel(); }
-    else showErr('pwError');
-  };
+  document.getElementById('pwSubmit').onclick = ()=> attemptAdminLogin(overlay);
   document.getElementById('adminPwInput').addEventListener('keydown', e=>{
     if(e.key === 'Enter') document.getElementById('pwSubmit').click();
   });
 }
 
-async function showAdminPanel(){
-  wrapEl.classList.add('hidden');
-  adminRoot.innerHTML = `<div class="admin-wrap"><p style="text-align:center;color:var(--muted);">Loading enrollments...</p></div>`;
+async function attemptAdminLogin(overlay){
+  const pwInput = document.getElementById('adminPwInput');
+  const submitBtn = document.getElementById('pwSubmit');
+  const pw = pwInput.value;
+  submitBtn.disabled = true;
   try{
-    const res = await fetch(APPS_SCRIPT_URL + '?token=' + encodeURIComponent(ADMIN_TOKEN));
+    const res = await fetch(APPS_SCRIPT_URL + '?token=' + encodeURIComponent(pw));
     const data = await res.json();
-    if(!data || data.success === false) throw new Error((data && data.error) || 'Could not load');
-    adminEntries = (data.entries||[]).slice().sort((a,b)=>
-      String(b.submittedAt||'').localeCompare(String(a.submittedAt||'')));
-    renderAdminPanel(adminEntries);
+    if(!data || data.success === false) throw new Error('bad token');
+    overlay.remove();
+    showAdminPanel(data);
   }catch(err){
-    adminRoot.innerHTML = `<div class="admin-wrap">
-      <p style="text-align:center;color:var(--danger);">Could not load enrollments (${esc(err.message||'')}).</p>
+    showErr('pwError');
+  }finally{
+    submitBtn.disabled = false;
+  }
+}
+
+function showAdminPanel(data){
+  wrapEl.classList.add('hidden');
+  adminEntries = (data.entries||[]).slice().sort((a,b)=>
+    String(b.submittedAt||'').localeCompare(String(a.submittedAt||'')));
+  renderAdminPanel(adminEntries);
+}
       <div class="nav-buttons"><button class="btn-secondary" id="adminBackErr">Back</button></div></div>`;
     document.getElementById('adminBackErr').onclick = backToEnrollment;
   }
