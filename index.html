@@ -2063,11 +2063,7 @@ function showAdminPanel(data){
     String(b.submittedAt||'').localeCompare(String(a.submittedAt||'')));
   renderAdminPanel(adminEntries);
 }
-      <div class="nav-buttons"><button class="btn-secondary" id="adminBackErr">Back</button></div></div>`;
-    document.getElementById('adminBackErr').onclick = backToEnrollment;
-  }
-}
-
+  
 function listStr(v){ return Array.isArray(v) ? v.join(', ') : (v || ''); }
 
 function renderAdminPanel(entries, filterText){
